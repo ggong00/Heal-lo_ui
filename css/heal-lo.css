@@ -1,0 +1,300 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+/* * {outline: 1px solid red;} */
+ul { 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    margin: 0;
+}
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1300px;
+    margin: 0 auto;
+    min-width: 768px;
+    max-width: 1600px;
+}
+
+/* header */
+header .topmenu{
+    font-size: 13px;
+    text-align: right;
+    height: 100%;
+}
+header .header video{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    position: relative;
+}
+header > .header > .text1{
+    position: absolute;
+    width:82% ;
+    top:10%;
+    left:18%;
+    text-align: left;
+    font-size:28px ;
+    color: white;
+}
+
+header > .header > .text1 > strong{
+    display: inline-flex;
+    font-size: 35px;
+}
+
+header > .header > .text2{
+    position: absolute;
+    width: 82% ;
+    top: 11%;
+    left: 18%;
+    text-align: left;
+    font-size: 110px ;
+    color: #f39c12;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+header > .header > .text3{
+    display: inline-flex;
+    position: absolute;
+    width: 82% ;
+    top: 35%;
+    left: 18%;
+    text-align: left;
+    font-size:30px ;
+    color: white;
+}
+
+header .menu .gnb {
+    height: 30px;
+}
+header .menu .gnb > ul {
+    display: flex;
+    height: 100%;
+}
+header .menu .gnb > ul > li {
+    flex: 1;
+    padding: 2px 3px;
+    background-color: rgb(247, 218, 175);
+    color: #000;
+    text-align: center;
+    position: relative;
+    font-size: 13px;
+    font-family: 'Noto';
+    font-weight: bold;
+}
+
+header .menu .gnb ul li:hover {
+    cursor: pointer;
+}
+
+header .menu .gnb ul li:hover > ul {
+    display: block;
+}
+
+header .menu .gnb > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 100%;
+}
+
+header .menu .gnb > ul > li> ul > li {
+    padding: 2px 3px;
+}
+
+header .menu .gnb > ul > li > ul > li:hover{
+    background-color: #666;
+    color: #fff;
+}
+
+
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+}
+main .bar {
+    text-align: center;
+    font-size: 50px;
+}
+main .top3 {
+    display: flex;
+}
+main .top3 .search1 {
+    flex: 1;
+}
+main .top3 .search1 img {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    object-fit: cover;
+    position: relative;
+}
+main .top3 .search1 p {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+main .top3 .calendar1 {
+    flex: 1;
+}
+main .top3 .calendar1 img {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    object-fit: cover;
+    position: relative;
+}
+main .top3 .calendar1 p {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+main .top3 .community1 {
+    flex: 1;
+}
+main .top3 .community1 img {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    object-fit: cover;
+    position: relative;
+}
+main .top3 .community1 p {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+main .second3 {
+    flex-direction: column;
+    flex:1;
+    margin-top: 20%;
+}
+
+main .second3 .introduction {
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    line-height: 20%;
+}
+
+main .second3 .introduction h1 {
+    font-size: 28px;
+}
+main .second3 .introduction p {
+    font-size: 13px;
+}
+main .second3 .search2 {
+    display: flex;
+    height: 40vh;
+}
+main .second3 .search2 .figcaption4 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+main .second3 .search2 .figcaption4 .name1 {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* transform: 1.5s; */
+}
+main .second3 .search2 .figcaption4 .explain1 {
+    font-size: 20px;
+    /* font-weight: bolder; */
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+main > .second3 > .search2 img{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    justify-self: right;
+    object-fit: contain;
+    /* position: absolute; */
+}
+main .second3 .calendar2 {
+    display: flex;
+    height: 40vh;
+}
+main > .second3 > .calendar2 img{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* position: relative; */
+}
+main .second3 .calendar2 .figcaption5 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main .second3 .calendar2 .figcaption5 .name2 {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: right;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* transform: 1.5s; */
+}
+main .second3 .calendar2 .figcaption5 .explain2 {
+    font-size: 20px;
+    /* font-weight: bolder; */
+    /* text-align: left; */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+main .second3 .community2 {
+    display: flex;
+    height: 40vh;
+}
+main .second3 .community2 .figcaption6 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main .second3 .community2 .figcaption6 .name3 {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* transform: 1.5s; */
+}
+main .second3 .community2 .figcaption6 .explain3 {
+    font-size: 20px;
+    /* font-weight: bolder; */
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+main > .second3 > .community2 img{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* position: relative; */
+}
+
+
+
+
+/* footer */
+footer{
+    margin-top: 20%;
+    font-size: 1px;
+    text-align: center;
+}

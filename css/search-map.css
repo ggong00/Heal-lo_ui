@@ -1,0 +1,27 @@
+/* container */
+#container  {
+  display: flex;
+  flex-direction: column;
+}
+
+#container .container__section1 {
+  background-color: rgb(168, 209, 209);
+  height: 100px;
+
+}
+
+
+#container .container__section2 {
+  background-color: rgb(39, 46, 46);
+  height: 800px;
+}
+
+/* #container .container__section1 .container__map {
+  background-color: rgb(174, 193, 186);
+  margin: 0 auto;
+  width: 800px;
+  height: 80%;
+
+} */
+
+
