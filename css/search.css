@@ -1,0 +1,127 @@
+/* container */
+#wrapper {
+  min-width: auto;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}  
+
+/* 섹션 레이아웃 */
+.section-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+/* 섹션 타이틀 */
+.container__section-name h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+  margin: 72px 0;
+  width: 100%;
+}
+
+/* 검색 */
+.container__section1 .search-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 630px;
+}
+.container__section1 .search-form .container__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.container__section1 .search-form .container__text .input-group{
+  width: 510px;
+}
+.container__section1 .search-form .container__category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 24px 0;
+}
+.container__section1 .search-form .search-category {
+  width: 120px;
+}
+.container__section1 .search-form .category-t {
+  font-size: 18px;
+  padding: 5px 0;
+  width: 100px;
+  border-radius: 8%;
+  border: 0.1px solid rgb(197, 192, 192);
+  background-color: var(--color-main-header);
+  font-weight: 500;
+  color: rgb(103, 100, 100);
+  text-align: center;
+}
+.container__section1 .search-form .btn-search {
+  width: 160px;
+  background-color: var(--color-others-header);
+}
+
+/* 지도 */
+.container__section2 .container__map .map-api {
+  min-width: 600px;
+  min-height: 300px;
+  max-width: 1200px;
+  max-height: 600px;
+  width: 60vw;
+  height: 30vw;
+  margin: 8px;
+  border-radius: 15%;
+  box-shadow: var(--color-others-header) 0.5px 0.5px 0.5px 5px;
+}
+
+/* 리스트 */
+
+/* not search용 객체 */
+.container__section3 .list-not-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+}
+.container__section3 .list-not-search .not-search-icon {
+  font-size: 30rem;
+  color: rgb(195, 138, 16, 0.3);
+}
+.container__section3 .list-not-search .not-search-coment {
+  font-size: 48px;
+
+}
+
+/* 운동시설 목록 */
+.container__section3 .container__lists .container__ilst {
+  margin: 48px auto;
+  max-width: 1000px;
+  min-width: 720px;
+}
+.container__section3 .container__lists .container__ilst img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* 페이지네이션 */
+.container__section3 .container__page-nav{
+  margin: 24px 0;
+}
+.container__section3 .container__page-nav a {
+  color: var(--color-main-header);  
+}
+
+
+

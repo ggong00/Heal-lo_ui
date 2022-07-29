@@ -23,7 +23,7 @@ function menuCategoryInit() {
 function iconMouseoverEvent(e) {
   sitemenuInfo.innerHTML = e.target.category;
   sitemenuInfo.style.left = e.target.offsetLeft + "px";
-  sitemenuInfo.style.top = e.target.offsetTop + -e.target.offsetHeight  + "px";
+  sitemenuInfo.style.top = e.target.offsetTop + -e.target.offsetHeight + 12 + "px";
   sitemenuInfo.style.opacity = 1;
   sitemenuInfo.style.color = "#f39c12";
 }

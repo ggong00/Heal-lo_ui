@@ -1,11 +1,14 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
-/* * {outline: 1px solid red;} */
-ul { 
+ul,li { 
     margin: 0;
     padding: 0;
     list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 body{
     margin: 0;
@@ -14,18 +17,28 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1300px;
+    width: 70%;
     margin: 0 auto;
     min-width: 768px;
     max-width: 1600px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* header */
+/* header - topmenu */
 header .topmenu{
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 23px;
     text-align: right;
     height: 100%;
 }
+header .topmenu a:active {
+    color: inherit;
+}
+header .topmenu a:hover {
+    text-decoration: underline;
+}
+
+/* header - logo */
 header .header video{
     width: 100%;
     height: 60vh;
@@ -36,45 +49,42 @@ header > .header > .text1{
     position: absolute;
     width:82% ;
     top:10%;
-    left:18%;
+    left:19%;
     text-align: left;
-    font-size:28px ;
+    font-size: 34px ;
     color: white;
 }
-
 header > .header > .text1 > strong{
     display: inline-flex;
-    font-size: 35px;
+    font-size: 39px;
 }
-
 header > .header > .text2{
     position: absolute;
     width: 82% ;
-    top: 11%;
+    top: 4%;
     left: 18%;
     text-align: left;
-    font-size: 110px ;
+    font-size: 140px ;
     color: #f39c12;
     font-weight: bold;
-    font-family: 'Noto Sans KR', sans-serif;
 }
-
 header > .header > .text3{
     display: inline-flex;
     position: absolute;
     width: 82% ;
-    top: 35%;
-    left: 18%;
+    top: 32%;
+    left: 18.5%;
     text-align: left;
-    font-size:30px ;
+    font-size:45px ;
     color: white;
 }
-
+/* header-gnb */
 header .menu .gnb {
-    height: 30px;
+    height: 45px;
 }
 header .menu .gnb > ul {
     display: flex;
+    align-items: center;
     height: 100%;
 }
 header .menu .gnb > ul > li {
@@ -84,8 +94,7 @@ header .menu .gnb > ul > li {
     color: #000;
     text-align: center;
     position: relative;
-    font-size: 13px;
-    font-family: 'Noto';
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -95,6 +104,8 @@ header .menu .gnb ul li:hover {
 
 header .menu .gnb ul li:hover > ul {
     display: block;
+    background-color: rgb(247, 218, 175);
+    z-index: 10000;
 }
 
 header .menu .gnb > ul > li > ul {
@@ -107,11 +118,12 @@ header .menu .gnb > ul > li > ul {
 
 header .menu .gnb > ul > li> ul > li {
     padding: 2px 3px;
+    line-height: 32px;
 }
 
 header .menu .gnb > ul > li > ul > li:hover{
-    background-color: #666;
-    color: #fff;
+    /* background-color: rgb(247, 218, 175); */
+    color: #16a085;
 }
 
 
@@ -122,8 +134,16 @@ main {
 }
 main .bar {
     text-align: center;
-    font-size: 50px;
+    padding: 10px 10px;
 }
+main .bar input {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+
+/* 여기서부터 다시 */
 main .top3 {
     display: flex;
 }
@@ -140,7 +160,6 @@ main .top3 .search1 img {
 }
 main .top3 .search1 p {
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
 }
 main .top3 .calendar1 {
@@ -156,7 +175,6 @@ main .top3 .calendar1 img {
 }
 main .top3 .calendar1 p {
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
 }
 main .top3 .community1 {
@@ -172,7 +190,6 @@ main .top3 .community1 img {
 }
 main .top3 .community1 p {
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
 }
 main .second3 {

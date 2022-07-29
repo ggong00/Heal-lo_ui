@@ -73,7 +73,7 @@ ul {
     text-align: center;
 }
 
-/*footer 영역*/
+/* footer 영역*/
 #footer .lower {
     height: 100px;
     display: flex;
@@ -84,6 +84,7 @@ ul {
 }
 #footer .lower ul {
     flex: 1;
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
 }
+
