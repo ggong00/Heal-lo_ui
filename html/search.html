@@ -47,10 +47,10 @@
       <main id="container">
         
         <!-- 섹션1 -->
-        <section class="container__section1 section-layout">
+        <section class="section1 section-layout">
 
           <!-- 섹션 제목 -->
-          <div class="container__section-name">
+          <div class="section-title">
             <h2>상세 검색</h2>
           </div>
 
@@ -58,23 +58,23 @@
           <form class="search-form" action="/index.html">
 
             <!-- 텍스트 컨테이너 -->
-            <div class="container__text">
+            <div class="search-form__text">
 
               <!-- 시설명 검색 -->
-              <div class="category-t">시설명</div>
-              <div class="input-group">
+              <div class="search-form__title01 search-form__label">시설명</div>
+              <div class="search-form__input-text input-group">
                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
                 <input type="text" class="form-control" placeholder="시설명을 입력해주세요.">
               </div>
             </div>
 
             <!-- 카테고리 컨테이너 -->
-            <div class="container__category">  
+            <div class="search-form__category">  
 
               <!-- 지역 카테고리 (시/도) -->
-              <div class="category-title01 category-t">지역</div>            
-              <div class="search-category">
-                <select class="form-select" id="floatingSelect">
+              <div class="search-form__title02 search-form__label">지역</div>            
+              <div class="search-form__loca">
+                <select class="search-form__select-city form-select" id="floatingSelect">
                   <option selected>모든 지역</option>
                   <option value="1">울산</option>
                   <option value="2">부산</option>
@@ -83,8 +83,8 @@
               </div>
 
               <!-- 지역 카테고리 (구) -->
-              <div class="search-category">
-                <select class="form-select" id="floatingSelect">
+              <div class="search-form__loca">
+                <select class="search-form__select-town form-select" id="floatingSelect">
                   <option selected>모든 지역</option>
                   <option value="1">중구</option>
                   <option value="2">남구</option>
@@ -93,7 +93,7 @@
               </div>
 
               <!-- 운동 카테고리 -->
-              <div class="category-title02 category-t">운동</div>            
+              <div class="search-form__title03 search-form__label">운동</div>            
               <div class="search-category">
                 <select class="form-select" id="floatingSelect">
                   <option selected>전체 선택</option>
@@ -109,19 +109,19 @@
         </section>
         
         <!-- 섹션2 -->
-        <section class="container__section2 section-layout">
+        <section class="section2 section-layout">
 
           <!-- 지도 api 컨테이너-->
-          <article class="container__map">
-            <img class="map-api" src="https://cdn.pixabay.com/photo/2019/07/06/16/31/city-map-4320755_960_720.png" alt="지도">
+          <article class="section2__map-container">
+            <img class="section2-api" src="https://cdn.pixabay.com/photo/2019/07/06/16/31/city-map-4320755_960_720.png" alt="지도">
           </article>
         </section>
         
         <!-- 리스트 -->
-        <section class="container__section3 section-layout">
+        <section class="section3 section-layout">
 
           <!-- 섹션 제목 -->
-          <div class="container__section-name">
+          <div class="section-title">
             <h2>시설 목록</h2>
           </div>
 
@@ -130,90 +130,78 @@
             <div>
               <i class="fa-solid fa-rectangle-xmark not-search-icon"></i>
             </div>
-            <div class="not-search-coment">
+            <div class="coment">
               검색을 해주세요 or 검색결과가 없습니다.
             </div>
           </div>  -->
 
           <!-- 리스트 컨테이너  -->
-          <div class="container__lists">
+          <div class="section3__lists">
 
             <!-- 시설 리스트 (테스트 객체)  -->
-            <div class="card mb-3 container__ilst"">
+            <div class="card mb-3 section3__ilst"">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="img-fluid rounded-start" alt="시설사진">
+                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
                 </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="card-body-contain col-md-8">
+                  <div class="card-body card-title">
+                    <h5 class="card-text">운동시설 A</h5>
+                  </div>
+                  <div class="card-body card-sub">
+                    <p class="card-text">추가내용1</p>
+                    <p class="card-text">추가내용2</p>
+                    <p class="card-text">010-8249-7750</p>
+                    <p class="card-text">울산 중구 옥교동 xx</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card mb-3 container__ilst"">
+
+            <div class="card mb-3 section3__ilst"">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://cdn.pixabay.com/photo/2016/01/08/01/53/gymer-1126999_960_720.jpg" class="img-fluid rounded-start" alt="시설사진">
+                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
                 </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="card-body-contain col-md-8">
+                  <div class="card-body card-title">
+                    <h5 class="card-text">운동시설 A</h5>
+                  </div>
+                  <div class="card-body card-sub">
+                    <p class="card-text">추가내용1</p>
+                    <p class="card-text">추가내용2</p>
+                    <p class="card-text">010-8249-7750</p>
+                    <p class="card-text">울산 중구 옥교동 xx</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card mb-3 container__ilst"">
+
+            <div class="card mb-3 section3__ilst"">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="img-fluid rounded-start" alt="시설사진">
+                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
                 </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="card-body-contain col-md-8">
+                  <div class="card-body card-title">
+                    <h5 class="card-text">운동시설 A</h5>
+                  </div>
+                  <div class="card-body card-sub">
+                    <p class="card-text">추가내용1</p>
+                    <p class="card-text">추가내용2</p>
+                    <p class="card-text">010-8249-7750</p>
+                    <p class="card-text">울산 중구 옥교동 xx</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card mb-3 container__ilst"">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://media.istockphoto.com/id/1357992967/ko/%EC%82%AC%EC%A7%84/%EC%8A%A4%EB%8B%88%EC%BB%A4%EC%A6%88%EC%99%80-%EC%8A%A4%ED%8F%AC%EC%B8%A0-%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC-%ED%8A%B8%EB%A0%8C%EB%93%9C-%EC%B9%BC%EB%9D%BC-2022-%EC%95%84%EC%A3%BC-%ED%8E%98%EB%A6%AC-%ED%81%B4%EB%A1%9C%EC%A6%88%EC%97%85-%ED%83%91-%EB%B7%B0.webp?s=612x612&w=is&k=20&c=pwLMLgm21E3-PlQ7hJCyMol-vCTcW7Ca5U17FTJ68-A=" class="img-fluid rounded-start" alt="시설사진">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 container__ilst"">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://cdn.pixabay.com/photo/2016/07/25/00/19/work-out-1539614_960_720.png" class="img-fluid rounded-start" alt="시설사진">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            
             <!-- // -->
           </div>  
 
           <!-- 페이지네이션 -->
-          <nav aria-label="Page navigation example" class="container__page-nav pagination-lg">
+          <nav aria-label="Page navigation example" class="section3__page-nav pagination-lg">
             <ul class="pagination">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">

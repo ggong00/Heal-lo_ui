@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 전체 컨테이너 */
-#wrapper {width:80%; max-width:1600px; min-width:900px; margin:0px auto; font-family:'Noto Sans KR',sans-serif;}
+#wrapper {width:80%; max-width:1600px; min-width:768px; margin:0px auto; font-family:'Noto Sans KR',sans-serif;}
 
 /*header 영역*/
 #header {position:relative;}
@@ -28,8 +28,9 @@
 #footer .inner ul {margin-left:70px;}
 #footer .inner h2 {font-size: 24px; font-weight: 700;}
 
-/* 미디어쿼리 */
+/* 미디어쿼리 (태블릿)*/
 @media (max-width: 1024px) {
+
   #header .header__banner {
     height: 600px;
   }
@@ -52,4 +53,9 @@
     font-weight:500; 
     font-size: 48px;
   }
+}
+
+/* 미디어쿼리 (모바일) 예정~*/
+@media (max-width: 768px) {
+
 }
