@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 전체 컨테이너 */
-#wrapper {width:80%; max-width:1600px; min-width:900px; margin:0px auto; font-family:'Noto Sans KR',sans-serif;}
+#wrapper {width:80%; max-width:1600px; min-width: 768px; margin:0px auto; font-family:'Noto Sans KR',sans-serif;}
 
 /*header 영역*/
 #header {position:relative;}
@@ -20,7 +20,7 @@
 #header .header__banner .header__main p {font-weight:500; font-size: 36px;}
 
 /*main 영역*/
-#container {height:1200px; border-top:3px solid #777;}
+#container {height:1200px; border-top:3px so0lid #777;}
 
 /*footer 영역*/
 #footer {border-top:3px solid #777;}
@@ -30,6 +30,10 @@
 
 /* 미디어쿼리 */
 @media (max-width: 1024px) {
+  #wrapper {
+    min-width: 800px;
+  }
+
   #header .header__banner {
     height: 600px;
   }
