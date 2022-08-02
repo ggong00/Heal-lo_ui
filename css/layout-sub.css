@@ -28,7 +28,7 @@
 #footer .inner ul {margin-left:70px;}
 #footer .inner h2 {font-size: 24px; font-weight: 700;}
 
-/* 미디어쿼리 */
+/* 미디어쿼리 (태블릿)*/
 @media (max-width: 1024px) {
   #wrapper {
     min-width: 800px;
@@ -56,4 +56,9 @@
     font-weight:500; 
     font-size: 48px;
   }
+}
+
+/* 미디어쿼리 (모바일) 예정~*/
+@media (max-width: 768px) {
+
 }

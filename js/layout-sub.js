@@ -16,7 +16,6 @@ sitemenuContain.addEventListener('mouseout',(e) => iconMouseoutEvent(e))
 function menuCategoryInit() {
   for(let i = 0; i<menus.length; i++) {
     menus[i].category = menuCategory[i];  
-    console.log(menus[i].category);
   } 
 }
 
