@@ -1,8 +1,4 @@
 /* container */
-#wrapper {
-  min-width: auto;
-}
-
 #container {
   display: flex;
   flex-direction: column;
@@ -79,8 +75,8 @@
   min-height: 300px;
   max-width: 1200px;
   max-height: 600px;
-  width: 60vw;
-  height: 30vw;
+  width: 80vw;
+  height: 40vw;
   margin: 8px;
   border-radius: 15%;
   box-shadow: var(--color-others-header) 0.5px 0.5px 0.5px 5px;
@@ -89,19 +85,18 @@
 /* 리스트 */
 
 /* not search용 객체 */
-.section3 .list-not-search {
+.section3 .section3-notsearch {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 600px;
 }
-.section3 .list-not-search .not-search-icon {
+.section3 .section3__notsearch .section3__notsearch-icon {
   font-size: 30rem;
   color: rgb(195, 138, 16, 0.3);
 }
-.section3 .list-not-search .not-search-coment {
+.section3 .section3__notsearch .section3__notsearch-coment {
   font-size: 48px;
-
 }
 
 /* 운동시설 목록 */
@@ -111,7 +106,7 @@
   max-width: 1200px;
   min-width: 600px;
   width: 80vw;
-  background-color: rgba(104, 226, 232, 0.109);
+  background-color: #f39d12;
   border-radius: 14px;
 }
 .section3 .section3__lists .section3__ilst .section3__list-img {
@@ -128,6 +123,7 @@
   padding: 8px 8px;
 }
 .section3 .section3__lists .section3__ilst .card-title {
+  align-self: center;
   font-size: 36px;
 }
 .section3 .section3__lists .section3__ilst .card-sub {

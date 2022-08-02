@@ -1,5 +1,5 @@
 const menuCategory = ['검색', '게시판', '캘린더', '즐겨찾기']
-const menus = document.querySelectorAll('.header__sitemenu i');
+const menus = document.querySelectorAll('.header__sitemenu .header__site-icon');
 let sitemenuInfo = document.getElementById('sitemenuInfo');
 const sitemenuContain = document.getElementById("siteMenuContain");
 

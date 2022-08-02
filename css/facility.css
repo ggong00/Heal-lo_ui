@@ -13,10 +13,10 @@
 }
 
 /* 시설 정보 */
-.container__section1 {
+.section1 {
     width: 100%;
 }
-.container__section1 .container__facility {
+.section1 .section1__facility {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,27 +24,31 @@
     position: relative;
     height: 1000px;
 }
-.container__section1 .container__facility .container__top {
+.section1 .section1__facility .section1__top {
     display: flex;
     justify-content: space-around;
     width: 60%;
     font-size: 52px;
 }
-.container__section1 .container__facility .container__top .facility-avg {
+.section1 .section1__facility .section1__top .section1__review-avg {
     color: rgb(172, 172, 31);
 }
-.container__section1 .container__facility .facility-img img {
+.section1 .section1__facility .section1__img .section1__facility-img {
     width: 1000px;
 }
-.container__section1 .container__facility-detail {
-    width: auto;
-
+.section1 .section1__facility-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.container__section1 .container__facility-detail .facility-info {
+.section1 .section1__facility-detail .hr {
+    width: 70%;
+}
+.section1 .section1__facility-detail .section1__facility-info {
     height: 500px;
 }
 
 /* 리뷰 정보 */
-.container__section2 {
+.section2 {
     background-color: #ccc;
 }
