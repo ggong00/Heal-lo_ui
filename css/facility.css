@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .hr {
     height: 2.5px;
     width: 100%;
@@ -20,35 +19,85 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
-    height: 1000px;
+    height: 900px;
 }
 .section1 .section1__facility .section1__top {
     display: flex;
-    justify-content: space-around;
-    width: 60%;
-    font-size: 52px;
+    justify-content: space-between;
+    width: 500px;
+    margin-top: 80px;
+    font-size: 36px;
 }
 .section1 .section1__facility .section1__top .section1__review-avg {
     color: rgb(172, 172, 31);
 }
+.section1 .section1__facility .section1__top .section1__title .section1__star {
+    margin-top: 48px;
+}
 .section1 .section1__facility .section1__img .section1__facility-img {
-    width: 1000px;
+    width: 600px;
 }
 .section1 .section1__facility-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.section1 .section1__facility-detail .section1__facility-info {
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 600px;
+}
 .section1 .section1__facility-detail .hr {
-    width: 70%;
+    width: 600px;
+}
+.section1 .section1__facility-detail .hr:last-of-type {
+    width: 100%;
+}
+.section1 .section1__facility-detail .section1__facility-info .section1__info-title {
+    font-weight: 600;
+    font-size: 28px;
+}
+.section1 .section1__facility-detail .section1__facility-info .section1__info-sub {
+    font-size: 18px;
+}
+.section1 .section1__facility-detail .section1__facility-info .section1__info-img {
+    display: flex;
+}
+.section1 .section1__facility-detail .section1__facility-info .section1__info-img img {
+    width: 150px;
+    height: 150px;
+    margin-right: 12px;
 }
 .section1 .section1__facility-detail .section1__facility-info {
-    height: 500px;
+    min-height: 200px;
 }
 
 /* 리뷰 정보 */
 .section2 {
-    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    height: 800px;
+}
+.section2 .section2__review-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section2 .section2__review-info .section2__star {
+    font-size: 24px;
+}
+.section2 .section2__review-info .section2__review-avg {
+    color: rgb(172, 172, 31);
+    font-size: 58px;
+}
+
+.section2 .section2__review-lists .section2__review-list {
+    height: 200px;
+    outline: 1px solid black;
 }

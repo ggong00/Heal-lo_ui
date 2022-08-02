@@ -106,7 +106,7 @@
   max-width: 1200px;
   min-width: 600px;
   width: 80vw;
-  background-color: #f39d12;
+  border: 3px solid #f39d12;
   border-radius: 14px;
 }
 .section3 .section3__lists .section3__ilst .section3__list-img {
