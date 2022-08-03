@@ -1,17 +1,23 @@
 @charset "utf-8";
 
 /* 전체 컨테이너 */
-#wrapper {width:80%; max-width:1600px; min-width: 900px; margin:0px auto; font-family:'Noto Sans KR',sans-serif;}
-
+#wrapper {width: 80%;min-width: 700px; max-width: 1600px; margin:0px auto; font-family:'Noto Sans KR',sans-serif;}
+#wrapper .content {width: 80%;}
+#wrapper .layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /*header 영역*/
-#header {position:relative;}
+#header {flex-shrink: 0; position:relative; width: 100%;}
 
 /* 탑 메뉴 */
-#header .header__menu-top {display:flex; justify-content:flex-end; font-size:14px;}
+#header .header__menu-top {display:flex; justify-content:flex-end;font-size:14px;}
 #header .header__menu-top .header__my-menu {display:inline-block; margin:10px 8px; cursor:pointer;}
 
 /* 베너 */
-#header .header__banner {display:flex; justify-content:center; flex-direction:column; align-items:center; position:relative; height:220px;}
+#header .header__banner {display:flex; justify-content:center; flex-direction:column; align-items:center; position:relative;height:220px;}
 #header .header__banner .header__main-logo .header__main-title {font-size:102px; font-weight:500; color:var(--color-others-header);}
 #header .header__banner .header__main-logo .header__sub-title {font-weight:500; font-size: 36px;}
 #header .header__banner .header__sitemenu {position:absolute; right:2px; font-size:36px; text-align:center; cursor:pointer;}
@@ -20,16 +26,16 @@
 #header .header__banner .header__sitemenu .header__site-icon:hover {color:var(--color-main-header); transform:scale(1.23);}
 
 /*main 영역*/
-#container {height:1200px; border-top: 3px solid #777;}
+#container {height:1200px; border-top: 3px solid rgb(168, 166, 166);}
 
 /*footer 영역*/
 #footer {border-top:3px solid #777;}
-#footer .inner {display:flex; justify-content:center; margin-top:30px;}
+#footer .inner {display:flex; justify-content:center; padding-bottom:56px; margin-top:30px;}
 #footer .inner ul {margin-left:70px;}
 #footer .inner h2 {font-size: 24px; font-weight: 700;}
 
 /* 미디어쿼리 (태블릿)*/
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   #header .header__banner {
     height: 600px;
   }

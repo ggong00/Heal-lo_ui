@@ -20,10 +20,12 @@
   </style>
 </head>
 <body>
-  <div id="wrapper">
+  <div id="wrapper" class="layout">
 
       <!-- 헤더 -->
     <header id="header">
+      <section class="content">
+
 
       <!-- 탑 메뉴 -->
       <div class="header__menu-top">
@@ -33,7 +35,7 @@
       </div>
 
       <!-- 베너 -->
-      <div class="header__banner">
+      <div class="header__banner" class="layout">
         <!-- 메인 로고 -->
         <div class="header__main-logo">
           <a href="#">
@@ -49,20 +51,26 @@
           <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
         </div>
       </div>  
+      </section>
     </header>
       
       <!-- 메인 컨텐츠 -->
       <main id="container">
+        <section class="content">
+
         <div id="idText">
             <p id='seccessId'>아이디 찾기완료!</p>
             <p id='seccessIdSub'>고객님의 정보와 일치하는 아이디입니다.</p>
             <button class="btn__login"><a href="#">로그인하기</a></button>
             <button class="btn__pw"><a href="#">비밀번호 찾기</a></button>
         </div>    
+        </section>
       </main>
 
       <!-- footer -->
-      <footer id="footer">
+      <footer id="footer" class="layout">
+        <section class="content">
+
         <div class="inner">
             <h2>Heal-lo</h2>
             <ul>
@@ -73,6 +81,7 @@
                 <li>Copyright 2022 헬로. All Rights Reserved.</li>
             </ul>
         </div>
+        </section>
     </footer>
     
   <script src="../js/layout-sub.js"></script>

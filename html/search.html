@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
@@ -16,8 +15,8 @@
   <div id="wrapper">
 
       <!-- 헤더 -->
-      <header id="header">
-
+      <header id="header" class="layout">
+        <section class="content">
           <!-- 탑 메뉴 -->
           <div class="header__menu-top">
             <span class="header__my-menu"><a href="#">로그아웃</a></span>
@@ -44,203 +43,207 @@
               <i class="fa-solid fa-heart header__site-icon"><a href="#"></a></i>
             </div>
           </div>  
+        </section>  
       </header>
       
       <!-- 메인 컨텐츠 -->
-      <main id="container">
-        
-        <!-- 섹션1 -->
-        <section class="section1 section-layout">
+      <main id="container" class="layout">
+        <section class="content">
+          
+          <!-- 섹션1 -->
+          <section class="section1 section-layout">
 
-          <!-- 섹션 제목 -->
-          <div class="section-title">
-            <h2>상세 검색</h2>
-          </div>
-
-          <!-- form -->
-          <form class="search-form" action="/index.html">
-
-            <!-- 텍스트 컨테이너 -->
-            <div class="search-form__text">
-
-              <!-- 시설명 검색 -->
-              <div class="search-form__title01 search-form__label">시설명</div>
-              <div class="search-form__input-text input-group">
-                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" class="form-control" placeholder="시설명을 입력해주세요.">
-              </div>
+            <!-- 섹션 제목 -->
+            <div class="section-title">
+              <h2>상세 검색</h2>
             </div>
 
-            <!-- 카테고리 컨테이너 -->
-            <div class="search-form__category">  
+            <!-- form -->
+            <form class="search-form" action="/index.html">
 
-              <!-- 지역 카테고리 (시/도) -->
-              <div class="search-form__title02 search-form__label">지역</div>            
-              <div class="search-form__loca">
-                <select class="search-form__select-city form-select" id="floatingSelect">
-                  <option selected>모든 지역</option>
-                  <option value="1">울산</option>
-                  <option value="2">부산</option>
-                  <option value="3">서울</option>
-                </select>
-              </div>
+              <!-- 텍스트 컨테이너 -->
+              <div class="search-form__text">
 
-              <!-- 지역 카테고리 (구) -->
-              <div class="search-form__loca">
-                <select class="search-form__select-town form-select" id="floatingSelect">
-                  <option selected>모든 지역</option>
-                  <option value="1">중구</option>
-                  <option value="2">남구</option>
-                  <option value="3">북구</option>
-                </select>
-              </div>
-
-              <!-- 운동 카테고리 -->
-              <div class="search-form__title03 search-form__label">운동</div>            
-              <div class="search-category">
-                <select class="form-select" id="floatingSelect">
-                  <option selected>전체 선택</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-search">검색</button>
-          </form>
-        </section>
-        
-        <!-- 섹션2 -->
-        <section class="section2 section-layout">
-
-          <!-- 지도 api 컨테이너-->
-          <article class="section2__map-container">
-            <img class="section2-api" src="https://cdn.pixabay.com/photo/2019/07/06/16/31/city-map-4320755_960_720.png" alt="지도">
-          </article>
-        </section>
-        
-        <!-- 리스트 -->
-        <section class="section3 section-layout">
-
-          <!-- 섹션 제목 -->
-          <div class="section-title">
-            <h2>시설 목록</h2>
-          </div>
-
-          <!-- not found 결과 -->
-          <!-- <div class="section3__notsearch">
-            <div>
-              <i class="fa-solid fa-rectangle-xmark secton3__notsearch-icon"></i>
-            </div>
-            <div class="secton3__notsearch-coment">
-              검색을 해주세요 or 검색결과가 없습니다.
-            </div>
-          </div>  -->
-
-          <!-- 리스트 컨테이너  -->
-          <div class="section3__lists">
-
-            <!-- 시설 리스트 (테스트 객체)  -->
-            <div class="card mb-3 section3__ilst"">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
-                </div>
-                <div class="card-body-contain col-md-8">
-                  <div class="card-body card-title">
-                    <h5 class="card-text">운동시설 A</h5>
-                  </div>
-                  <div class="card-body card-sub">
-                    <p class="card-text">추가내용1</p>
-                    <p class="card-text">추가내용2</p>
-                    <p class="card-text">010-8249-7750</p>
-                    <p class="card-text">울산 중구 옥교동 xx</p>
-                  </div>
+                <!-- 시설명 검색 -->
+                <div class="search-form__title01 search-form__label">시설명</div>
+                <div class="search-form__input-text input-group">
+                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
+                  <input type="text" class="form-control" placeholder="시설명을 입력해주세요.">
                 </div>
               </div>
+
+              <!-- 카테고리 컨테이너 -->
+              <div class="search-form__category">  
+
+                <!-- 지역 카테고리 (시/도) -->
+                <div class="search-form__title02 search-form__label">지역</div>            
+                <div class="search-form__loca">
+                  <select class="search-form__select-city form-select" id="floatingSelect">
+                    <option selected>모든 지역</option>
+                    <option value="1">울산</option>
+                    <option value="2">부산</option>
+                    <option value="3">서울</option>
+                  </select>
+                </div>
+
+                <!-- 지역 카테고리 (구) -->
+                <div class="search-form__loca">
+                  <select class="search-form__select-town form-select" id="floatingSelect">
+                    <option selected>모든 지역</option>
+                    <option value="1">중구</option>
+                    <option value="2">남구</option>
+                    <option value="3">북구</option>
+                  </select>
+                </div>
+
+                <!-- 운동 카테고리 -->
+                <div class="search-form__title03 search-form__label">운동</div>            
+                <div class="search-category">
+                  <select class="form-select" id="floatingSelect">
+                    <option selected>전체 선택</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-search">검색</button>
+            </form>
+          </section>
+          
+          <!-- 섹션2 -->
+          <section class="section2 section-layout">
+
+            <!-- 지도 api 컨테이너-->
+            <article class="section2__map-container">
+              <img class="section2-api" src="https://cdn.pixabay.com/photo/2019/07/06/16/31/city-map-4320755_960_720.png" alt="지도">
+            </article>
+          </section>
+          
+          <!-- 리스트 -->
+          <section class="section3 section-layout">
+
+            <!-- 섹션 제목 -->
+            <div class="section-title">
+              <h2>시설 목록</h2>
             </div>
 
-            <div class="card mb-3 section3__ilst"">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
-                </div>
-                <div class="card-body-contain col-md-8">
-                  <div class="card-body card-title">
-                    <h5 class="card-text">운동시설 A</h5>
+            <!-- not found 결과 -->
+            <!-- <div class="section3__notsearch">
+              <div>
+                <i class="fa-solid fa-rectangle-xmark secton3__notsearch-icon"></i>
+              </div>
+              <div class="secton3__notsearch-coment">
+                검색을 해주세요 or 검색결과가 없습니다.
+              </div>
+            </div>  -->
+
+            <!-- 리스트 컨테이너  -->
+            <div class="section3__lists">
+
+              <!-- 시설 리스트 (테스트 객체)  -->
+              <div class="card mb-3 section3__ilst"">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
                   </div>
-                  <div class="card-body card-sub">
-                    <p class="card-text">추가내용1</p>
-                    <p class="card-text">추가내용2</p>
-                    <p class="card-text">010-8249-7750</p>
-                    <p class="card-text">울산 중구 옥교동 xx</p>
+                  <div class="card-body-contain col-md-8">
+                    <div class="card-body card-title">
+                      <h5 class="card-text">운동시설 A</h5>
+                    </div>
+                    <div class="card-body card-sub">
+                      <p class="card-text">추가내용1</p>
+                      <p class="card-text">추가내용2</p>
+                      <p class="card-text">010-8249-7750</p>
+                      <p class="card-text">울산 중구 옥교동 xx</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="card mb-3 section3__ilst"">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
-                </div>
-                <div class="card-body-contain col-md-8">
-                  <div class="card-body card-title">
-                    <h5 class="card-text">운동시설 A</h5>
+              <div class="card mb-3 section3__ilst"">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
                   </div>
-                  <div class="card-body card-sub">
-                    <p class="card-text">추가내용1</p>
-                    <p class="card-text">추가내용2</p>
-                    <p class="card-text">010-8249-7750</p>
-                    <p class="card-text">울산 중구 옥교동 xx</p>
+                  <div class="card-body-contain col-md-8">
+                    <div class="card-body card-title">
+                      <h5 class="card-text">운동시설 A</h5>
+                    </div>
+                    <div class="card-body card-sub">
+                      <p class="card-text">추가내용1</p>
+                      <p class="card-text">추가내용2</p>
+                      <p class="card-text">010-8249-7750</p>
+                      <p class="card-text">울산 중구 옥교동 xx</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            
-            <!-- // -->
-          </div>  
+              <div class="card mb-3 section3__ilst"">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1197662246/ko/%EC%82%AC%EC%A7%84/%EC%B2%B4%EC%9C%A1%EA%B4%80%EC%97%90%EC%84%9C-%EC%95%84%EB%A0%B9%EC%9D%98-%ED%96%89.webp?s=612x612&w=is&k=20&c=VSGgwQ-A6cZt5lwifHK1JIuimStPTr1bjqfjKQWUz1I=" class="section3__list-img img-fluid rounded-start" alt="시설사진">
+                  </div>
+                  <div class="card-body-contain col-md-8">
+                    <div class="card-body card-title">
+                      <h5 class="card-text">운동시설 A</h5>
+                    </div>
+                    <div class="card-body card-sub">
+                      <p class="card-text">추가내용1</p>
+                      <p class="card-text">추가내용2</p>
+                      <p class="card-text">010-8249-7750</p>
+                      <p class="card-text">울산 중구 옥교동 xx</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- // -->
+            </div>  
 
-          <!-- 페이지네이션 -->
-          <nav aria-label="Page navigation example" class="section3__page-nav pagination-lg">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-        </section>
+            <!-- 페이지네이션 -->
+            <nav aria-label="Page navigation example" class="section3__page-nav pagination-lg">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+        </section>  
       </main>
 
       <!-- footer -->
-      <footer id="footer">
-        <div class="inner">
-            <h2>Heal-lo</h2>
-            <ul>
-                <li>상호명: heal-lo</li>
-                <li>대표: 1팀</li>
-                <li>주소: 울산광역시 남구 신정동</li>
-                <li>이메일: ulsanheallo@naver.com</li><br>
-                <li>Copyright 2022 헬로. All Rights Reserved.</li>
-            </ul>
-        </div>
+      <footer id="footer" class="layout">
+        <section class="content">
+          <div class="inner">
+              <h2>Heal-lo</h2>
+              <ul>
+                  <li>상호명: heal-lo</li>
+                  <li>대표: 1팀</li>
+                  <li>주소: 울산광역시 남구 신정동</li>
+                  <li>이메일: ulsanheallo@naver.com</li><br>
+                  <li>Copyright 2022 헬로. All Rights Reserved.</li>
+              </ul>
+          </div>
+        </section>  
     </footer>
-    
+  
+  <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="../js/layout-sub.js"></script>
 </body>
