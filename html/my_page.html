@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
   <style>
+    #wrapper #container.layout {display: block;}
     #container {height: 800px;}
 
     #container .text-box {width: 300px; margin: 0px;}
@@ -41,7 +42,9 @@
   <div id="wrapper">
 
       <!-- 헤더 -->
-    <header id="header">
+    <header id="header" class="layout">
+      <section class="content">
+
 
       <!-- 탑 메뉴 -->
       <div class="header__menu-top">
@@ -51,7 +54,7 @@
       </div>
 
       <!-- 베너 -->
-      <div class="header__banner">
+      <div class="header__banner" class="layout">
         <!-- 메인 로고 -->
         <div class="header__main-logo">
           <a href="#">
@@ -67,10 +70,13 @@
           <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
         </div>
       </div>  
+      </section>
     </header>
       
       <!-- 메인 컨텐츠 -->
-      <main id="container">
+      <main id="container" class="layout">
+        <section class="content">
+
         <div class="text-box">
             <div class="my-page">
                 <p>마이 페이지</p>
@@ -101,10 +107,13 @@
             <label id="phoneNb" for="phoneNb">휴대전화 번호</label>            
             <input id="phoneNb" type="text">
         </div>
+        </section>
       </main>
 
       <!-- footer -->
       <footer id="footer">
+        <section class="content">
+
         <div class="inner">
             <h2>Heal-lo</h2>
             <ul>
@@ -115,6 +124,7 @@
                 <li>Copyright 2022 헬로. All Rights Reserved.</li>
             </ul>
         </div>
+        </section>
     </footer>
     
   <script src="../js/layout-sub.js"></script>

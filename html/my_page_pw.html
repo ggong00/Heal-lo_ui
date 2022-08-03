@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
   <style>
-    #container {height:600px; border-top:3px solid #777;}
+    #wrapper #container.layout {display: block;}
+    #container .layout {display: block; height:600px; border-top:3px solid #777;}
 
     #container .text-box .my-page p {font-size: 2rem; font-weight: bold; margin-top: 40px; margin-left: 30px; }
     #container .text-box .information p {font-size: 1.3rem; font-weight: 550; margin-top: 40px; margin-left: 30px;}
@@ -26,7 +27,9 @@
   <div id="wrapper">
 
       <!-- 헤더 -->
-    <header id="header">
+    <header id="header" class="layout">
+      <section class="content">
+
 
       <!-- 탑 메뉴 -->
       <div class="header__menu-top">
@@ -52,10 +55,13 @@
           <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
         </div>
       </div>  
+      </section>
     </header>
       
       <!-- 메인 컨텐츠 -->
-      <main id="container">
+      <main id="container" class="layout">
+        <section class="content">
+
         <div class="text-box">
             <div class="my-page">
                 <p>마이 페이지</p>
@@ -74,10 +80,13 @@
             </div>
             <button><a href="">완료</a></button>
         </div>
+        </section>
       </main>
 
       <!-- footer -->
-      <footer id="footer">
+      <footer id="footer" class="layout">
+        <section class="content">
+
         <div class="inner">
             <h2>Heal-lo</h2>
             <ul>
@@ -88,6 +97,7 @@
                 <li>Copyright 2022 헬로. All Rights Reserved.</li>
             </ul>
         </div>
+        </section>
     </footer>
     
   <script src="layout-sub.js"></script>
