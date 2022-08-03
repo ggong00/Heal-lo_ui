@@ -12,17 +12,18 @@
     #container {flex-flow: column wrap; justify-content: center; align-items: center;}
     #container p {font-size: 2rem; font-weight: 500;}
 
-    #container #id {display: flex; flex-direction: column ;}
+    #container #id {display: flex; flex-direction: column; align-items: center; justify-content: center; height: 600px}
     #container .container__title1 {text-align: center;}
-    #container .container__id {display:flex; flex-flow: column; justify-content: center; position: relative; width: 720px; height:300px; background-color:#ccc; margin-top: 20px; margin-bottom: 130px;}
+    #container .container__id {display:flex; flex-flow: column; justify-content: center; position: relative; width: 720px; height:300px; background-color:#ccc; margin: 20px 0;}
     #container #idNameFont {margin-left: 10px; font-size: 25px;}
     #container #idEmailFont {margin-left: 10px; font-size: 25px;}
     #container #idName {margin-top: 10px; margin-bottom: 50px; margin-left: 10px; margin-right: 200px; padding: 10px 2px;}
     #container #idEmail {margin-top: 10px; margin-left: 10px; margin-right: 200px; padding: 10px 2px;}
-    #container #id button {position:absolute; right: 560px; bottom: 278px; width: 50px; background-color: #16a085; color: white;}
+    #container #id .button {display: flex;justify-content:  flex-end; width: 720px;}
+    #container #id .button button {display: block; width: 80px; font-size: 16px; background-color: #16a085; color: white;}
 
-    #container #pw {display: flex; flex-direction: column ; border-top: 3px solid black;}
-    #container .container__title2 {text-align: center; margin-top: 90px;}
+    #container #pw {display: flex; flex-direction: column; align-items: center; height: 600px;}
+    #container .container__title2 {text-align: center;}
     #container .container__pw {display:flex; flex-flow: column; justify-content: center; width: 720px; height:450px; background-color:#ccc; margin-top: 20px; margin-bottom: 20px;}
     #container #pwIdFont {margin-left: 10px; font-size: 25px;}
     #container #pwNameFont {margin-left: 10px; font-size: 25px;}
@@ -30,15 +31,15 @@
     #container #pwId {margin-top: 10px; margin-bottom: 50px; margin-left: 10px; margin-right: 200px; padding: 10px 2px;}
     #container #pwName {margin-top: 10px; margin-bottom: 50px; margin-left: 10px; margin-right: 200px; padding: 10px 2px;}
     #container #pwEmail {margin-top: 10px; margin-left: 10px; margin-right: 200px; padding: 10px 2px;}
-    #container #pw button {position:absolute; right: 560px; top: 1400px; width: 50px; background-color: #16a085; color: white;}
+    #container #pw .button {display: flex;justify-content:  flex-end; width: 720px;}
+    #container #pw  .button button {width: 80px; font-size: 16px; background-color: #16a085; color: white;}
     </style>
 </head>
 <body>
   <div id="wrapper">
 
       <!-- 헤더 -->
-    <header id="header" class="layout">
-      <section class="content">
+    <header id="header">
         <!-- 탑 메뉴 -->
         <div class="header__menu-top">
           <span class="header__my-menu"><a href="#">로그아웃</a></span>
@@ -63,13 +64,10 @@
             <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
           </div>
         </div>  
-      </section>  
     </header>
       
       <!-- 메인 컨텐츠 -->
-      <main id="container" class="layout">
-        <section class="content">
-
+      <main id="container">
           <div id="id">
             <p class="container__title1">아이디 찾기</p>
 
@@ -79,7 +77,9 @@
               <label id="idEmailFont" for="idEmail">이메일</label>
               <input id="idEmail" type="text">
             </div>  
-            <button><a href="#">완료</a></button>
+            <div class="button">
+              <button><a href="#">완료</a></button>
+            </div>
         </div>
           <div id="pw">
             <p class="container__title2">비밀번호 찾기</p>
@@ -92,15 +92,14 @@
               <label id="pwEmailFont" for="pwEmail">이메일</label>
               <input id="pwEmail" type="text">
             </div>  
-            <button><a href="#">완료</a></button>
+            <div class="button">
+              <button><a href="#">완료</a></button>
+            </div>
           </div>  
-        </section>  
       </main>
 
       <!-- footer -->
-      <footer id="footer" class="layout">
-        <section class="content">
-    
+      <footer id="footer">
           <div class="inner">
               <h2>Heal-lo</h2>
               <ul>
@@ -111,7 +110,6 @@
                   <li>Copyright 2022 헬로. All Rights Reserved.</li>
               </ul>
           </div>
-        </section>  
     </footer>
     
   <script src="../js/layout-sub.js"></script>
