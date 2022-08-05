@@ -6,8 +6,7 @@
   height: auto;
   border-style: none;
   max-width: none;
-
-}  
+}
 
 /* 섹션 레이아웃 */
 .section-layout {
@@ -16,19 +15,10 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 48px;
+  padding: 48px;
 }
 
 /* 섹션 타이틀 */
-.section-title {
-  width: 100vw;
-  padding: 110px 0;
-  min-width: 1200px;
-  margin: 48px 0;
-  background: rgb(58,180,86);
-  background: linear-gradient(90deg, rgba(58,180,86,0.6951155462184874) 0%, rgba(255,94,0,0.3981967787114846) 51%, rgba(76,177,78,0.4009978991596639) 100%);
-
-}
 .section-title h2 {
   text-align: center;
   font-size: 36px;
@@ -37,7 +27,11 @@
 }
 
 /* 검색 */
-.section1 .search-form{
+.section1 {
+  padding: 82px 0;
+}
+
+.section1 .search-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +44,7 @@
   align-items: center;
   width: 100%;
 }
-.section1 .search-form .search-form__text .search-form__input-text{
+.section1 .search-form .search-form__text .search-form__input-text {
   width: 510px;
 }
 .section1 .search-form .search-form__category {
@@ -79,9 +73,27 @@
   background-color: var(--color-others-header);
 }
 
+.test {
+  left: 0;
+  bottom: 0;
+  font-size: 18px;
+}
+.test li {
+  padding: 12px;
+  margin: 8px 8px;
+  background-color: #f39d12;
+  border-radius: 26px;
+}
+.test .test-ul1 {
+  text-align: center;
+}
+.test .test-ul2 {
+  text-align: center;
+}
+
 /* 지도 */
 .section2 .section2__map-container {
-  width: 80vw;
+  width: 60vw;
   height: 700px;
   max-width: 1400px;
   /* min-width: 800px; */
@@ -92,7 +104,6 @@
   width: 100%;
   height: 100%;
   margin: 8px;
-  box-shadow: var(--color-others-header) 0.5px 0.5px 0.5px 5px;
 }
 
 /* 리스트 */
@@ -120,12 +131,14 @@
   margin: 48px 120px;
   padding: 8px 8px;
   max-width: 1200px;
-  width: 80vw;
-  border: 3px solid #f39d12;
+  width: 50vw;
+  border: 1px solid #f39d12;
   border-radius: 14px;
 }
+
 .section3 .section3__lists .section3__ilst .section3__list-img {
   width: 100%;
+  height: 100%;
 }
 .section3 .section3__lists .section3__ilst .card-body-contain {
   display: flex;
@@ -150,11 +163,11 @@
 }
 
 /* 페이지네이션 */
-.section3 .section3__page-nav{
+.section3 .section3__page-nav {
   margin: 24px 0;
 }
 .section3 .section3__page-nav a {
-  color: var(--color-main-header);  
+  color: var(--color-main-header);
 }
 
 @media (max-width: 1024px) {
@@ -172,6 +185,3 @@
     width: 450px;
   }
 }
-
-
-
