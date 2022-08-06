@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
   <style>
-    #container {height:600px; border-top:3px solid #777;}
-    #container {position: relative;}
-  
-    #container #idText #seccessId {position: absolute; left:620px; top:100px;font-size: 2rem; font-weight: 500;}
-    #container #idText #seccessIdSub {position: absolute; left:620px; top:150px;font-size: 1.3rem; font-weight: 500;}
+    #container {height:600px; border-top:3px solid #777;}  
 
-    #container .btn__login {position: absolute; left:820px; top:300px; background-color: #16a085; color: white;}
-    #container .btn__pw {position: absolute; left:920px; top:300px; background-color: #16a085; color: white;}
+    #idText {display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;}
+    #container #idText #seccessId {margin-bottom: 30px; margin-right: 70px; font-size: 2rem; font-weight: 500;}
+    #container #idText #seccessIdSub {margin-left: 120px; margin-bottom: 200px; margin-right: 70px; font-size: 1.3rem; font-weight: 500;}
+
+    #container .btn__login {margin-left: 250px; margin-right: 20px; background-color: #16a085; color: white;}
+    #container .btn__pw { background-color: #16a085; color: white;}
   </style>
 </head>
 <body>
@@ -55,8 +55,10 @@
         <div id="idText">
             <p id='seccessId'>아이디 찾기완료!</p>
             <p id='seccessIdSub'>고객님의 정보와 일치하는 아이디입니다.</p>
-            <button class="btn__login"><a href="#">로그인하기</a></button>
-            <button class="btn__pw"><a href="#">비밀번호 찾기</a></button>
+            <div class="btn">
+              <button class="btn__login"><a href="#">로그인하기</a></button>
+              <button class="btn__pw"><a href="#">비밀번호 찾기</a></button>
+           </div>
         </div>    
       </main>
 
