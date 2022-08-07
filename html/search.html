@@ -77,8 +77,6 @@
               </ul>
             </div>
 
-            <!-- <div class="hr"></div> -->
-
             <div class="search__cg-wrap">
               <div class="category-title"><p class="lable-input">시설분류</p></div>
               <ul class="search__cg-loca2 category">
@@ -102,32 +100,33 @@
             </div>
           </div>
         
-          <div class="search-map">
+          <div class="search-body">
             <div class="selected-wrap" id="selectedWrap">
-              <div class="search-wrap__header" -data-after="개">
+              <div class="selected-wrap__header" -data-after="개">
                 검색 결과 : <span class="result-count">0</span>
               </div>
 
-              <div class="search__text-input">
-                <div action="">
+              <div class="selected-wrap__text-input">
+                <div>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" class="form-control shadow-none" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">
-                  </div>              
+                    <input type="text" class="form-control shadow-none" id="textSearchInput" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">   
+                  </div>      
                 </div>
+                
               </div>
 
               <div class="searched-text">
-                  울산종합체육관
+                  <p>1</p>
+                  <button class="btn-search-upda">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </button>     
               </div>
 
-              <div class="search-wrap__cg-wrap">
-                <!-- <div class="selected-cg">
-                  <label for="btnClose">체육시설</label>
-                  <button type="button" class="btn-close" id="btnClose" aria-label="Close"></button>
-                </div> -->
+              <div class="selected-wrap__cg-wrap">
+
               </div>
-              <div class="search-wrap__btn-wrap">
+              <div class="btn-wrap">
                 <button class="btn-selected btn-search">검색</button>
                 <button class="btn-selected btn-reset">리셋</button>
               </div>  
@@ -230,8 +229,6 @@
             </div>
           </div>
         </div>
-
-
       </section>
 
       <nav aria-label="Page navigation example" class="pagenation-wrap">
