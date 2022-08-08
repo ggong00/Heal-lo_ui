@@ -1,0 +1,22 @@
+@charset "utf-8";
+.container { display: block; background-color: white; border-radius: 3px; padding: 1em; }
+
+.join { display: flex; justify-content: center; text-align: center; margin: 40px auto; flex-direction: column; }
+
+.join__name { display: flex; font-size: 24px; justify-content: center; margin-bottom: 20px; }
+
+.join__form { display: flex; width: 700px; flex-direction: column; padding: 1em; margin: auto; }
+
+p { margin: 0; align-self: center; }
+
+.join__form .join__info { display: flex; align-items: center; position: relative; }
+
+.join__form .join__info label { display: flex; width: 100px; padding: 0.5em; }
+.container input { /* flex: 4; */ padding: 0.5em; border-radius: 5px; border: 1px solid black; width: 150px; margin: 5px; }
+
+.container #domain-txt, .container #domain-list, .container .btn { width: 100px; }
+.container #domain-list { height: 35px; align-self: center; }
+.container .join .join__form .btn { margin-left: 20px; }
+
+
+.container .join__btn { display: block; width: 100px; padding: 1em; background: gray; color: white; border: 0; position: absolute; right: 0; top: 10px; }
