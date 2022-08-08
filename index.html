@@ -7,107 +7,111 @@
     <title>Heal-lo 메인페이지</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/heal-lo.css">s
+    <link rel="stylesheet" href="../css/heal-lo.css">
     <script src="https://kit.fontawesome.com/412d41036e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <div class="topmenu">
-                    <a href="#">로그인</a>
-                    <a href="#">회원가입</a>
-                    <a href="#">ID/PW 찾기</a>
+
+        <!-- 헤더 -->
+        <header id="header">
+
+            <!-- 탑메뉴 -->
+            <div class="header__menu-top">
+                    <span><a href="#">로그인</a></span>
+                    <span><a href="#">회원가입</a></span>
+                    <span><a href="#">ID/PW 찾기</a></span>
             </div>
-            <div class="header">
-                <video src="../video/main_video.mp4" muted autoplay loop></video>
-                <p class="text1" >나만의 건강한 장소, <strong>헬-로!</strong></p>
-                <p class="text2"><a href="#">Heal-lo</a></p>
-                <p class="text3">: Healthy-location</p>
+
+            <!-- 베너-->
+            <div class="header__banner">
+                <video src="/main_video.mp4" muted autoplay loop></video>
+                <!-- 메인 로고 -->
+                <p class="header__main-logo" >나만의 건강한 장소, <strong>헬-로!</strong></p>
+                <p class="header__main-title"><a href="#">Heal-lo</a></p>
+                <p class="header__sub-title">: Healthy-location</p>
             </div>
-            <div class="menu">
-                <div class="gnb">
+
+            <!-- gnb메뉴 -->
+            <div class="header__menu">
+                <div class="header__menu-gnb">
                     <ul>
                         <li>운동시설 검색
                             <ul>
-                                <li>검색</li>
+                                <li><a href="#">검색</a></li>
                             </ul>
                         </li>
                         <li>커뮤니티
                             <ul>
-                                <li>자유게시판</li>
-                                <li>정보공유판</li>
-                                <li>추천글</li>
-                                <li>공지사항</li>
-                                <li>문의하기</li>
+                                <li><a href="#">자유게시판</a></li>
+                                <li><a href="#">정보공유판</a></li>
+                                <li><a href="#">추천글</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">문의하기</a></li>
                             </ul>
                         </li>
                         <li>즐겨찾기
                             <ul>
-                                <li>즐겨찾기 목록</li>
+                                <li><a href="#">즐겨찾기 목록</a></li>
                             </ul>
                         </li>
                         <li>캘린더
                             <ul>
-                                <li>캘린더</li>
+                                <li><a href="#">캘린더</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </header>
-        <main>
-            <section class="bar">
-                <input type="text" class="search_bar" placeholder="운동시설명 입력">
-                <button>검색</button>
+
+        <!-- 메인 -->
+        <main id="container">
+
+            <!-- 검색 바 -->
+            <section class="section1__search-bar">
+                <div class="section1__search-bar__group">
+                    <input type="text" class="search-bar__content" placeholder="시설명 입력">
+                    <button>검색</button>
+                </div>
             </section>
-            <section class="top3">
-                <artticle class="search1">
-                    <img src="../img/search.png" alt="">
-                    <p>우리집 근처 운동시설 찾기</p>
+
+            <!-- 주요 기능-->
+            <section class="section1">
+                <artticle class="section1__search">
+                    <p><a href="#"><img src="../img/search.png" alt="" >우리집 근처 운동시설 찾기</a></p>
                 </artticle>
-                <artticle class="calendar1">
-                    <img src="../img/calendar.png" alt="">
-                    <p>내 운동기록 보기</p>
+                <artticle class="section1__calendar">
+                    <p><a href="#"><img src="../img/calendar.png" alt="">내 운동기록 보기</a></p>
                 </artticle>
-                <artticle class="community1">
-                    <img src="../img/community.png" alt="">
-                    <p>커뮤니티</p>
+                <artticle class="section1__community">
+                    <p><a href="#"><img src="../img/community.png" alt="">커뮤니티</a></p>
                 </artticle>
             </section>
-            <section class="second3">
-                <article class="introduction">
-                    <h1>건강한 삶, Heal-lo와 함께</h1>
-                    <p>당신의 삶에 새로운 목표를 제시합니다.</p>
-                </article>
-                <article class="search2">
-                    <img src="../img/운동11.jpg" alt="운동">
-                    <div class="figcaption4">
-                        <p class="name1">더 빠르게</p> 
-                        <p class="explain1"><strong>Heal-lo</strong>는 주변에 있는 <strong>운동시설업</strong>의 다양한 정보를 제공합니다</p> 
-                    </div>
-                </article>
-                <article class="calendar2">
-                    <div class="figcaption5">
-                        <p class="name2">더 스마트하게</p>
-                        <p class="explain2"><strong>Heal-lo</strong>는 모든 운동인이 공감, 지식, 경험을 나눌 수 있는 <strong>커뮤니티 공간</strong>을 제공합니다</p>
-                    </div>
-                    <img src="../img/캘린더5.jpg" alt="캘린더">
-                </article>
-                <article class="community2">
-                    <img src="../img/커뮤1.jpg" alt="커뮤니티">
-                    <div class="figcaption6">
-                        <p class="name3">계획적으로</p>
-                        <p class="explain3"><strong>Heal-lo</strong>는 당신의 계획적인 <strong>운동 목표 달성</strong>을 돕기 위해 <strong>캘린더</strong>를 제공합니다</p>
-                    </div>
-                </article>
+
+            <!-- 웹사이트 소개 -->
+            <section class="section2">
+                    <div id="object" class="bgBox">
+                    <article class="section2__intro">
+                        <h1>건강한 삶, Heal-lo와 함께</h1>
+                        <p>당신의 삶에 새로운 목표를 제시합니다.</p>
+                    </article>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>상호명 : Heal-lo</p>
-            <p>대표 : 1팀</p>
-            <p>주소 : 울산광역시 남구 신정동</p>
-            <p>이메일 : ulsanhello@naver.com</p>
-            <p>copyright@헬로. All Rights Reserved.</p>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="inner">
+                <h2>Heal-lo</h2>
+                <ul>
+                    <li>상호명: heal-lo</li>
+                    <li>대표: 1팀</li>
+                    <li>주소: 울산광역시 남구 신정동</li>
+                    <li>이메일: ulsanheallo@naver.com</li><br>
+                    <li>Copyright 2022 헬로. All Rights Reserved.</li>
+                </ul>
+            </div>
         </footer>
     </div>
 </body>
