@@ -10,32 +10,34 @@
 }
 
 /* 리스트 헤더 */
-.review .review-header {
+.review-header {
     padding-top: 64px;
 }
-
-.review .review-header .review-header__title {
+.review-header__title {
+    width: 50%;
     height: 100px;
+    margin: 0 auto;
+    text-align: center;
 }
-.review .review-header .review-header__grade {
+.review-header__grade {
     height: 200px;
 }
-.review .review-header .review-header__btn {
+.review-header__btn {
     height: 100px;
 }
 
 /* 리스트 메인 */
-.review .review-lists {
+.review-lists {
     padding-top: 16px;
 }
-.review .review-lists .new-review-num {
+.review-lists .new-review-num {
     height: 100px;
 }
-.review .review-lists .review-item {
+.review-lists .review-item {
     height: 200px;
 }
 
 /* 페이지네이션 */
-.review .pagenation {
+.pagenation {
     height: 150px;
 }

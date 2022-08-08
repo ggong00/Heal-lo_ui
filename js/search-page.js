@@ -1,6 +1,9 @@
+import {category_lv1,category_lv2} from "./category-loca.js";
+
 // dom접근
 const $selectedCg = document.querySelector('.selected-wrap__cg-wrap');
 const $cgLists = document.querySelector('.search__select-input');
+const $cgListsByLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
 const $btnSearch = document.querySelector('.btn-search');
 const $btnReset = document.querySelector('.btn-reset');
 let $btnAddContentsByFa = document.querySelector('.searched-text .btn-search-upda');
@@ -8,9 +11,56 @@ const $selectedWrap = document.querySelector('.selected-wrap');
 const $searchedTextWrap = document.querySelector('.selected-wrap .searched-text');
 const searchedText = document.querySelector('.selected-wrap .searched-text p');
 const $inputByText = document.getElementById('textSearchInput')  
+const $cgLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
 //선택된 카테고리 배열
 const selectedCgArrSave = [];
 let searchedTextSave = '';
+
+// 지역 카테고리 lv1 랜더링 
+RenderingUlTag($cgListsByLoca1,category_lv1);
+
+// 지역 카테고리 lv1 클릭 이벤트
+$cgListsByLoca1.addEventListener('click', ({target}) => {
+  if(target.tagName != 'P') {
+    return;
+  }
+  //카테고리 생성 로직
+  const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loca2');
+  $cgListsByLoca2.style.top = 0;
+  $cgListsByLoca2.style.opacity = 0;
+  $cgListsByLoca2.innerHTML = ' ';
+  RenderingUlTag($cgListsByLoca2,category_lv2[`${target.textContent}`],'lv2');
+  $cgListsByLoca2.style.top = $cgListsByLoca1.children[0].offsetTop + $cgListsByLoca1.offsetHeight + 'px';
+  $cgListsByLoca2.style.opacity = 1;
+
+
+})
+
+//지역 카테고리 ul태그 랜더링 함수 (ul > li > p)
+function RenderingUlTag(ulTag,arr,lv) {
+  arr.forEach((ele,idx) => {
+    const pTag = document.createElement('p');
+    pTag.textContent = ele;
+    const liTag = document.createElement('li');
+    liTag.appendChild(pTag);
+    ulTag.appendChild(liTag);
+
+    if(idx == arr.length-1 && lv) {
+      // <i class="fa-solid fa-circle-xmark"></i>
+      const closeLiTag = document.createElement('li');
+      closeLiTag.setAttribute('class','loca-close-li')      
+      const closeBtn = document.createElement('i');
+      closeBtn.setAttribute('class','btn-close-loca fa-solid fa-circle-xmark');
+      closeLiTag.appendChild(closeBtn);
+      ulTag.appendChild(closeLiTag);
+
+      closeBtn.addEventListener('click', () => {
+        ulTag.querySelectorAll('li').forEach(ele => ele.remove());
+        ulTag.style.opacity = 0;
+      }) 
+    }
+  })
+}
 
 // 시설명 검색 클릭 이벤트
 $inputByText.addEventListener('click', () => {
@@ -40,7 +90,7 @@ $selectedWrap.addEventListener('mouseleave', () => {
   $btnAddContentsByFa.classList.remove('visibility_visible');
 }) 
 
-
+/*
 // 카테고리 클릭 이벤트
 $cgLists.addEventListener('click', ({target}) => {
   // p태그 판별
@@ -98,7 +148,12 @@ $cgLists.addEventListener('click', ({target}) => {
   $selectedCg.appendChild(selectedCg_div);
   selectedCgArrSave.push(selectedCg_label.textContent);
 
-})
+})  */
+
+// 카테고리 이벤트 v2
+
+
+
 
 // 검색버튼 클릭 이벤트
 $btnSearch.addEventListener('click',e => {
