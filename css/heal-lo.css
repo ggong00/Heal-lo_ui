@@ -1,317 +1,74 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+/* * {outline: 1px solid red;} */
+ul,li {margin: 0; padding: 0; list-style: none;}
+a, a:hover {color: inherit; text-decoration: none;}
+button {border: none;}
 
-ul,li { 
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-body{
-    margin: 0;
-}
-#wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 70%;
-    margin: 0 auto;
-    min-width: 768px;
-    max-width: 1600px;
-    font-family: 'Noto Sans KR', sans-serif;
-}
+body {margin: 0;}
+#wrapper {display: flex; flex-direction: column; justify-content: center; position: relative; width: 80%; min-width: 768px; max-width: 1600px; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif;}
 
-/* header - topmenu */
-header .topmenu{
-    font-size: 15px;
-    line-height: 23px;
-    text-align: right;
-    height: 100%;
-}
-header .topmenu a:active {
-    color: inherit;
-}
-header .topmenu a:hover {
-    text-decoration: underline;
-}
+/* header 영역 - topmenu */
+#header {display: flex; flex-direction: column; height: 85vh;}
+#header .header__menu-top {font-size: 15px; height: 4vh; text-align: right; padding-top: 10px; padding-bottom: 5px;}
+#header .header__menu-top span a:active {color: inherit;}
+#header .header__menu-top span a:hover {text-decoration: underline;}
+#header .header__menu-top span a:before {margin-left: 8px; content: '';}
 
-/* header - logo */
-header .header video{
+/* header 영역 - logo */
+#header .header__banner video {width: 100%; height: 72vh; position: relative; object-fit: cover;}
+#header .header__banner .header__main-logo {position: absolute; width: 82%; top: 10%; left: 8%; font-size: 40px; color: white; text-align: left;}
+#header .header__banner .header__main-logo strong {display: inline-flex; font-size: 1.3em;}
+#header .header__banner .header__main-title {position: absolute; width: 82%; top: 16%; left: 7%; font-weight: bold; font-size: 150px; color: #f39c12; text-align: left;}
+#header .header__banner .header__sub-title {display: inline-flex; position: absolute; width: 82%; top: 26%; left: 8%; font-size:50px; color: white; text-align: left;}
+
+/* header 영역 - gnb */
+/* gnb 배경색 참고-rgb(252, 230, 197) */
+#header .header__menu .header__menu-gnb {height: 9vh;}
+#header .header__menu .header__menu-gnb > ul {display: flex; flex: 1; align-items: center; height: 70%; line-height: 2.7vh;}
+#header .header__menu .header__menu-gnb > ul > li {flex: 1; position: relative; padding: 2px 3px; font-size: 20px; font-weight: bold; background-color: #eee; color: #000; text-align: center;}
+#header .header__menu .header__menu-gnb > ul > li:hover {cursor: pointer;}
+#header .header__menu .header__menu-gnb > ul > li:hover > ul {display: block; border-top: 1px solid black; background-color: #eee; z-index: 100;}
+#header .header__menu .header__menu-gnb > ul > li > ul {display: none; position: absolute; width: 100%; top: 30px; left: 0;}
+#header .header__menu .header__menu-gnb > ul > li > ul > li {padding: 2px 3px; font-size: 16px; line-height: 30px;}
+#header .header__menu .header__menu-gnb > ul > li > ul > li:hover {color: #16a085;}
+
+/* main 영역 - 검색바 */
+#container {display: flex; flex-direction: column;}
+#container .section1__search-bar {display: flex; width: 100%; height: 500px;}
+#container .section1__search-bar .section1__search-bar__group {display: flex; justify-content: center; width: 100%; height: 100%; margin: 30px auto;}
+#container .section1__search-bar .section1__search-bar__group .search-bar__content {width: 500px; height: 40px; border: 3px solid #f39c12;}
+#container .section1__search-bar .section1__search-bar__group button {width: 50px; height: 48px; font-weight: bold; background-color: #f39c12; color: white;}
+/* 검색창 눌렀을 때 border 안 변하게 하고 싶음 */
+
+/* main 영역 - 주요 기능(검색, 캘린더, 게시판) */
+#container .section1 {display: flex;}
+#container .section1 .section1__search {flex: 1;}
+#container .section1 .section1__search img {width: 100%; height: 90%; padding: 10px 10px; top: 5%; left: 5%; object-fit: cover;}
+#container .section1 .section1__search p, .section1__calendar p, .section1__community p {font-weight: 200; font-size: 18px; text-align: center;}
+#container .section1 .section1__calendar {flex: 1.2;}
+#container .section1 .section1__calendar img {width: 95%; height: 87%; padding: 8px 10px; left: 10%; object-fit: cover;}
+#container .section1 .section1__community {flex: 0.9;}
+#container .section1 .section1__community img {width: 100%; height: 90%; padding: 10px 10px; top: 5%; left: 5%; object-fit: cover; }
+
+
+/* main 영역 - 웹사이트 소개 */
+#container .section2 {
     width: 100%;
-    height: 60vh;
-    object-fit: cover;
-    position: relative;
-}
-header > .header > .text1{
-    position: absolute;
-    width:82% ;
-    top:10%;
-    left:19%;
-    text-align: left;
-    font-size: 34px ;
-    color: white;
-}
-header > .header > .text1 > strong{
-    display: inline-flex;
-    font-size: 39px;
-}
-header > .header > .text2{
-    position: absolute;
-    width: 82% ;
-    top: 4%;
-    left: 18%;
-    text-align: left;
-    font-size: 140px ;
-    color: #f39c12;
-    font-weight: bold;
-}
-header > .header > .text3{
-    display: inline-flex;
-    position: absolute;
-    width: 82% ;
-    top: 32%;
-    left: 18.5%;
-    text-align: left;
-    font-size:45px ;
-    color: white;
-}
-/* header-gnb */
-header .menu .gnb {
-    height: 45px;
-}
-header .menu .gnb > ul {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-header .menu .gnb > ul > li {
-    flex: 1;
-    padding: 2px 3px;
-    background-color: rgb(247, 218, 175);
-    color: #000;
-    text-align: center;
-    position: relative;
-    font-size: 20px;
-    font-weight: bold;
+    height: 100vh;
 }
 
-header .menu .gnb ul li:hover {
-    cursor: pointer;
-}
-
-header .menu .gnb ul li:hover > ul {
-    display: block;
-    background-color: rgb(247, 218, 175);
-    z-index: 10000;
-}
-
-header .menu .gnb > ul > li > ul {
-    display: none;
-    position: absolute;
-    top: 27px;
-    left: 0;
-    width: 100%;
-}
-
-header .menu .gnb > ul > li> ul > li {
-    padding: 2px 3px;
-    line-height: 32px;
-}
-
-header .menu .gnb > ul > li > ul > li:hover{
-    /* background-color: rgb(247, 218, 175); */
-    color: #16a085;
-}
-
-
-/* main */
-main {
-    display: flex;
-    flex-direction: column;
-}
-main .bar {
-    text-align: center;
-    padding: 10px 10px;
-}
-main .bar input {
-    text-align: center;
-    font-size: 25px;
+#object{
+    width: 500px;
+    height: 500px;
+	background-color: #fe5652;
+	visibility: hidden;
 }
 
 
 
-/* 여기서부터 다시 */
-main .top3 {
-    display: flex;
-}
-main .top3 .search1 {
-    flex: 1;
-}
-main .top3 .search1 img {
-    width: 90%;
-    height: 90%;
-    top: 5%;
-    left: 5%;
-    object-fit: cover;
-    position: relative;
-}
-main .top3 .search1 p {
-    text-align: center;
-    font-size: 15px;
-}
-main .top3 .calendar1 {
-    flex: 1;
-}
-main .top3 .calendar1 img {
-    width: 90%;
-    height: 90%;
-    top: 5%;
-    left: 5%;
-    object-fit: cover;
-    position: relative;
-}
-main .top3 .calendar1 p {
-    text-align: center;
-    font-size: 15px;
-}
-main .top3 .community1 {
-    flex: 1;
-}
-main .top3 .community1 img {
-    width: 90%;
-    height: 90%;
-    top: 5%;
-    left: 5%;
-    object-fit: cover;
-    position: relative;
-}
-main .top3 .community1 p {
-    text-align: center;
-    font-size: 15px;
-}
-main .second3 {
-    flex-direction: column;
-    flex:1;
-    margin-top: 20%;
-}
-
-main .second3 .introduction {
-    flex: 1;
-    height: 100%;
-    text-align: center;
-    line-height: 20%;
-}
-
-main .second3 .introduction h1 {
-    font-size: 28px;
-}
-main .second3 .introduction p {
-    font-size: 13px;
-}
-main .second3 .search2 {
-    display: flex;
-    height: 40vh;
-}
-main .second3 .search2 .figcaption4 {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
-}
-main .second3 .search2 .figcaption4 .name1 {
-    font-size: 50px;
-    font-weight: bolder;
-    text-align: left;
-    font-family: 'Noto Sans KR', sans-serif;
-    /* transform: 1.5s; */
-}
-main .second3 .search2 .figcaption4 .explain1 {
-    font-size: 20px;
-    /* font-weight: bolder; */
-    text-align: left;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-main > .second3 > .search2 img{
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    justify-self: right;
-    object-fit: contain;
-    /* position: absolute; */
-}
-main .second3 .calendar2 {
-    display: flex;
-    height: 40vh;
-}
-main > .second3 > .calendar2 img{
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* position: relative; */
-}
-main .second3 .calendar2 .figcaption5 {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-main .second3 .calendar2 .figcaption5 .name2 {
-    font-size: 50px;
-    font-weight: bolder;
-    text-align: right;
-    font-family: 'Noto Sans KR', sans-serif;
-    /* transform: 1.5s; */
-}
-main .second3 .calendar2 .figcaption5 .explain2 {
-    font-size: 20px;
-    /* font-weight: bolder; */
-    /* text-align: left; */
-    font-family: 'Noto Sans KR', sans-serif;
-}
-main .second3 .community2 {
-    display: flex;
-    height: 40vh;
-}
-main .second3 .community2 .figcaption6 {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-main .second3 .community2 .figcaption6 .name3 {
-    font-size: 50px;
-    font-weight: bolder;
-    text-align: left;
-    font-family: 'Noto Sans KR', sans-serif;
-    /* transform: 1.5s; */
-}
-main .second3 .community2 .figcaption6 .explain3 {
-    font-size: 20px;
-    /* font-weight: bolder; */
-    text-align: left;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-main > .second3 > .community2 img{
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* position: relative; */
-}
-
-
-
-
-/* footer */
-footer{
-    margin-top: 20%;
-    font-size: 1px;
-    text-align: center;
-}
+/*footer 영역*/
+#footer {border-top:3px solid #777;}
+#footer .inner {display:flex; justify-content:center; margin-top:30px;}
+#footer .inner ul {margin-left:70px;}
+#footer .inner h2 {font-size: 24px; font-weight: 700;}

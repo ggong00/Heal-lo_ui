@@ -1,0 +1,17 @@
+@charset "utf-8";
+#container { height: 1200px; border-top: 3px solid #777; padding: 10px; }
+
+#container h1 { font-size: xx-large; font-weight: bold; margin: 30px; }
+/* 테이블 */
+#container .board { width: 90%; margin: 0 auto;}
+#container .board #sort { display: flex; margin-left: auto; }
+#container .board #sort li { width: 100px; height: 50px; display: flex; align-items: center; justify-content: center; }
+#container .board .list-table { flex-shrink: 0; width: 100%; margin: 0 auto; }
+#container .board th, #container .board td { text-align: center; vertical-align: middle; padding: 14px 10px; border-top: 1px #eaeaea solid; }
+
+/* 버튼 */
+#container .board .btn{ display: flex; justify-content: flex-end; }
+#container .board .btn .write { display: flex; margin: 10px; justify-content: center; align-items: center; border: none; width: 70px; height: 30px; color: white; font-size: 16px; background-color: yellowgreen; }
+
+
+
