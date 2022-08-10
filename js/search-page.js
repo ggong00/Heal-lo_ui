@@ -6,6 +6,7 @@ const $selectedCg = document.querySelector('.selected-wrap__cg-wrap');
 const $cgListsByLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
 const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loca2');
 const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
+const $searchBtnByName = document.querySelector('.selected-wrap__text-input i');
 const $selectedWrap = document.querySelector('.selected-wrap');
 const $searchedTextWrap = document.querySelector('.selected-wrap .searched-text');
 const $inputByText = document.getElementById('textSearchInput')  
@@ -37,12 +38,14 @@ $cgListsByLoca1.addEventListener('click', ({target,currentTarget}) => {
     return;
   }
 
-  const li_lv2 = currentTarget.querySelectorAll('li p');
-  [...li_lv2].forEach(ele => {
-    ele.style.backgroundColor = cgRemveColor;
-  })
+  selectedLog.now = target;
 
-  target.style.backgroundColor = cgAddColor;
+  // const li_lv2 = currentTarget.querySelectorAll('li p');
+  // [...li_lv2].forEach(ele => {
+  //   ele.style.backgroundColor = cgRemveColor;
+  // })
+
+  // target.style.backgroundColor = cgAddColor;
 
   //카테고리 생성 로직
   $cgListsByLoca2.innerHTML = '';
@@ -62,7 +65,7 @@ $cgListsByLoca1.addEventListener('click', ({target,currentTarget}) => {
   },true)
 })
 
-// // 지역 카테고리 lv2 클릭 이벤트
+// 지역 카테고리 lv2 클릭 이벤트
 $cgListsByLoca2.addEventListener('click',({target,currentTarget}) => {
   if(target.tagName != 'P') {
     return;
@@ -74,9 +77,24 @@ $cgListsByLoca2.addEventListener('click',({target,currentTarget}) => {
 
   })
 
+  // 객체 저장
   selectedCgLocaSave.level1 = target.classList[0];
   selectedCgLocaSave.level2 = target.textContent;
   target.style.backgroundColor = cgAddColor;
+
+  //선택되어 있는 lv1 지역카테고리 스타일 적용
+  if(selectedLog.now != '') {
+    selectedLog.now.style.backgroundColor = cgAddColor;
+  }
+
+  //그전에 카테고리의 스타일 제거 후 선택되어 있는 카테고리 스타일 적용 
+  if(selectedLog.before != '') {
+    selectedLog.before.style.backgroundColor = cgRemveColor;
+    selectedLog.now.style.backgroundColor = cgAddColor;
+  }
+  
+  //선택되어 있는 카테고리 요소 저장
+  selectedLog.before = selectedLog.now;
 
   console.log(selectedCgLocaSave);
 
@@ -134,16 +152,14 @@ $cgListsByFacility.addEventListener('click',({target,currentTarget}) => {
   console.log(selectedCgSave);
 })
 
-//시설명 검색 icon 이벤트
-// const clickMeIcon = document.querySelector('.selected-wrap__text-input i');
+// 시설명 검색 이벤트
+$searchBtnByName.addEventListener('click',(e) => { 
+  searchedTextSave =  $inputByText.value;
+  $inputByText.value = '';
+  console.log(searchedTextSave);
 
-// $inputByText.addEventListener('focusin',() => {
-//   clickMeIcon.style.animation = 'click-me infinite 1.5s';
-// })
+})
 
-// $inputByText.addEventListener('focusout',() => {
-//   clickMeIcon.style.animation = 'none';
-// })
 
 
 /*

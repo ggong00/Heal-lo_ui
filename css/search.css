@@ -155,7 +155,7 @@
   background-color: white;
   font-size: 20px;
   padding: 8px;
-  color: var(--color-main-header);
+  color: rgba(112, 108, 108, 0.322);
   cursor: pointer;
 }
 .search .search__main .search-body .selected-wrap__text-input .input-group span i {
@@ -169,12 +169,8 @@
   border-right: none;
 }
 .search .search__main .search-body .selected-wrap__text-input input[type=text]:focus + span i {
-  animation: click-me infinite 1.5s;
-}
-.search .search__main .search-body .selected-wrap__text-input input[type=text]:focus + span i:hover {
-  animation: none;
-  color: #16a084;
-  transform: scale(1.6);
+  color: var(--color-main-header);
+  transform: scale(1.4);
 }
 .search .search__main .search-body .selected-wrap .selected-wrap__cg-wrap {
   position: relative;
@@ -310,21 +306,8 @@
 }
 
 /* 기타 */
-
 .visibility_visible {
   visibility: visible !important;
-}
-
-@keyframes click-me {
-  0% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1.6);
-  }
-  100%{
-    transform: scale(1.2);
-  }
 }
 
 
