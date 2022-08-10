@@ -48,27 +48,20 @@
     <!-- 메인 컨텐츠 -->
     <main id="container">
 
-      <!-- 시설 헤더 -->
+      <!-- 시설 정보 헤더 -->
       <section class="facility-header">
-        <div class="facility-avg review-avg">
-          <p>0.0</p>
+
+        <!-- 시설 이름 -->
+        <h2 class="facility-title">온산문화체육센터</h2>
+
+        <!-- 즐겨찾기 -->
+        <div class="facility-favorite">
+          <i class="fa-solid fa-heart favorite-icon"></i>
         </div>
-        <div class="facility-title">
-          <h2>온산문화체육센터</h2>
-          <div class="facility-star">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-        <div>
-          <i class="fa-solid fa-heart section1__favorite-icon"></i>
-        </div>
+
       </section>
 
-      <!-- 시설 정보 -->
+      <!-- 시설 정보 바디-->
       <section class="facility-body">
   
         <!-- 시설 메인 이미지 -->
@@ -131,24 +124,16 @@
 
           <div class="hr"></div>
 
-          <div class="facility-detail__info img-contain">
-            <h3 class="facility-detail__title">시설 사진</h3>
-            <div class="facility-detail__sub">
-          </div>
-
-          </div>
-
-          <div class="hr"></div>
-
         </article>
+
       </section>
 
       <!-- 리뷰 정보 -->
-      <section class="review">
+      <section class="review" id="reviewContainer">
         <!-- 시설 리뷰 정보 -->
         <article class="review-header">
           <div class="review-header__title">리뷰</div>
-          <div class="review-header__avg">
+          <div class="review-header__avg review-avg">
             <p>0.0</p>
           </div>
 
@@ -166,7 +151,9 @@
           <button class="btn btn-primary btn-review">리뷰작성</button>
         </div>
         <!-- 리뷰 목록 -->
+
         <article class="review-lists">
+
           <div class="review-item">
             <div class="review-item__img">
               <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
@@ -186,83 +173,100 @@
             </div>
           </div>
 
-          <article class="review-lists">
-            <div class="review-item">
-              <div class="review-item__img">
-                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-              </div>
-              <div class="review-item__info">
-                <div class="review-item__star">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <span>이재진</span>
-                <span>2022.09.09</span>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                  aspernatur.</p>
-              </div>
+          <div class="review-item">
+            <div class="review-item__img">
+              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
             </div>
+            <div class="review-item__info">
+              <div class="review-item__star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>이재진</span>
+              <span>2022.09.09</span>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernatur.</p>
+            </div>
+          </div>
 
-            <div class="review-item">
-              <div class="review-item__img">
-                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-              </div>
-              <div class="review-item__info">
-                <div class="review-item__star">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <span>이재진</span>
-                <span>2022.09.09</span>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                  aspernatur.</p>
-              </div>
+          <div class="review-item">
+            <div class="review-item__img">
+              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
             </div>
+            <div class="review-item__info">
+              <div class="review-item__star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>이재진</span>
+              <span>2022.09.09</span>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernatur.</p>
+            </div>
+          </div>
 
-            <div class="review-item">
-              <div class="review-item__img">
-                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-              </div>
-              <div class="review-item__info">
-                <div class="review-item__star">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <span>이재진</span>
-                <span>2022.09.09</span>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                  aspernatur.</p>
-              </div>
+          <div class="review-item">
+            <div class="review-item__img">
+              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
             </div>
+            <div class="review-item__info">
+              <div class="review-item__star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>이재진</span>
+              <span>2022.09.09</span>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernatur.</p>
+            </div>
+          </div>
 
-            <div class="review-item">
-              <div class="review-item__img">
-                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-              </div>
-              <div class="review-item__info">
-                <div class="review-item__star">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <span>이재진</span>
-                <span>2022.09.09</span>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                  aspernatur.</p>
-              </div>
+          <div class="review-item">
+            <div class="review-item__img">
+              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
             </div>
+            <div class="review-item__info">
+              <div class="review-item__star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>이재진</span>
+              <span>2022.09.09</span>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernatur.</p>
+            </div>
+          </div>
         </article>  
+
+        <nav aria-label="Page navigation example" class="pagination-wrap">
+          <ul class="pagination pagination-lg">
+            <li class="page-item">
+              <a class="page-link shadow-none" href="#reviewContainer" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link shadow-none" href="#reviewContainer">1</a></li>
+            <li class="page-item"><a class="page-link shadow-none" href="#reviewContainer">2</a></li>
+            <li class="page-item"><a class="page-link shadow-none" href="#reviewContainer">3</a></li>
+            <li class="page-item">
+              <a class="page-link shadow-none" href="#reviewContainer" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
       </section>
 

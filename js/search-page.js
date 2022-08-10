@@ -2,16 +2,11 @@ import {category_lv1,category_lv2} from "./category-loca.js";
 import {moveMap} from "./naver-map-api.js";
 
 // dom접근
-const $selectedCg = document.querySelector('.selected-wrap__cg-wrap');
 const $cgListsByLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
 const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loca2');
 const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
 const $searchBtnByName = document.querySelector('.selected-wrap__text-input i');
-const $selectedWrap = document.querySelector('.selected-wrap');
-const $searchedTextWrap = document.querySelector('.selected-wrap .searched-text');
 const $inputByText = document.getElementById('textSearchInput')  
-const $cgLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
-let $btnAddContentsByFa = document.querySelector('.searched-text .btn-search-upda');
 
 // 다용도 전역변수
 let selectedLog = {before : '', now : ''};
