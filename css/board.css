@@ -1,17 +1,148 @@
 @charset "utf-8";
-#container { height: 1200px; border-top: 3px solid #777; padding: 10px; }
+.btn {
+  background-color: #16a085;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  padding: 0;
+}
+#container {
+  display: flex;
+  height: 1200px;
+  border-top: 3px solid #777;
+  padding: 10px;
+}
 
-#container h1 { font-size: xx-large; font-weight: bold; margin: 30px; }
+#container .title {
+  width: 18%;
+  flex-shrink: 0;
+}
+
+#container .title .title__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+#container .title .title__list a {
+  border-bottom: 1px solid #ddd;
+  margin-right: auto;
+  padding: 30px 0 10px 0;
+  font-size: 20px;
+  transition: all 0.4s;
+}
+#container .title .title__list a:hover {
+  font-size: 26px;
+}
+
+#container .board .board__title {
+  text-align: center;
+  font-size: 28px;
+  padding: 30px 0;
+}
+
+#container .board {
+  width: 82%;
+}
+
+#container .board .board__sort {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#container .board .board__sort a {
+  display: block;
+  padding: 10px 20px;
+  transition: all 0.4s;
+}
+#container .board .board__sort a:hover {
+  text-decoration: underline;
+}
+
 /* 테이블 */
-#container .board { width: 90%; margin: 0 auto;}
-#container .board #sort { display: flex; margin-left: auto; }
-#container .board #sort li { width: 100px; height: 50px; display: flex; align-items: center; justify-content: center; }
-#container .board .list-table { flex-shrink: 0; width: 100%; margin: 0 auto; }
-#container .board th, #container .board td { text-align: center; vertical-align: middle; padding: 14px 10px; border-top: 1px #eaeaea solid; }
+#container .board .board__table {
+  margin: 0 auto;
+}
+#container .board .board__table th,
+#container .board .board__table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 14px 10px;
+  border-top: 1px #eaeaea solid;
+}
 
-/* 버튼 */
-#container .board .btn{ display: flex; justify-content: flex-end; }
-#container .board .btn .write { display: flex; margin: 10px; justify-content: center; align-items: center; border: none; width: 70px; height: 30px; color: white; font-size: 16px; background-color: yellowgreen; }
+/* 하단 */
+#container .board .board__bottom {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
 
+#container .board .board__bottom .board__btn {
+  align-self: flex-end;
+}
 
+#container .board .board__bottom .board__btn .btn__write {
+  width: 80px;
+  height: 30px;
+  margin: 20px;
+}
 
+#container .board .board__bottom .board__btn .btn__write a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+/* 검색 */
+
+#container .board .board__bottom .board__search {
+  /* align-self: center; */
+  margin: 0 auto;
+}
+
+#container .board .board__bottom .board__search select {
+  margin: 0 2px 0 0;
+  width: 92px;
+  height: 24px;
+  line-height: 24px;
+}
+#container .board .board__bottom .board__search input {
+  width: 162px;
+  height: 18px !important;
+}
+#container .board .board__bottom .board__search .btn__search {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 2px 8px;
+  border: 1px solid #16a085;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  vertical-align: middle;
+  word-spacing: -0.5px;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 페이징 */
+#container .board .board__page {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#container .board .board__page a {
+  /* display: flex; */
+  margin: 0 10px;
+}
+#container .board .board__page ol {
+  display: flex;
+}
+#container .board .board__page .page__num {
+  /* display: flex; */
+  margin: 0 10px;
+}
