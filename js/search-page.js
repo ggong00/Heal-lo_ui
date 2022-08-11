@@ -1,46 +1,163 @@
+import {category_lv1,category_lv2} from "./category-loca.js";
+import {moveMap} from "./naver-map-api.js";
+
 // dom접근
-const $selectedCg = document.querySelector('.selected-wrap__cg-wrap');
-const $cgLists = document.querySelector('.search__select-input');
-const $btnSearch = document.querySelector('.btn-search');
-const $btnReset = document.querySelector('.btn-reset');
-let $btnAddContentsByFa = document.querySelector('.searched-text .btn-search-upda');
-const $selectedWrap = document.querySelector('.selected-wrap');
-const $searchedTextWrap = document.querySelector('.selected-wrap .searched-text');
-const searchedText = document.querySelector('.selected-wrap .searched-text p');
+const $cgListsByLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
+const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loca2');
+const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
+const $searchBtnByName = document.querySelector('.selected-wrap__text-input i');
 const $inputByText = document.getElementById('textSearchInput')  
+
+// 다용도 전역변수
+let selectedLog = {before : '', now : ''};
+const cgRemveColor = '#ffffff99';
+const cgAddColor = 'var(--color-others-header)';
 //선택된 카테고리 배열
-const selectedCgArrSave = [];
-let searchedTextSave = '';
+let selectedCgLocaSave = {level1 : '', level2 : ''};  //지역 선택 저장
+let selectedCgSave = ''; //운동분류 저장
+let searchedTextSave = '';  //시설명 검색어 저장
 
-// 시설명 검색 클릭 이벤트
-$inputByText.addEventListener('click', () => {
-  $searchedTextWrap.classList.remove('visibility_visible');
-  $btnAddContentsByFa.classList.add('visibility_visible');
-})
+// 네이버 지도 생성
+const mapOptions = {
+  center: new naver.maps.LatLng(35.5352, 129.3109),
+  zoom: 8
+};
+const map = new naver.maps.Map('map', mapOptions);
 
-// 시설명 추가버튼 클릭 이벤트
-$btnAddContentsByFa.addEventListener('click', () => {
-  let value = $inputByText.value.trim();
-  if (value != '') {
-    searchedTextSave = value;
-    $searchedTextWrap.classList.add('visibility_visible');
-    if(value.length >= 11) {
-      searchedText.textContent = value.substr(0,10) + '...';
-    } else {
-      searchedText.textContent = value;
-    }
-  } else {
-    searchedTextSave = '';
+// 지역 카테고리 lv1 랜더링 
+RenderingUlTag($cgListsByLoca1,category_lv1);
+
+// 지역 카테고리 lv1 클릭 이벤트
+$cgListsByLoca1.addEventListener('click', ({target,currentTarget}) => {
+  if(target.tagName != 'P') {
+    return;
   }
-  $inputByText.value = '';
-  $btnAddContentsByFa.classList.remove('visibility_visible');
+
+  selectedLog.now = target;
+
+  // const li_lv2 = currentTarget.querySelectorAll('li p');
+  // [...li_lv2].forEach(ele => {
+  //   ele.style.backgroundColor = cgRemveColor;
+  // })
+
+  // target.style.backgroundColor = cgAddColor;
+
+  //카테고리 생성 로직
+  $cgListsByLoca2.innerHTML = '';
+  RenderingUlTag($cgListsByLoca2,category_lv2[`${target.textContent}`], target.textContent);
+  $cgListsByLoca2.style.top = $cgListsByLoca1.children[0].offsetTop + $cgListsByLoca1.offsetHeight + 'px';
+  $cgListsByLoca2.style.visibility = 'visible';
+
+  //캡쳐링 단계(lv2 삭제)
+  document.body.addEventListener('click', ({target}) => {
+    if(target.closest('.search__cg-wrap .search__cg-loca2')) {
+      return;
+    }
+  
+    $cgListsByLoca2.style.top = 0;
+    $cgListsByLoca2.style.visibility ='hidden';
+    $cgListsByLoca2.innerHTML = '';
+  },true)
 })
 
-$selectedWrap.addEventListener('mouseleave', () => {
-  $btnAddContentsByFa.classList.remove('visibility_visible');
-}) 
+// 지역 카테고리 lv2 클릭 이벤트
+$cgListsByLoca2.addEventListener('click',({target,currentTarget}) => {
+  if(target.tagName != 'P') {
+    return;
+  }
+
+  const li_lv2 = currentTarget.querySelectorAll('li p');
+  [...li_lv2].forEach(ele => {
+    ele.style.backgroundColor = cgRemveColor;
+
+  })
+
+  // 객체 저장
+  selectedCgLocaSave.level1 = target.classList[0];
+  selectedCgLocaSave.level2 = target.textContent;
+  target.style.backgroundColor = cgAddColor;
+
+  //선택되어 있는 lv1 지역카테고리 스타일 적용
+  if(selectedLog.now != '') {
+    selectedLog.now.style.backgroundColor = cgAddColor;
+  }
+
+  //그전에 카테고리의 스타일 제거 후 선택되어 있는 카테고리 스타일 적용 
+  if(selectedLog.before != '') {
+    selectedLog.before.style.backgroundColor = cgRemveColor;
+    selectedLog.now.style.backgroundColor = cgAddColor;
+  }
+  
+  //선택되어 있는 카테고리 요소 저장
+  selectedLog.before = selectedLog.now;
+
+  console.log(selectedCgLocaSave);
+
+})
+
+//지역 카테고리 ul태그 랜더링 함수 (ul > li > p)
+function RenderingUlTag(ulTag,arr,parentLv) {
+  
+  arr.forEach((ele,idx) => {
+    const pTag = document.createElement('p');
+    pTag.textContent = ele;
+    pTag.setAttribute('class',parentLv);
+    const liTag = document.createElement('li');
+    liTag.appendChild(pTag);
+    ulTag.appendChild(liTag);
+
+    if(selectedCgLocaSave.level1 == parentLv && selectedCgLocaSave.level2 == ele) {
+      pTag.style.backgroundColor = cgAddColor;
+    }
+
+    if(idx == arr.length-1 && parentLv) {
+      // close버튼 설정
+      const closeLiTag = document.createElement('li');
+      closeLiTag.setAttribute('class','loca-close-li')      
+      const closeBtn = document.createElement('i');
+      closeBtn.setAttribute('class','btn-close-loca fa-solid fa-circle-xmark');
+      closeLiTag.appendChild(closeBtn);
+      ulTag.appendChild(closeLiTag);
+
+      closeBtn.addEventListener('click', () => {
+        ulTag.querySelectorAll('li').forEach(ele => ele.remove());
+        $cgListsByLoca2.style.top = 0;
+        ulTag.style.visibility = 'hidden';  
+      })
+    }
+  })
+
+}
+
+//운동 카테고리 클릭 이벤트
+$cgListsByFacility.addEventListener('click',({target,currentTarget}) => {
+  if(target.tagName != 'P') {
+    return;
+  }
+
+  const li_lv2 = currentTarget.querySelectorAll('li p');
+  [...li_lv2].forEach(ele => {
+    ele.style.backgroundColor = cgRemveColor;
+
+  })
+
+  target.style.backgroundColor = cgAddColor;
+
+  selectedCgSave = target.textContent;
+  console.log(selectedCgSave);
+})
+
+// 시설명 검색 이벤트
+$searchBtnByName.addEventListener('click',(e) => { 
+  searchedTextSave =  $inputByText.value;
+  $inputByText.value = '';
+  console.log(searchedTextSave);
+
+})
 
 
+
+/*
 // 카테고리 클릭 이벤트
 $cgLists.addEventListener('click', ({target}) => {
   // p태그 판별
@@ -98,39 +215,4 @@ $cgLists.addEventListener('click', ({target}) => {
   $selectedCg.appendChild(selectedCg_div);
   selectedCgArrSave.push(selectedCg_label.textContent);
 
-})
-
-// 검색버튼 클릭 이벤트
-$btnSearch.addEventListener('click',e => {
-  const value = searchedTextSave.trim();
-
-  if(value == '') {
-    // 카테고리 검색
-    console.log(selectedCgArrSave);  
-
-  } else {
-    // 카테고리 + 시설명 검색
-
-    console.log(searchedTextSave)
-    console.log(selectedCgArrSave);
-    
-  }
-})
-
-// 리셋버튼 클릭 이벤트
-$btnReset.addEventListener('click', e => {
-  [...$selectedCg.querySelectorAll('.selected-cg')]
-              .forEach(ele => ele.remove());
-
-  selectedCgArrSave.splice(0,selectedCgArrSave.length);            
-
-  document.querySelectorAll('.category .cg-active')
-          .forEach(ele => {
-            ele.classList.remove('cg-active');
-          }) 
-
-  searchedTextSave = '';        
-
-  $searchedTextWrap.classList.remove('visibility_visible');
-
-});
+})  */

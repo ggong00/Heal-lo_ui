@@ -7,6 +7,7 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=igjbcnj0cq"></script>
   <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
@@ -52,34 +53,27 @@
         </article>
 
         <article class="search__main">
+
+
           <div class="search__select-input">
 
             <div class="search__cg-wrap">  
-              <div class="category-title"><p class="lable-input">지역</p></div>
+              <div class="category-title">
+                <p class="label-input">지역</p>
+              </div>
               <ul class="search__cg-loca1 category">
-                <li class=""><p>경기도</p></li>
-                <li class=""><p>충청북도</p></li>
-                <li class=""><p>강원도</p></li>
-                <li class=""><p>충청남도</p></li>
-                <li class=""><p>전라북도</p></li>
-                <li class=""><p>전라남도</p></li>
-                <li class=""><p>경상북도</p></li>
-                <li class=""><p>경상남도</p></li>
-                <li class=""><p>제주도</p></li>
-                <li class=""><p>서울</p></li>
-                <li class=""><p>부산</p></li>
-                <li class=""><p>대구</p></li>
-                <li class=""><p>인천</p></li>
-                <li class=""><p>광주</p></li>
-                <li class=""><p>대전</p></li>
-                <li class=""><p>울산</p></li>
-                <li class=""><p>세종</p></li>
+              </ul>
+
+              <!-- 카테고리 wrap 스크립트 -->
+              <ul class="search__cg-loca2 category">
               </ul>
             </div>
 
             <div class="search__cg-wrap">
-              <div class="category-title"><p class="lable-input">시설분류</p></div>
-              <ul class="search__cg-loca2 category">
+              <div class="category-title">
+                <p class="label-input">시설분류</p>
+              </div>
+              <ul class="search__cg-fa category">
                 <li class=""><p>골프장</p></li>
                 <li class=""><p>농구장</p></li>
                 <li class=""><p>배드민턴장</p></li>
@@ -101,154 +95,182 @@
           </div>
         
           <div class="search-body">
-            <div class="selected-wrap" id="selectedWrap">
-              <div class="selected-wrap__header" -data-after="개">
-                검색 결과 : <span class="result-count">0</span>
-              </div>
+            <div class="searched-wrap" id="selectedWrap">
 
-              <div class="selected-wrap__text-input">
-                <div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" class="form-control shadow-none" id="textSearchInput" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">   
-                  </div>      
+              <div class="text-input">
+                <div class="text-input__header" -data-after="건">
+                  검색 결과 : <span class="result-count">8</span>
                 </div>
+                <div class="text-input__body input-group mb-3">
+                  <input type="text" class="form-control shadow-none" id="textSearchInput" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">
+                  <span><i class="fa-solid fa-magnifying-glass-location" id="facilityBtn"></i></span>   
+                </div>      
+              </div>
+              <ul class="searched-lists">
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="searched-lists__item">
+                  <div class="item-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                  </div>
+                  <div class="item-content">
+                    <div class="item-content__top">
+                      <h3 class="item-title">울산공공헬스장</h3>
+                      <i class="fa-solid fa-heart section1__favorite-icon"></i>
+                    </div>
+                    <div class="item-content__body">
+                      <p class="item-sub">010-8888-7711</p>
+                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
+                      <p class="item-sub">추가내용</p>
+                      <p class="item-sub">추가내용</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li aria-label="Page navigation example" class="pagination-wrap">
+                  <ul class="pagination pagination-sm">
+                    <li class="page-item">
+                      <a class="page-link shadow-none" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link shadow-none" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link shadow-none" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link shadow-none" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link shadow-none" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
                 
-              </div>
-
-              <div class="searched-text">
-                  <p>1</p>
-                  <button class="btn-search-upda">
-                    <i class="fa-solid fa-circle-plus"></i>
-                  </button>     
-              </div>
-
-              <div class="selected-wrap__cg-wrap">
-
-              </div>
-              <div class="btn-wrap">
-                <button class="btn-selected btn-search">검색</button>
-                <button class="btn-selected btn-reset">리셋</button>
-              </div>  
+              </ul>
             </div>
+
             <div class="search-map__api">
-              <img class="map" src="/img/지도이미지-임시.PNG" alt="">
+              <div id="map" style="width:100%;height:100%;"></div>
             </div>
           </div>
         </article>
       </section>
-
-      <section class="search-output-ls contents">
-
-        <div class="card mb-3 search-result">
-          <div class="row g-0">
-            <div class="col-xl-4">
-              <img src="https://cdn.pixabay.com/photo/2020/11/27/12/59/woman-5781862_960_720.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-xl-8">
-              <div class="card-body">
-                <h3 class="card-title">A 체육관</h5>
-                <p class="card-text text-addr">울산 중구 옥교동 xxx</p>
-                <p class="card-text text-tel">010-8249-7750</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3 search-result">
-          <div class="row g-0">
-            <div class="col-xl-4">
-              <img src="https://cdn.pixabay.com/photo/2020/11/27/12/59/woman-5781862_960_720.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-xl-8">
-              <div class="card-body">
-                <h3 class="card-title">A 체육관</h5>
-                <p class="card-text text-addr">울산 중구 옥교동 xxx</p>
-                <p class="card-text text-tel">010-8249-7750</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3 search-result">
-          <div class="row g-0">
-            <div class="col-xl-4">
-              <img src="https://cdn.pixabay.com/photo/2020/11/27/12/59/woman-5781862_960_720.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-xl-8">
-              <div class="card-body">
-                <h3 class="card-title">A 체육관</h5>
-                <p class="card-text text-addr">울산 중구 옥교동 xxx</p>
-                <p class="card-text text-tel">010-8249-7750</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3 search-result">
-          <div class="row g-0">
-            <div class="col-xl-4">
-              <img src="https://cdn.pixabay.com/photo/2020/11/27/12/59/woman-5781862_960_720.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-xl-8">
-              <div class="card-body">
-                <h3 class="card-title">A 체육관</h5>
-                <p class="card-text text-addr">울산 중구 옥교동 xxx</p>
-                <p class="card-text text-tel">010-8249-7750</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3 search-result">
-          <div class="row g-0">
-            <div class="col-xl-4">
-              <img src="https://cdn.pixabay.com/photo/2020/11/27/12/59/woman-5781862_960_720.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-xl-8">
-              <div class="card-body">
-                <h3 class="card-title">A 체육관</h5>
-                <p class="card-text text-addr">울산 중구 옥교동 xxx</p>
-                <p class="card-text text-tel">010-8249-7750</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3 search-result">
-          <div class="row g-0">
-            <div class="col-xl-4">
-              <img src="https://cdn.pixabay.com/photo/2020/11/27/12/59/woman-5781862_960_720.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-xl-8">
-              <div class="card-body">
-                <h3 class="card-title">A 체육관</h5>
-                <p class="card-text text-addr">울산 중구 옥교동 xxx</p>
-                <p class="card-text text-tel">010-8249-7750</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <nav aria-label="Page navigation example" class="pagenation-wrap">
-        <ul class="pagination pagination-lg">
-          <li class="page-item">
-            <a class="page-link shadow-none" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link shadow-none" href="#">1</a></li>
-          <li class="page-item"><a class="page-link shadow-none" href="#">2</a></li>
-          <li class="page-item"><a class="page-link shadow-none" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link shadow-none" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
     </main>
 
     <!-- footer -->
@@ -266,10 +288,12 @@
     </footer>
   </div>  
   
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
   <script src="../js/layout-sub.js"></script>
-  <script src="../js/search-page.js"></script>
+  <script type="module" src="../js/naver-map-api.js"></script>
+  <script type="module" src="../js/search-page.js"></script>
 </body>
 </html>

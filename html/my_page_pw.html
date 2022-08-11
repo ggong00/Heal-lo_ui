@@ -9,18 +9,22 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
   <style>
-    #wrapper #container.layout {display: block;}
-    #container .layout {display: block; height:600px; border-top:3px solid #777;}
+    #container {height:600px; border-top:3px solid #777;}
 
+    #container .content {display: flex; justify-content: space-between; height: 100%;}
+
+    #container .text-box {flex: 1;}
     #container .text-box .my-page p {font-size: 2rem; font-weight: bold; margin-top: 40px; margin-left: 30px; }
     #container .text-box .information p {font-size: 1.3rem; font-weight: 550; margin-top: 40px; margin-left: 30px;}
     #container .text-box .activity p {font-size: 1.3rem; font-weight: 550; margin-top: 40px; margin-left: 30px;}
 
-    #container .pw { display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    #container .pw { display: flex; flex-direction: column; justify-content: center; align-items: center; flex: 1;}
     #container .container-pw {display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #ccc; width: 500px;}
     #container .container-pw label {font-size: 1.5rem; font-weight: 500; margin-top: 10px; margin-bottom: 30px;}
     #container .container-pw input {margin-top: 10px; margin-bottom: 50px; padding: 10px 10px;}
     #container .pw button {margin-top: 30px; margin-left: 450px; width: 50px; background-color: #16a085; color: white;}
+
+    #container #none {flex: 1;}
   </style>
 </head>
 <body>
@@ -56,23 +60,26 @@
       
       <!-- 메인 컨텐츠 -->
       <main id="container">
-        <div class="text-box">
-            <div class="my-page">
-                <p>마이 페이지</p>
-            </div>
-            <div class="information">
-                <p><a href="#">나의 정보수정</a></p>
-            </div>
-            <div class="activity">
-                <p><a href="#"> 나의 활동</a></p>
-            </div>
-        </div>
-        <div class="pw">
-          <div class="container-pw">
-              <label for="">비밀번호를 입력하세요</label>
-              <input type="text">
+        <div class="content">
+          <div class="text-box">
+              <div class="my-page">
+                  <p>마이 페이지</p>
+              </div>
+              <div class="information">
+                  <p><a href="#">나의 정보수정</a></p>
+              </div>
+              <div class="activity">
+                  <p><a href="#"> 나의 활동</a></p>
+              </div>
           </div>
-          <button><a href="">완료</a></button>
+          <div class="pw">
+            <div class="container-pw">
+                <label for="">비밀번호를 입력하세요</label>
+                <input type="text">
+            </div>
+            <button><a href="">완료</a></button>
+          </div>
+          <div id="none"></div>
         </div>
       </main>
 
