@@ -5,17 +5,28 @@ import {moveMap} from "./naver-map-api.js";
 const $cgListsByLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
 const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loca2');
 const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
-const $searchBtnByName = document.querySelector('.selected-wrap__text-input i');
-const $inputByText = document.getElementById('textSearchInput')  
+const $searchBtnByName = document.querySelector('.text-input__body i');
+const $inputByText = document.getElementById('textSearchInput');
+const $searchedWrap = document.querySelector('.text-input__header');  
+const $searchedLists = document.querySelector('.searched-wrap .searched-lists');  
 
 // 다용도 전역변수
 let selectedLog = {before : '', now : ''};
 const cgRemveColor = '#ffffff99';
 const cgAddColor = 'var(--color-others-header)';
+
 //선택된 카테고리 배열
 let selectedCgLocaSave = {level1 : '', level2 : ''};  //지역 선택 저장
 let selectedCgSave = ''; //운동분류 저장
 let searchedTextSave = '';  //시설명 검색어 저장
+
+// 목록 하이드바 위치지정
+const openBar = document.querySelector('.lists-openbar');
+
+openBar.addEventListener('click',() => {
+  actionOpenMenu();
+  actionOpenMenu_icon();
+})
 
 // 네이버 지도 생성
 const mapOptions = {
@@ -34,13 +45,6 @@ $cgListsByLoca1.addEventListener('click', ({target,currentTarget}) => {
   }
 
   selectedLog.now = target;
-
-  // const li_lv2 = currentTarget.querySelectorAll('li p');
-  // [...li_lv2].forEach(ele => {
-  //   ele.style.backgroundColor = cgRemveColor;
-  // })
-
-  // target.style.backgroundColor = cgAddColor;
 
   //카테고리 생성 로직
   $cgListsByLoca2.innerHTML = '';
@@ -82,7 +86,7 @@ $cgListsByLoca2.addEventListener('click',({target,currentTarget}) => {
     selectedLog.now.style.backgroundColor = cgAddColor;
   }
 
-  //그전에 카테고리의 스타일 제거 후 선택되어 있는 카테고리 스타일 적용 
+  //그전 카테고리의 스타일 제거 후 선택되어 있는 카테고리 스타일 적용 
   if(selectedLog.before != '') {
     selectedLog.before.style.backgroundColor = cgRemveColor;
     selectedLog.now.style.backgroundColor = cgAddColor;
@@ -145,74 +149,25 @@ $cgListsByFacility.addEventListener('click',({target,currentTarget}) => {
 
   selectedCgSave = target.textContent;
   console.log(selectedCgSave);
-})
-
-// 시설명 검색 이벤트
-$searchBtnByName.addEventListener('click',(e) => { 
-  searchedTextSave =  $inputByText.value;
-  $inputByText.value = '';
-  console.log(searchedTextSave);
-
-})
-
-
-
-/*
-// 카테고리 클릭 이벤트
-$cgLists.addEventListener('click', ({target}) => {
-  // p태그 판별
-  if(!(target.tagName == 'P')) return;
-
-  // 최대 갯수 제한
-  if(selectedCgArrSave.length >= 10) {
-    alert('최대 10개 선택가능합니다.');
-    return;
-  }
-
-  // 중복 카테고리 제한
-  if(selectedCgArrSave.indexOf(target.textContent) != -1) {
-    alert('이미 선택된 카테고리입니다');
-    return;
-  }
-
-  target.classList.add('cg-active');
-
-
-  // 태그 생성
-  const selectedCg_div = document.createElement('div');
-  console.log(selectedCg_div);
-
-  const selectedCg_label = document.createElement('label');
-  const selectedCg_btn = document.createElement('button');
-
-  selectedCg_div.setAttribute('class','selected-cg');
-  selectedCg_btn.setAttribute('type','button');
-  selectedCg_btn.setAttribute('class','btn-close shadow-none');
-  selectedCg_btn.setAttribute('id',`btnClose_${target.textContent}`);
-  selectedCg_btn.setAttribute('aria-label','Close');
-  selectedCg_label.setAttribute('for',`btnClose_${target.textContent}`)
-  selectedCg_label.textContent = target.textContent;  
-
-  // 버튼 클릭 이벤트
-  selectedCg_btn.addEventListener('click', () => {
-    selectedCg_div.style.transition = 'all 0.4s';
-    selectedCg_div.style.transform = 'scale(0.2)';
-
-    setTimeout(() => {
-      selectedCg_div.remove();
-      target.classList.remove('cg-active');
-      selectedCgArrSave.forEach((ele,idx) => {
-        if(ele == target.textContent ) {
-          selectedCgArrSave.splice(idx,1);
-        }
-      })
-    }, 300);
   })
-  
-  // 태그 삽입
-  selectedCg_div.appendChild(selectedCg_label);
-  selectedCg_div.appendChild(selectedCg_btn);
-  $selectedCg.appendChild(selectedCg_div);
-  selectedCgArrSave.push(selectedCg_label.textContent);
 
-})  */
+  // 시설명 검색 이벤트
+  $searchBtnByName.addEventListener('click',(e) => { 
+    searchedTextSave =  $inputByText.value;
+    $inputByText.value = '';
+
+    if(!$searchedLists.classList.contains('open-action')) {
+      actionOpenMenu();
+      actionOpenMenu_icon();
+    }
+
+  })
+
+  // 메뉴 오픈 함수
+  function actionOpenMenu_icon() {
+    openBar.classList.toggle('open-action-icon');  
+  }
+
+  function actionOpenMenu() {
+    $searchedLists.classList.toggle('open-action');
+  }
