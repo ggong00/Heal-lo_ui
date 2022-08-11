@@ -9,32 +9,43 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/layout-sub.css">
   <style>
-    #wrapper #container.layout {display: block;}
+    /* * {outline: 1px solid red;} */
     #container {height: 800px;}
 
-    #container .text-box {width: 300px; margin: 0px;}
+    #container .content {display: flex; justify-content: space-between; height: 100%;}
+
+    #container .text-box {flex: 1;}
     #container .text-box .my-page p {font-size: 2rem; font-weight: bold; margin-top: 40px; margin-left: 30px; }
     #container .text-box .information p {font-size: 1.3rem; font-weight: 550; margin-top: 40px; margin-left: 30px;}
     #container .text-box .activity p {font-size: 1.3rem; font-weight: 550; margin-top: 40px; margin-left: 30px;}
 
-    #container .myInformation {display: flex; flex-direction: column; align-items: center; position: relative; height:500px ;}
-    .myInformation label#name {position: absolute; top: -120px;}
-    .myInformation input#name {position: absolute; top: -100px; padding: 10px 2px;}
+    #container .myInformation {display: flex; flex-direction: column; flex: 1;}
+    .myInformation label#name {font-weight: 500; margin-top: 80px; margin-bottom: 15px;}
+    .myInformation input#name {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
-    .myInformation label#nname {position: absolute; top: -50px;}
-    .myInformation input#nname {position: absolute; top: -30px; padding: 10px 2px;}
+    .myInformation label#nname {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
+    .myInformation input#nname {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
-    .myInformation label#id {position: absolute; top: 20px;}
-    .myInformation input#id {position: absolute; top: 40px; padding: 10px 2px;}
+    .myInformation label#id {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
+    .myInformation input#id {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
-    .myInformation label#changePw {position: absolute; top: 90px;}
-    .myInformation input#changePw {position: absolute; top: 110px; padding: 10px 2px;}
+    .myInformation label#changePw {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
+    .myInformation input#changePw {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
-    .myInformation label#changePwCh {position: absolute; top: 160px;}
-    .myInformation input#changePwCh {position: absolute; top: 180px; padding: 10px 2px;}
+    .myInformation label#changePwCh {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
+    .myInformation input#changePwCh {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
-    .myInformation label#phoneNb {position: absolute; top: 230px;}
-    .myInformation input#phoneNb {position: absolute; top: 250px; padding: 10px 2px;}
+    .myInformation label#phoneNb {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
+    .myInformation input#phoneNb {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
+
+
+    .myInformation .btn {display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; height: 162px;}
+    .myInformation .btn #btnChange {width: 80px; background-color: #16a085; color: white; }
+    .myInformation .btn #btnOut {width: 50px; background-color: #16a085; color: white;  margin-left: 440px;}
+
+    #container #none {position: relative; flex: 1;}
+    #container #none button {position: absolute; left: 25px; top: 215px;}
+    #container #none p {position: absolute; left: 25px; top: 415px;}
 
   </style>
 </head>
@@ -71,35 +82,45 @@
       
       <!-- 메인 컨텐츠 -->
       <main id="container">
-        <div class="text-box">
-            <div class="my-page">
-                <p>마이 페이지</p>
-            </div>
-            <div class="information">
-                <p><a href="#">나의 정보수정</a></p>
-            </div>
-            <div class="activity">
-                <p><a href="#"> 나의 활동</a></p>
-            </div>
-        </div>
-        <div class="myInformation">
-            <label id="name" for="name">이름</label>
-            <input id="name" type="text">
-            
-            <label id="nname" for="nname">닉네임</label>
-            <input id="nname" type="text">
-            
-            <label id="id" for="id">아이디</label>
-            <input id="id" type="text">
-            
-            <label id="changePw" for="changePw">비밀번호 변경</label>
-            <input id="changePw" type="text">
-            
-            <label id="changePwCh" for="changePwCh">비밀번호 변경확인</label>
-            <input id="changePwCh" type="text">
-            
-            <label id="phoneNb" for="phoneNb">휴대전화 번호</label>            
-            <input id="phoneNb" type="text">
+        <div class="content">
+          <div class="text-box">
+              <div class="my-page">
+                  <p>마이 페이지</p>
+              </div>
+              <div class="information">
+                  <p><a href="#">나의 정보수정</a></p>
+              </div>
+              <div class="activity">
+                  <p><a href="#"> 나의 활동</a></p>
+              </div>
+          </div>
+          <div class="myInformation">
+              <label id="name" for="name">이름</label>
+              <input id="name" type="text"> 
+          
+              <label id="nname" for="nname">닉네임</label>
+              <input id="nname" type="text">
+          
+              <label id="id" for="id">아이디</label>
+              <input id="id" type="text">
+          
+              <label id="changePw" for="changePw">비밀번호 변경</label>
+              <input id="changePw" type="text"> 
+          
+              <label id="changePwCh" for="changePwCh">비밀번호 변경확인</label>
+              <input id="changePwCh" type="text">
+          
+              <label id="phoneNb" for="phoneNb">휴대전화 번호</label>
+              <input id="phoneNb" type="text">
+              <div class="btn">
+                <button id="btnChange">수정완료</button>
+                <button id="btnOut"><a href="#">탈퇴</a></button>
+              </div>
+          </div>
+          <div id="none">
+            <button class="btnCheck">중복확인</button>
+            <p class="change-pw-warning">대/소영문자, 숫자조합 20자 이하</p>
+          </div>
         </div>
       </main>
 
