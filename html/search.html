@@ -74,6 +74,7 @@
                 <p class="label-input">시설분류</p>
               </div>
               <ul class="search__cg-fa category">
+                <li class=""><p>전체</p></li>
                 <li class=""><p>골프장</p></li>
                 <li class=""><p>농구장</p></li>
                 <li class=""><p>배드민턴장</p></li>
@@ -89,7 +90,6 @@
                 <li class=""><p>풋살장</p></li>
                 <li class=""><p>야외시설</p></li>
                 <li class=""><p>종합경기장</p></li>
-                <li class=""><p>기타</p></li>
               </ul>
             </div>
           </div>
@@ -101,10 +101,10 @@
                 <div class="text-input__header" -data-after="건">
                   검색 결과 : <span class="result-count">8</span>
                 </div>
-                <div class="text-input__body input-group mb-3">
+                <form class="text-input__body input-group mb-3">
                   <input type="text" class="form-control shadow-none" id="textSearchInput" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">
-                  <span><i class="fa-solid fa-magnifying-glass-location" id="facilityBtn"></i></span>   
-                </div>      
+                  <button type="submit"><i class="fa-solid fa-magnifying-glass-location" id="facilityBtn"></i></button>   
+                </form>      
               </div>
               <ul class="searched-lists">
                 <li class="searched-lists__item">
@@ -266,7 +266,7 @@
             </div>
 
             <div class="lists-openbar">
-              <i class="fa-solid fa-arrow-down-wide-short openbar-icon"></i>
+              <i class="fa-solid fa-arrow-down-short-wide openbar-icon"></i>
             </div>
 
             <div class="search-map__api">

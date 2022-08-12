@@ -5,7 +5,7 @@ import {moveMap} from "./naver-map-api.js";
 const $cgListsByLoca1 = document.querySelector('.search__cg-wrap .search__cg-loca1');
 const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loca2');
 const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
-const $searchBtnByName = document.querySelector('.text-input__body i');
+const $searchForm = document.querySelector('.text-input__body');
 const $inputByText = document.getElementById('textSearchInput');
 const $searchedWrap = document.querySelector('.text-input__header');  
 const $searchedLists = document.querySelector('.searched-wrap .searched-lists');  
@@ -17,7 +17,7 @@ const cgAddColor = 'var(--color-others-header)';
 
 //선택된 카테고리 배열
 let selectedCgLocaSave = {level1 : '', level2 : ''};  //지역 선택 저장
-let selectedCgSave = ''; //운동분류 저장
+let selectedCgSave = '전체'; //운동분류 저장
 let searchedTextSave = '';  //시설명 검색어 저장
 
 // 목록 하이드바 위치지정
@@ -95,8 +95,6 @@ $cgListsByLoca2.addEventListener('click',({target,currentTarget}) => {
   //선택되어 있는 카테고리 요소 저장
   selectedLog.before = selectedLog.now;
 
-  console.log(selectedCgLocaSave);
-
 })
 
 //지역 카테고리 ul태그 랜더링 함수 (ul > li > p)
@@ -142,17 +140,17 @@ $cgListsByFacility.addEventListener('click',({target,currentTarget}) => {
   const li_lv2 = currentTarget.querySelectorAll('li p');
   [...li_lv2].forEach(ele => {
     ele.style.backgroundColor = cgRemveColor;
-
   })
 
   target.style.backgroundColor = cgAddColor;
-
   selectedCgSave = target.textContent;
-  console.log(selectedCgSave);
+
   })
 
   // 시설명 검색 이벤트
-  $searchBtnByName.addEventListener('click',(e) => { 
+  $searchForm.addEventListener('submit',(e) => {
+    e.preventDefault();
+
     searchedTextSave =  $inputByText.value;
     $inputByText.value = '';
 
@@ -165,9 +163,33 @@ $cgListsByFacility.addEventListener('click',({target,currentTarget}) => {
 
   // 메뉴 오픈 함수
   function actionOpenMenu_icon() {
-    openBar.classList.toggle('open-action-icon');  
+    openBar.classList.toggle('open');
+    openBar.classList.toggle('open-action-icon');
+
+    setTimeout(() => {
+      const beforeIcon = openBar.querySelector('i');
+      beforeIcon.remove();
+  
+      const afterIcon = document.createElement('i');
+  
+      
+        if(openBar.classList.contains('open')) {
+          afterIcon.setAttribute('class','fa-solid fa-arrow-up-short-wide openbar-icon');
+        } else {
+          afterIcon.setAttribute('class','fa-solid fa-arrow-down-short-wide openbar-icon');
+        }
+      
+      openBar.appendChild(afterIcon);
+
+    },300)
   }
 
   function actionOpenMenu() {
     $searchedLists.classList.toggle('open-action');
   }
+
+  // 테스트용
+  document.body.addEventListener('click', () => {
+    console.log(`[최종 검색 조합] 운동 = ${selectedCgSave} 시설명 = ${searchedTextSave}`);
+    console.log(selectedCgLocaSave);
+  })
