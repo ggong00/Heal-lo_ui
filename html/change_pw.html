@@ -17,10 +17,17 @@
       }
 
       #changePwContainer {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .none {
+        flex: 1;
         position: relative;
       }
 
       #changePwContent {
+        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -53,8 +60,7 @@
 
       #changeWarning {
         position: absolute;
-        right: 100px;
-        bottom: 80px;
+        top: 200px;
       }
 
       .change-warning-font {
@@ -108,18 +114,21 @@
       <!-- 메인 컨텐츠 -->
       <main id="container">
         <div id="changePwContainer">
+          <div class="none"></div>
           <div id="changePwContent">
             <p id="changePwFont">비밀번호 재설정</p>
             <input type="text" id="changePw" placeholder="새로운 비밀번호" />
             <input type="text" id="changePwR" placeholder="비밀번호 재입력" />
             <button id="btn">완료</button>
           </div>
-          <div id="changeWarning">
-            <p class="change-warning-font">주의하세요!</p>
-            <p class="change-warning-subfont">
-              비밀번호는 대,소문자구분 영문자,숫자조합으로<br />
-              8글자 이상~20글자 이하로 제한됩니다!
-            </p>
+          <div class="none">
+            <div id="changeWarning">
+              <p class="change-warning-font">주의하세요!</p>
+              <p class="change-warning-subfont">
+                비밀번호는 대,소문자구분 영문자,숫자조합으로<br />
+                8글자 이상~20글자 이하로 제한됩니다!
+              </p>
+            </div>
           </div>
         </div>
       </main>
