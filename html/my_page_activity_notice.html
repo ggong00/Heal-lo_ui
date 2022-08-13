@@ -11,57 +11,7 @@
     ></script>
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/layout-sub.css" />
-    <style>
-      /* *{outline: 1px solid red;} */
-      #container .content {
-        display: flex;
-        justify-content: space-between;
-        height: 100%;
-      }
-
-      #container .text-box {
-        flex: 2;
-      }
-      #container .text-box .my-page p {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-top: 40px;
-        margin-left: 30px;
-      }
-      #container .text-box .information p {
-        font-size: 1.3rem;
-        font-weight: 550;
-        margin-top: 40px;
-        margin-left: 30px;
-      }
-      #container .text-box .activity p {
-        font-size: 1.3rem;
-        font-weight: 550;
-        margin-top: 40px;
-        margin-left: 30px;
-      }
-
-      .history {
-        flex: 6;
-        display: flex; 
-        flex-direction: column;
-      }
-      .history .menu {
-        display: flex;
-        justify-content: space-evenly;
-        font-size: 1.6rem; font-weight: bold;
-        margin: 40px 0px;
-      }
-      .history .record {
-        display: flex;
-        border: 1px solid #ccc;
-        padding: 5px;
-      }
-      .history .record .title {flex: 6; text-align: center; font-size: 1.3rem; font-weight: 300;}
-      .history .record .dateline {flex: 2; text-align: center; font-size: 1.3rem; font-weight: 300;}
-      .history .record .hits {flex: 2; text-align: center; font-size: 1.3rem; font-weight: 300;}
-
-    </style>
+    <link rel="stylesheet" href="../css/my_page_activity_notice.css">
   </head>
   <body>
     <div id="wrapper">
@@ -124,6 +74,16 @@
             <p class="title">제목</p>
             <p class="dateline">작성일</p>
             <p class="hits">조회</p>
+          </div>
+          <div class="substance">
+            <a href="#"><p class="substance-notice">Lorem ipsum dolor sit amet.</p></a>
+            <p class="substance-dateline">2022.08.13</p>
+            <p class="substance-hits">10</p>
+          </div>
+          <div class="substance">
+            <a href="#"><p class="substance-notice">Lorem ipsum dolor sit amet.</p></a>
+            <p class="substance-dateline">2022.08.13</p>
+            <p class="substance-hits">10</p>
           </div>
         </div>
       </main>
