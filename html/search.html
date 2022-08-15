@@ -39,7 +39,6 @@
             <a href="#"><i class="fa-solid fa-location-dot header__site-icon"></i></a>
             <a href="#"><i class="fa-solid fa-book-open header__site-icon"></i></a>
             <a href="#"><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
           </div>
         </div>  
     </header>
@@ -71,25 +70,10 @@
 
             <div class="search__cg-wrap">
               <div class="category-title">
-                <p class="label-input">시설분류</p>
+                <p class="label-input">분류</p>
               </div>
               <ul class="search__cg-fa category">
-                <li class=""><p>전체</p></li>
-                <li class=""><p>골프장</p></li>
-                <li class=""><p>농구장</p></li>
-                <li class=""><p>배드민턴장</p></li>
-                <li class=""><p>수영장</p></li>
-                <li class=""><p>실내체육관</p></li>
-                <li class=""><p>야구장</p></li>
-                <li class=""><p>운동장</p></li>
-                <li class=""><p>족구장</p></li>
-                <li class=""><p>체력단련실</p></li>
-                <li class=""><p>축구장</p></li>
-                <li class=""><p>탁구장</p></li>
-                <li class=""><p>테니스장</p></li>
-                <li class=""><p>풋살장</p></li>
-                <li class=""><p>야외시설</p></li>
-                <li class=""><p>종합경기장</p></li>
+                <li class=""><p id="전체">전체</p></li>
               </ul>
             </div>
           </div>
@@ -99,17 +83,17 @@
 
               <div class="text-input">
                 <div class="text-input__header" -data-after="건">
-                  검색 결과 : <span class="result-count">8</span>
+                  검색 결과 : <span class="result-count"></span>
                 </div>
                 <form class="text-input__body input-group mb-3">
                   <input type="text" class="form-control shadow-none" id="textSearchInput" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">
                   <button type="submit"><i class="fa-solid fa-magnifying-glass-location" id="facilityBtn"></i></button>   
                 </form>      
               </div>
-              <ul class="searched-lists">
-                <li class="searched-lists__item">
+              <ul class="searched-lists" id="searchedLists">
+                <!-- <li class="searched-lists__item">
                   <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
+                    <img src="../img/이미지준비중.jpg" alt="">
                   </div>
                   <div class="item-content">
                     <div class="item-content__top">
@@ -123,128 +107,9 @@
                       <p class="item-sub">추가내용</p>
                     </div>
                   </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_960_720.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
-                    </div>
-                  </div>
-                </li>
+                </li> -->
 
-                <li aria-label="Page navigation example" class="pagination-wrap">
+                <!-- <li aria-label="Page navigation example" class="pagination-wrap">
                   <ul class="pagination pagination-sm">
                     <li class="page-item">
                       <a class="page-link shadow-none" href="#" aria-label="Previous">
@@ -260,8 +125,7 @@
                       </a>
                     </li>
                   </ul>
-                </li>
-
+                </li> -->
               </ul>
             </div>
 
