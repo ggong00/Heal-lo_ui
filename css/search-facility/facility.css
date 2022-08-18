@@ -186,16 +186,23 @@
 }
 
 /* 기타 */
+.fixed-menu-wrap {
+  position: sticky;
+  display: flex;
+  justify-content: flex-end;
+  top: 30%;
+  width: 130%;
+  height: 0;
+}
 .fixed-menu {
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  right: 1px;
+  min-height: 170px;
   padding: 8px;
   font-size: 32px;
-  right: 0;
-  top: 1200px;
   color: var(--color-main-header);
   background-color: #dbdee144;
   border-radius: 12px;

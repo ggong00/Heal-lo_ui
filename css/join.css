@@ -1,22 +1,94 @@
 @charset "utf-8";
-.container { display: block; background-color: white; border-radius: 3px; padding: 1em; }
+#header .header__banner .header__main-logo .header__main-title {
+  color: var(--color-main-header);
+}
+.container {
+  display: block;
+  background-color: white;
+  border-radius: 3px;
+  padding: 1em;
+}
 
-.join { display: flex; justify-content: center; text-align: center; margin: 40px auto; flex-direction: column; }
+.join {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  margin: 40px auto;
+  flex-direction: column;
+}
 
-.join__name { display: flex; font-size: 24px; justify-content: center; margin-bottom: 20px; }
+.join__name {
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-.join__form { display: flex; width: 700px; flex-direction: column; padding: 1em; margin: auto; }
+.join__form {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  padding: 1em;
+  margin: auto;
+  border-radius: 5px;
+}
 
-p { margin: 0; align-self: center; }
+p {
+  margin: 0;
+  align-self: center;
+}
 
-.join__form .join__info { display: flex; align-items: center; position: relative; }
+.join__form .join__info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
-.join__form .join__info label { display: flex; width: 100px; padding: 0.5em; }
-.container input { /* flex: 4; */ padding: 0.5em; border-radius: 5px; border: 1px solid black; width: 150px; margin: 5px; }
+.join__form .join__info label {
+  display: flex;
+  width: 100px;
+  padding: 0.5em;
+}
+.container input {
+  /* flex: 4; */
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 150px;
+  margin: 5px;
+}
 
-.container #domain-txt, .container #domain-list, .container .btn { width: 100px; }
-.container #domain-list { height: 35px; align-self: center; }
-.container .join .join__form .btn { margin-left: 20px; }
+.container #domain-txt,
+.container #domain-list,
+.container .btn {
+  width: 100px;
+}
+.container #domain-list {
+  height: 35px;
+  align-self: center;
+}
 
+.container .join .join__form .btn {
+  margin-left: 20px;
+  border: none;
+}
+.container .join .join__form .btn:hover{
+  cursor: pointer;
+}
 
-.container .join__btn { display: block; width: 100px; padding: 1em; background: gray; color: white; border: 0; position: absolute; right: 0; top: 10px; }
+#sign{
+  text-align: end;
+}
+.container .join__btn {
+  border: none;
+  padding: 1em;
+  font-size: 1.1em;
+  background-color:white;
+  font-weight: bold;
+}
+.container .join__btn:hover {
+  text-align: end;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.459);
+}

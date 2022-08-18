@@ -228,6 +228,9 @@
 .search__main .search-body .searched-wrap .item-content__body .item-sub1::before {
   content: '[분류]';
 }
+.search__main .search-body .searched-wrap .item-content__body .item-tel::before {
+  content: '[전화번호]';
+}
 .search__main .search-body .searched-wrap .item-content__body .item-addr::before {
   content: '[주소]';
 }

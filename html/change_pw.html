@@ -11,62 +11,7 @@
     ></script>
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/layout-sub.css" />
-    <style>
-      #container {
-        height: 600px;
-      }
-
-      #changePwContainer {
-        position: relative;
-      }
-
-      #changePwContent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      #changePwFont {
-        font-size: 1.8rem;
-        font-weight: 500;
-        margin-top: 130px;
-        margin-bottom: 40px;
-      }
-      #changePw {
-        padding: 10px 2px;
-        margin-bottom: 25px;
-        width: 250px;
-      }
-
-      #changePwR {
-        padding: 10px 2px;
-        margin-bottom: 25px;
-        width: 250px;
-      }
-
-      #btn {
-        width: 50px;
-        background-color: #16a085;
-        color: white;
-        margin-left: 200px;
-      }
-
-      #changeWarning {
-        position: absolute;
-        right: 100px;
-        bottom: 80px;
-      }
-
-      .change-warning-font {
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: 20px;
-      }
-      .change-warning-subfont {
-        font-size: 1rem;
-        font-weight: 300;
-      }
-    </style>
+    <link rel="stylesheet" href="../css/change_pw.css">
   </head>
   <body>
     <div id="wrapper">
@@ -108,18 +53,21 @@
       <!-- 메인 컨텐츠 -->
       <main id="container">
         <div id="changePwContainer">
+          <div class="none"></div>
           <div id="changePwContent">
             <p id="changePwFont">비밀번호 재설정</p>
             <input type="text" id="changePw" placeholder="새로운 비밀번호" />
             <input type="text" id="changePwR" placeholder="비밀번호 재입력" />
             <button id="btn">완료</button>
           </div>
-          <div id="changeWarning">
-            <p class="change-warning-font">주의하세요!</p>
-            <p class="change-warning-subfont">
-              비밀번호는 대,소문자구분 영문자,숫자조합으로<br />
-              8글자 이상~20글자 이하로 제한됩니다!
-            </p>
+          <div class="none">
+            <div id="changeWarning">
+              <p class="change-warning-font">주의하세요!</p>
+              <p class="change-warning-subfont">
+                비밀번호는 대,소문자구분 영문자,숫자조합으로<br />
+                8글자 이상~20글자 이하로 제한됩니다!
+              </p>
+            </div>
           </div>
         </div>
       </main>
@@ -141,5 +89,6 @@
     </div>
 
     <script src="../js/layout-sub.js"></script>
+    <script src="../js/change_pw.js"></script>
   </body>
 </html>
