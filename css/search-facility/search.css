@@ -1,0 +1,268 @@
+#container {
+  height: auto;
+}
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 검색  */
+.search {
+  width: 100%;
+}
+.search__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+}
+.search__main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+}
+.search__main .label-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 카테고리 선택 섹션 */
+.search__main .search__select-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  border-radius: 36px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+.search__main .search__select-input .search__cg-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 0;
+  width: 100%;
+}
+.search__main .category {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 12px;
+  padding: 0 18px;
+  margin: 0 auto;
+}
+.search__main .category.search__cg-loca2 {
+  position: absolute;
+  font-weight: 600;
+  background-color: #ffffff;
+  padding: 18px;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+}
+.search__main .category p {
+  display: inline-block;
+  text-align: center;
+  margin: 6px;
+  padding: 12px;
+  color: rgb(46, 63, 77);
+  background-color: #ffffff99;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.search__main .category .loca-close-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+.search__main .category li:hover p {
+  transform: translate(0px,-6px) scale(1.06);
+}
+.search__main .category-title {
+  display: inline-block;
+  align-self: start;
+  width: 120px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4px 0;
+}
+.search__main .category-title p {
+  padding: 8px;
+}
+.search__main .category-title .label-sub {
+  font-size: 10px;
+  color: red;
+}
+.search__main .search-body {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+/* 검색 메인 섹션1 */
+.search__main .search-body .searched-wrap {
+  position: absolute;
+  width: 350px;
+  height: 100%;
+  max-height: 100%;
+  z-index: 5;
+  padding: 18px;
+  padding: 0;
+  padding-bottom: 32px;
+  opacity: 0.9;
+}
+.search__main .search-body .searched-wrap .text-input {
+  width: 100%;
+  height: 10%;
+}
+.search__main .search-body .searched-wrap .text-input__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  padding: 6px;
+  width: 100%;
+  background-color: var(--color-others-header);
+}
+.search__main .search-body .searched-wrap .text-input__header::after {
+  content: attr(-data-after);
+}
+.search__main .search-body .searched-wrap .text-input__body {
+  margin-top: 4px;
+}
+.search__main .search-body .searched-wrap .text-input__body button {
+  border: 1px solid black;
+  background-color: white;
+  font-size: 20px;
+  padding: 4px;
+  color: rgba(112, 108, 108, 0.322);
+  cursor: pointer;
+}
+.search__main .search-body .searched-wrap .text-input__body button i {
+  font-size: 24px;
+  color: var(--color-main-header);
+}
+.search__main .search-body .searched-wrap .text-input__body input[type=text] {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 0;
+  border: 1px solid black;
+  border-right: none;
+}
+.search__main .search-body .searched-wrap .searched-lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  height: 0;
+  margin-top: 12px;
+  background-color: rgba(255, 255, 255, 0.959);
+  transition: ease-in-out 0.5s;
+}
+.search__main .search-body .searched-wrap .open-action {
+  height: 85%;
+}
+.search__main .search-body .searched-wrap .searched-lists__item {
+  display: flex;
+  min-height: 100px;
+  margin: 8px;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+} 
+.search__main .search-body .searched-wrap .searched-lists__item .favorite-icon {
+  display: block;
+  cursor: pointer;
+  color: #acadae;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+.search__main .search-body .searched-wrap .searched-lists__item .favorite-icon:hover {
+  color: rgba(255, 155, 172, 0.462);
+}
+.search__main .search-body .searched-wrap .item-img {
+  flex: 1;
+}
+.search__main .search-body .searched-wrap .item-img img {
+  width: 100%;
+  height: 100%;
+}
+.search__main .search-body .searched-wrap .item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2;
+  padding: 4px;
+}
+.search__main .search-body .searched-wrap .item-content__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  font-weight: 600;
+}
+.search__main .search-body .searched-wrap .item-content__body {
+  font-size: 0.7em;
+}
+.search__main .search-body .searched-wrap .item-content__body .item-sub{
+  margin: 4px 0;
+}
+.search__main .search-body .searched-wrap .item-content__body .item-sub1::before {
+  content: '[분류]';
+}
+.search__main .search-body .searched-wrap .item-content__body .item-addr::before {
+  content: '[주소]';
+}
+
+.search__main .search-body .searched-wrap .pagination-wrap .pagination a {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-others-header);
+}
+
+/* 목록 하이드바 */
+.lists-openbar {
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  background-color: var(--color-main-header);
+  padding: 2px;
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+  bottom: 560px;
+  left: 10px;
+  width: 50px;
+}
+.open-action-icon {
+  bottom: 20px;
+}
+
+/* 검색 메인 섹션2 */
+/* 지도 */
+.search__main .search-body .search-map__api {
+  position: relative;
+  width: 100%;
+  height: 650px;
+}
+
+#footer {
+  padding: 20px;
+}
