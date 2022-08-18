@@ -9,11 +9,10 @@
       src="https://kit.fontawesome.com/7ee6b8223a.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/layout-sub.css" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/layout-sub.css" />
+    <link rel="stylesheet" href="../../css/my-page/my_page_activity_review.css">
   </head>
-
   <body>
     <div id="wrapper">
       <!-- 헤더 -->
@@ -53,38 +52,38 @@
 
       <!-- 메인 컨텐츠 -->
       <main id="container">
-        <div class="wrap">
-          <div class="loginBox">
-            <div>
-              <p id="login">로그인</p>
-              <p><label for="id">아이디</label><input id="id" type="text" /></p>
-              <p>
-                <label for="pwd">비밀번호</label
-                ><input id="pwd" type="password" />
-              </p>
-              <p id="msg"></p>
-              <p><button class="btn" id="loginBtn">로그인</button></p>
-
-              <div class="snsBox">
-                <p>SNS로그인</p>
-                <button class="sns_btn" id="google">
-                  <img src="../img/google_icon.png" alt="" />
-                </button>
-                <button class="sns_btn" id="kakao">
-                  <img src="../img/kakao_icon.png" alt="" />
-                </button>
-                <button class="sns_btn" id="naver">
-                  <img src="../img/naver_icon.png" alt="" />
-                </button>
-              </div>
-
-              <div class="findBox">
-                <p>
-                  <button class="btn" id="joinBtn">아이디/비밀번호 찾기</button>
-                </p>
-                <p><button class="btn" id="joinBtn">회원가입</button></p>
-              </div>
+        <div class="content">
+          <div class="text-box">
+            <div class="my-page">
+              <p>마이 페이지</p>
             </div>
+            <div class="information">
+              <p><a href="#">나의 정보수정</a></p>
+            </div>
+            <div class="activity">
+              <p><a href="#"> 나의 활동</a></p>
+          </div>
+        </div>
+        <div class="history">
+          <div class="menu">
+            <p class="notice">작성한 게시물</p>
+            <p class="coment">댓글</p>
+            <p class="review">리뷰</p>
+          </div>
+          <div class="record">
+            <p class="title">제목</p>
+            <p class="dateline">작성일</p>
+            <p class="star">별점</p>
+          </div>
+          <div class="substance">
+            <a href="#"><p class="substance-notice">Lorem ipsum dolor sit amet.</p></a>
+            <p class="substance-dateline">2022.08.13</p>
+            <p class="substance-star">3.5</p>
+          </div>
+          <div class="substance">
+            <a href="#"><p class="substance-notice">Lorem ipsum dolor sit amet.</p></a>
+            <p class="substance-dateline">2022.08.13</p>
+            <p class="substance-star">3.5</p>
           </div>
         </div>
       </main>
@@ -105,7 +104,7 @@
       </footer>
     </div>
 
-    <script src="../js/layout-sub.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../../js/layout-sub.js"></script>
   </body>
 </html>
+
