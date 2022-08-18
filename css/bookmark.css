@@ -19,3 +19,5 @@
 #container .bookmark ul>li:nth-child(3) {padding: 5px; }
 #container .bookmark ul>li:nth-child(4) {padding: 5px; }
 #container .bookmark i {font-size: 2rem;}
+
+.bookmark-btn-color { color: #f39c12; }
