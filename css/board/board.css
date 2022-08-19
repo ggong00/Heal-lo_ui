@@ -15,7 +15,7 @@
 }
 
 #container .title {
-  width: 18%;
+  width: 15%;
   flex-shrink: 0;
 }
 
@@ -43,7 +43,7 @@
 }
 
 #container .board {
-  width: 82%;
+  width: 85%;
 }
 
 #container .board .board__sort {
@@ -76,56 +76,42 @@
 #container .board .board__bottom {
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 60px;
 }
 
 #container .board .board__bottom .board__btn {
+  display: flex;
+  flex:1;
   align-self: flex-end;
+  /* margin: 10px;
+  box-sizing: border-box; */
 }
 
 #container .board .board__bottom .board__btn .btn__write {
-  width: 80px;
-  height: 30px;
-  margin: 20px;
+  width: 70px;
+  /* height: 30px; */
+  /* margin: 20px; */
+}
+#container .board .board__bottom .board__btn .btn__write:hover{
+  cursor: pointer;
 }
 
-#container .board .board__bottom .board__btn .btn__write a {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
 
 /* 검색 */
 
 #container .board .board__bottom .board__search {
   /* align-self: center; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
-#container .board .board__bottom .board__search select {
-  margin: 0 2px 0 0;
-  width: 92px;
-  height: 24px;
-  line-height: 24px;
-}
-#container .board .board__bottom .board__search input {
-  width: 162px;
-  height: 18px !important;
-}
 #container .board .board__bottom .board__search .btn__search {
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 2px 8px;
-  border: 1px solid #16a085;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: normal;
-  text-decoration: none;
-  vertical-align: middle;
-  word-spacing: -0.5px;
-  letter-spacing: 0;
-  text-align: center;
-  white-space: nowrap;
+  width: 70px;
+}
+#container .board .board__bottom .board__search .btn__search:hover{
+  cursor: pointer;
 }
 
 /* 페이징 */
