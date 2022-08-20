@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=igjbcnj0cq"></script>
@@ -92,18 +93,26 @@
               <ul class="searched-lists" id="searchedLists">
                 <li class="searched-lists__item">
                   <div class="item-img">
-                    <img src="/img/이미지준비중.jpg" alt="">
+                    <img src="../../img/이미지준비중.jpg" alt="">
                   </div>
                   <div class="item-content">
                     <div class="item-content__top">
                       <h3 class="item-title">울산공공헬스장</h3>
-                      <i class="fa-solid fa-heart section1__favorite-icon favorite-icon"></i>
+                      <div class="icon-wrap">
+                        <span class="fa-stack fa-lg favorite-icon">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa-solid fa-heart fa-stack-1x contents-icon"></i>
+                        </span>
+                        <span class="fa-stack fa-lg move-map-icon">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa-solid fa-map-location-dot fa-stack-1x contents-icon"></i>
+                        </span>
+                      </div>
                     </div>
                     <div class="item-content__body">
-                      <p class="item-sub">010-8888-7711</p>
-                      <p class="item-sub">울산 중구 옥교동 xxxx</p>
-                      <p class="item-sub">추가내용</p>
-                      <p class="item-sub">추가내용</p>
+                      <p class="item-tel">010-8888-7711</p>
+                      <p class="item-addr">울산 중구 옥교동 xxxx</p>
+
                     </div>
                   </div>
                 </li>
@@ -129,8 +138,13 @@
               </ul>
             </div>
 
-            <div class="lists-openbar">
-              <i class="fa-solid fa-arrow-down-short-wide openbar-icon"></i>
+            <div class="map-util">
+              <div class="open-list util">
+                <i class="fa-solid fa-arrow-down-short-wide"></i>
+              </div>
+              <div class="my-location util">
+                <span>내 위치</span>
+              </div>
             </div>
 
             <div class="search-map__api">
@@ -161,6 +175,6 @@
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
   <script src="../../js/template/layout-sub.js"></script>
-  <script type="module" src="/js/search-facility/search-page.js"></script>
+  <script type="module" src="../../js/search-facility/search-page.js"></script>
 </body>
 </html>

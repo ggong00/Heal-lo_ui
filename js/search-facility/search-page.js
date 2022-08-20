@@ -8,9 +8,12 @@ const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loc
 const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
 const $searchForm = document.querySelector('.text-input__body');
 const $inputByText = document.getElementById('textSearchInput');
-const $searchedWrap = document.querySelector('.text-input__header');  
 const $searchedLists = document.querySelector('.searched-wrap .searched-lists');
-const $resultCount = document.querySelector('.result-count')
+const $resultCount = document.querySelector('.result-count');
+const $mapUtil = document.querySelector('.map-util');
+const $openList = document.querySelector('.open-list');
+const $myLocation = document.querySelector('.my-location');
+
 
 // 다용도 전역변수
 let selectedLog = {before : '', now : ''};
@@ -21,25 +24,45 @@ const limitPageNum = 10;
 const onePageNum = 10;
 let createListStatus = 'false';
 
-//선택된 카테고리 배열
-let selectedCgLocaSave = {level1 : '', level2 : ''};  //지역 선택 저장
-let selectedTypeCgSave = ''; //운동분류 저장
-let searchedTextSave = 'all';  //시설명 검색어 저장
-
-// 목록 하이드바 위치지정
-const openBar = document.querySelector('.lists-openbar');
-
-openBar.addEventListener('click',() => {
-  actionOpenMenu();
-  actionOpenMenu_icon();
-})
-
 // 네이버 지도 생성
 const mapOptions = {
   center: new naver.maps.LatLng(35.5352, 129.3109),
   zoom: 8
 };
 const map = new naver.maps.Map('map', mapOptions);
+
+const mapUtil = new MapUtile(map);
+
+//선택된 카테고리 배열
+let selectedCgLocaSave = {level1 : '', level2 : ''};  //지역 선택 저장
+let selectedTypeCgSave = ''; //운동분류 저장
+let searchedTextSave = 'all';  //시설명 검색어 저장
+
+//리스트 오픈버튼 클릭 이벤트
+$openList.addEventListener('click',() => {
+  actionOpenMenu();
+})
+
+//내 위치 버튼 클릭 이벤트
+$myLocation.addEventListener('click', () => {
+  if (!navigator.geolocation) {
+    alert('내 위치정보를 지원하지 않는 브라우저입니다.');
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        mapUtil.makeMyMarker(lat, lng);
+      },
+      (positionError) => {
+        console.log(positionError.code,positionError.message);
+        alert('위치를 불러오는 중 오류가 생겼습니다.');
+      }
+  );
+});
 
 // 지역 카테고리 lv1 랜더링 
 RenderingUlTagLv1($cgListsByLoca1,categoryLoca_lv1);
@@ -206,30 +229,25 @@ function RenderingUlTagLv2(ulTag,arr,parentLv) {
 }
 
 // 메뉴 오픈 함수
-function actionOpenMenu_icon() {
-  openBar.classList.toggle('open');
-  openBar.classList.toggle('open-action-icon');
+function actionOpenMenu() {
+  $mapUtil.classList.toggle('open');
+  $searchedLists.classList.toggle('open-lists');
 
   setTimeout(() => {
-    const beforeIcon = openBar.querySelector('i');
+    const beforeIcon = $mapUtil.querySelector('.open-list i');
     beforeIcon.remove();
 
     const afterIcon = document.createElement('i');
 
-    
-      if(openBar.classList.contains('open')) {
+      if($mapUtil.classList.contains('open')) {
         afterIcon.setAttribute('class','fa-solid fa-arrow-up-short-wide openbar-icon');
       } else {
         afterIcon.setAttribute('class','fa-solid fa-arrow-down-short-wide openbar-icon');
       }
-    
-    openBar.appendChild(afterIcon);
+
+    $openList.appendChild(afterIcon);
 
   },300)
-}
-
-function actionOpenMenu() {
-  $searchedLists.classList.toggle('open-action');
 }
 
 //운동시설 항목 생성 함수
@@ -237,18 +255,25 @@ function createList(itemData) {
   const listWrap =
       makeElements('div', {class: 'searched-lists__item'},
           makeElements('div', {class: 'item-img'},
-              makeElements('img', {src: '../img/이미지준비중.jpg'})),
+              makeElements('img', {src: '../../img/이미지준비중.jpg'})),
           makeElements('div', {class: 'item-content'},
               makeElements('div', {class: 'item-content__top'},
                   makeElements('a', {href: '#'},
                       makeElements('h3', {class: 'item-title'}, itemData.faciNm)),
-                  makeElements('i', {class: 'fa-solid fa-heart section1__favorite-icon favorite-icon'})),
+                  makeElements('div', {class: 'icon-wrap'},
+                      makeElements('span',{class : 'fa-stack fa-lg favorite-icon'},
+                          makeElements('i',{class : 'fa fa-square fa-stack-2x'}),
+                          makeElements('i',{class : 'fa-solid fa-heart fa-stack-1x contents-icon'})),
+                      makeElements('span', {class: 'fa-stack fa-lg move-map-icon'},
+                          makeElements('i',{class : 'fa fa-square fa-stack-2x'}),
+                          makeElements('i',{class : 'fa-solid fa-map-location-dot fa-stack-1x contents-icon'})))),
               makeElements('div', {class: 'item-content__body'},
-                  makeElements('p', {class: 'item-sub item-sub1'}, itemData.faciMngType),
-                  makeElements('p', {class: 'item-sub item-sub2'}, itemData.fcobNm),
-                  makeElements('p', {class: 'item-sub item-sub3'}, itemData.inoutGbn),
                   makeElements('p', {class: 'item-sub item-tel'}, itemData.faciTel),
                   makeElements('p', {class: 'item-sub item-addr'},itemData.faciRoadAddr1))));
+
+  listWrap.querySelector('.move-map-icon').addEventListener('click',() => {
+    mapUtil.moveMap(itemData.faciPointY,itemData.faciPointX)
+  })
 
   return listWrap;
 }
@@ -284,8 +309,8 @@ function createPagination(dataArr) {
       [...page.querySelectorAll('a')].forEach(ele => ele.classList.remove('select-on'));
       e.target.classList.add('select-on');
 
-      const mapUtile = new MapUtile(map);
-      mapUtile.makeMarker(pageLists)
+
+      mapUtil.makeMarkers(pageLists)
     })
 
     page.appendChild(a);
@@ -327,6 +352,8 @@ function requestPublicApi(faciNm,fcobNm,faciRoadAddr1,pageNo) {
 
   xhr.addEventListener('readystatechange', () => {
 
+    createListStatus = true;
+
     if (xhr.readyState == XMLHttpRequest.DONE) {
 
       if (xhr.status == 0 || (xhr.status >= 200 && xhr.status < 400)) {
@@ -357,7 +384,6 @@ function requestPublicApi(faciNm,fcobNm,faciRoadAddr1,pageNo) {
 
         if (!$searchedLists.classList.contains('open-action')) {
           actionOpenMenu();
-          actionOpenMenu_icon();
         }
 
       } else {
@@ -365,6 +391,5 @@ function requestPublicApi(faciNm,fcobNm,faciRoadAddr1,pageNo) {
       }
 
     }
-    createListStatus = true;
   })
 }

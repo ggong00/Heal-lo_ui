@@ -81,8 +81,6 @@
   padding: 12px;
   color: rgb(46, 63, 77);
   background-color: #ffffff99;
-  border-bottom-left-radius: 16px;
-  border-top-right-radius: 16px;
   cursor: pointer;
   transition: all 0.4s;
 }
@@ -131,10 +129,12 @@
   padding: 0;
   padding-bottom: 32px;
   opacity: 0.9;
+  pointer-events: none;
 }
 .search__main .search-body .searched-wrap .text-input {
   width: 100%;
   height: 10%;
+  pointer-events: auto;
 }
 .search__main .search-body .searched-wrap .text-input__header {
   display: flex;
@@ -144,6 +144,7 @@
   padding: 6px;
   width: 100%;
   background-color: var(--color-others-header);
+  pointer-events: auto;
 }
 .search__main .search-body .searched-wrap .text-input__header::after {
   content: attr(-data-after);
@@ -179,8 +180,9 @@
   margin-top: 12px;
   background-color: rgba(255, 255, 255, 0.959);
   transition: ease-in-out 0.5s;
+  pointer-events: auto;
 }
-.search__main .search-body .searched-wrap .open-action {
+.search__main .search-body .searched-wrap .open-lists {
   height: 85%;
 }
 .search__main .search-body .searched-wrap .searched-lists__item {
@@ -188,16 +190,6 @@
   min-height: 100px;
   margin: 8px;
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-} 
-.search__main .search-body .searched-wrap .searched-lists__item .favorite-icon {
-  display: block;
-  cursor: pointer;
-  color: #acadae;
-  font-size: 18px;
-  transition: all 0.3s;
-}
-.search__main .search-body .searched-wrap .searched-lists__item .favorite-icon:hover {
-  color: rgba(255, 155, 172, 0.462);
 }
 .search__main .search-body .searched-wrap .item-img {
   flex: 1;
@@ -219,14 +211,23 @@
   font-size: 1em;
   font-weight: 600;
 }
+.search__main .search-body .searched-wrap .searched-lists__item .icon-wrap {
+  font-size: 10px;
+  cursor: pointer;
+  min-width: 65px;
+}
+.search__main .search-body .searched-wrap .searched-lists__item .contents-icon {
+  color: white;
+  transition: all 0.3s;
+}
+.search__main .search-body .searched-wrap .searched-lists__item .contents-icon:hover {
+  color: var(--color-main-header)
+}
 .search__main .search-body .searched-wrap .item-content__body {
   font-size: 0.7em;
 }
 .search__main .search-body .searched-wrap .item-content__body .item-sub{
   margin: 4px 0;
-}
-.search__main .search-body .searched-wrap .item-content__body .item-sub1::before {
-  content: '[분류]';
 }
 .search__main .search-body .searched-wrap .item-content__body .item-tel::before {
   content: '[전화번호]';
@@ -242,20 +243,38 @@
 }
 
 /* 목록 하이드바 */
-.lists-openbar {
+.map-util {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: absolute;
-  text-align: center;
   z-index: 5;
-  background-color: var(--color-main-header);
-  padding: 2px;
+  bottom: 540px;
+  left: 0;
+  width: 350px;
+  height: 50px;
+  padding: 4px;
   transition: ease-in-out 0.5s;
-  cursor: pointer;
-  bottom: 560px;
-  left: 10px;
-  width: 50px;
+  font-size: 14px;
 }
-.open-action-icon {
-  bottom: 20px;
+.map-util .util {
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 2px 18px;
+}
+.map-util .open-list {
+  background-color: var(--color-main-header);
+}
+.map-util .my-location {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-main-header);
+}
+.map-util .fa-location-arrow {
+  color: white;
+}
+.open {
+  bottom: 10px;
 }
 
 /* 검색 메인 섹션2 */
@@ -264,6 +283,25 @@
   position: relative;
   width: 100%;
   height: 650px;
+}
+.marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 30px;
+  font-size: 22px;
+}
+.facility-location-marker {
+  color: var(--color-main-header);
+}
+
+.my-location-marker {
+  color: var(--color-others-header);
+}
+.infoWindow {
+  padding: 2px;
+  font-size: 14px;
 }
 
 #footer {
