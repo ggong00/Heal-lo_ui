@@ -19,6 +19,9 @@
 .myInformation label#id {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
 .myInformation input#id {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
+.myInformation label#email {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
+.myInformation input#email {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
+
 .myInformation label#changePw {font-weight: 500; margin-top: 30px; margin-bottom: 15px;}
 .myInformation input#changePw {padding: 10px 2px; border: 1px solid #888; border-radius: 10px;}
 
@@ -30,9 +33,9 @@
 
 
 .myInformation .btn {display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; height: 162px;}
-.myInformation .btn #btnChange {width: 80px; background-color: #16a085; color: white; }
+.myInformation .btn #btnChange {width: 80px; background-color: #16a085; color: white; margin-top: 10px; }
 .myInformation .btn #btnOut {width: 50px; background-color: #16a085; color: white;  margin-left: 440px;}
 
 #container #none {position: relative; flex: 1;}
 #container #none button {position: absolute; left: 25px; top: 215px;}
-#container #none p {position: absolute; left: 25px; top: 415px;}
+#container #none p {position: absolute; left: 25px; top: 515px;}

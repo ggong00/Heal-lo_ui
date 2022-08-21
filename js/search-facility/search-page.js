@@ -33,7 +33,7 @@ const map = new naver.maps.Map('map', mapOptions);
 
 const mapUtil = new MapUtile(map);
 
-//선택된 카테고리 배열
+//선택된 카테고리
 let selectedCgLocaSave = {level1 : '', level2 : ''};  //지역 선택 저장
 let selectedTypeCgSave = ''; //운동분류 저장
 let searchedTextSave = 'all';  //시설명 검색어 저장
