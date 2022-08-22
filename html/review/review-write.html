@@ -6,8 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/css/template/common.css">
-<link rel="stylesheet" href="/css/template/layout-sub.css">
+<link rel="stylesheet" href="../../css/template/common.css">
+<link rel="stylesheet" href="../../css/template/layout-sub.css">
+<link rel="stylesheet" href="../../css/review/review-write.css">
 </head>
 <body>
     <div id="wrapper">
@@ -35,14 +36,73 @@
                 <a href="#"><i class="fa-solid fa-location-dot header__site-icon"></i></a>
                 <a href="#"><i class="fa-solid fa-book-open header__site-icon"></i></a>
                 <a href="#"><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
-                <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
             </div>
         </div>  
     </header>
 
     <!-- 메인 컨텐츠 -->
     <main id="container">
-        
+        <section class="content">
+            <p class="page-title">리뷰작성</p>
+
+            <div class="facility-card">
+                <div class="card-img">
+                    <img src="../../img/이미지준비중.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="card-content__top">
+                        <h3 class="card-title">울산공공헬스장</h3>
+                        <div class="icon-wrap">
+                            <span class="fa-stack fa-lg favorite-icon">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa-solid fa-heart fa-stack-1x contents-icon"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-content__body">
+                        <p class="card-tel">010-8888-7711</p>
+                        <p class="card-addr">울산 중구 옥교동 xxxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="" method="" class="review-write-form form-editor">
+                <ul class="editor-menu" id="editorMenu">
+                    <li id="bold" data-style="bold">
+                        <b>B</b>
+                    </li>
+                    <li id="italic" data-style="italic">
+                        <i>I</i>
+                    </li>
+                    <li id="underline" data-style="underline">
+                        <u>U</u>
+                    </li>
+                    <li id="strike" data-style="strikeThrough">
+                        <s>S</s>
+                    </li>
+                    <li id="orderedList" data-style="insertOrderedList">
+                        OL
+                    </li>
+                    <li id="unorderedList" data-style="insertUnorderedList">
+                        UL
+                    </li>
+                    <li id="image">
+                        IMG
+                    </li>
+                </ul>
+                <div class="textarea" name="" id="editor" contentEditable='true'></div>
+                
+                <div>
+                    <input type="file"multiple="multiple" enctype="multipart/form-data">
+                </div>
+                <div></div>
+            </form>
+
+            <div>
+
+            </div>
+        </section>
+            
     </main>
 
     <!-- footer -->
@@ -61,5 +121,6 @@
     </div>  
     
     <script src="../../js/template/layout-sub.js"></script>
+    <script src="../../js/module/form-editor.js"></script>
 </body>
 </html>

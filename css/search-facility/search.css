@@ -226,9 +226,6 @@
 .search__main .search-body .searched-wrap .item-content__body {
   font-size: 0.7em;
 }
-.search__main .search-body .searched-wrap .item-content__body .item-sub{
-  margin: 4px 0;
-}
 .search__main .search-body .searched-wrap .item-content__body .item-tel::before {
   content: '[전화번호]';
 }

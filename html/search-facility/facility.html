@@ -112,10 +112,6 @@
             <h3 class="facility-detail__title">수업 종목</h3>
             <div class="facility-detail__sub">
               <span>헬스</span>
-              <span>수영</span>
-              <span>공프</span>
-              <span>당구</span>
-              <span>요가</span>
             </div>
           </div>
 
@@ -135,11 +131,10 @@
           </div>
 
           <div class="review-header__main">
-            <div class="review-header__title">리뷰</div>
-            <div class="review-header__avg review-avg">
-              <p>0.0</p>
+            <div class="review-header__top">
+              <p class="review-header__title">리뷰</p> 
+              <p class="review-header__avg review-avg">0.0</p>
             </div>
-
             <div class="review-header__star">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -150,7 +145,7 @@
           </div>
 
           <div class="review__btn-write">
-            <button class="btn btn-primary btn-review">리뷰작성</button>
+            <button class="review-write btn-review">리뷰작성</button>
           </div>
         </article>
 
@@ -181,7 +176,12 @@
               <span class="user-name">이재진</span>
               <span class="date">2022.09.09</span>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
                 aspernatur.</p>
+            </div>
+            <div class="review-btn-wrap">
+              <button class="review-update btn-review">수정</button>
+              <button class="review-delete btn-review">삭제</button>
             </div>
           </div>
 
@@ -263,7 +263,7 @@
         </article>  
 
         <nav aria-label="Page navigation example" class="pagination-wrap">
-          <ul class="pagination pagination-lg">
+          <ul class="pagination pagination-md">
             <li class="page-item">
               <a class="page-link shadow-none" href="#reviewContainer" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
