@@ -18,6 +18,11 @@
   font-size: 1.6rem; font-weight: bold;
   margin: 40px 0px;
 }
+
+.history .menu .notice:hover{scale: 1.2; transition: all 0.8s;}
+.history .menu .coment:hover{scale: 1.2; transition: all 0.8s;}
+.history .menu .review:hover{scale: 1.2; transition: all 0.8s;}
+
 .history .record {
   display: flex;
   border: 1px solid #ccc;
