@@ -126,7 +126,16 @@
 }
 .textarea:focus {
     outline: 1px solid var(--color-main-header);
-    
+}
+/* 이미지 미리보기 */
+.preview-img {
+    margin: 6px 0;
+}
+.preview-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin: 0 4px;
 }
 /* 리뷰 등록 버튼 */
 .review-reg {

@@ -77,11 +77,16 @@
                     <p class="text-score">0.0</p>
                 </div>
             </article>    
-            <form action="" method="" class="review-write-form form-editor">
+            <form action="" method="" class="review-write-form">
                 <div class="textarea" name="" id="editor" contenteditable='true'></div>
-                <div class="review-reg">
-                    <button class="btn-reg">등록</button>
+                <div class="upload-img-wrap">
+                    <input class="input-img" type="file" multiple accept=".png , .jpg">
+                    <div class="preview-img">
+                    </div>
                 </div>
+                <!-- <div class="review-reg">
+                    <button class="btn-reg">등록</button>
+                </div> -->
             </form>
 
         </section>
@@ -105,6 +110,5 @@
     
     <script src="../../js/template/layout-sub.js"></script>
     <script src="../../js/review/review-witre.js"></script>
-    <script src="../../js/module/form-editor.js"></script>
 </body>
 </html>
