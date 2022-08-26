@@ -6,8 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/css/template/common.css">
-<link rel="stylesheet" href="/css/template/layout-sub.css">
+<link rel="stylesheet" href="../../css/template/common.css">
+<link rel="stylesheet" href="../../css/template/layout-sub.css">
+<link rel="stylesheet" href="../../css/review/review.css">
 </head>
 <body>
     <div id="wrapper">
@@ -35,14 +36,61 @@
                 <a href="#"><i class="fa-solid fa-location-dot header__site-icon"></i></a>
                 <a href="#"><i class="fa-solid fa-book-open header__site-icon"></i></a>
                 <a href="#"><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
-                <a href="#"><i class="fa-solid fa-heart header__site-icon"></i></a>
             </div>
         </div>  
     </header>
 
     <!-- 메인 컨텐츠 -->
     <main id="container">
-        
+        <section class="content">
+            <p class="page-title">리뷰수정</p>
+            <article class="review-form-header">
+                <div class="facility-card">
+                    <div class="card-img">
+                        <img src="../../img/이미지준비중.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-content__top">
+                            <h3 class="card-title">울산공공헬스장</h3>
+                            <div class="icon-wrap">
+                                <span class="fa-stack fa-lg favorite-icon">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa-solid fa-heart fa-stack-1x contents-icon"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-content__body">
+                            <p class="card-tel">010-8888-7711</p>
+                            <p class="card-addr">울산 중구 옥교동 xxxx</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-score">
+                    <p>별점을 매겨주세요</p>
+                    <p class="text-score">0.0</p>
+                    <div class="outer-star">
+                        ★★★★★
+                        <span class="inner-star">
+                            ★★★★★
+                        </span>
+                        <input class="change-score" type="range" value="1" step="1" min="0" max="10">
+                    </div>    
+                </div>
+            </article>    
+            <article class="review-write-form">
+                <div class="textarea" name="" id="editor" contenteditable='true'></div>
+                <div class="upload-img-wrap">
+                    <label for="inputImg">이미지 업로드</label>
+                    <div class="review-reg">
+                        <button class="btn-cancle revire-btn">취소</button>
+                        <button class="btn-update revire-btn">수정완료</button>
+                    </div>
+                    <input class="input-img" id="inputImg" type="file" multiple accept=".png , .jpg">                    
+                </div>
+                <div class="preview-wrap">
+                </div>
+            </article>
+        </section>
     </main>
 
     <!-- footer -->
@@ -61,5 +109,6 @@
     </div>  
     
     <script src="../../js/template/layout-sub.js"></script>
+    <script type="module" src="../../js/review/review-update.js"></script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-export {makeElements}
-
 /*
   element 생성 함수
   element이름(name),속성(attributes),자식노드를 포함하는 element를 만들어 반환한다.
@@ -31,3 +29,5 @@ function makeElements(name, attributes, ...contents){
 
   return node;
 }
+
+export {makeElements}

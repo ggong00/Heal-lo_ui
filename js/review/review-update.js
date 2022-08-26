@@ -5,7 +5,8 @@ const $changeScore = document.querySelector('.change-score');
 const $inputImg = document.querySelector('.input-img');
 const $previewWrap = document.querySelector('.preview-wrap');
 const $textarea = document.querySelector('.textarea');
-const $RegBtn = document.querySelector('.btn-reg');
+const $RegBtn = document.querySelector('.btn-update');
+const $cancleBtn = document.querySelector('.btn-cancle');
 
 let ratingScore = 0;
 let uploadImgs = [];
@@ -56,7 +57,7 @@ $inputImg.addEventListener('change',({target}) => {
     });
 })
 
-//등록 버튼 이벤트
+//수정완료 버튼 이벤트
 $RegBtn.addEventListener('click', () => {
     const submitData = {
         ratingScore : ratingScore,
@@ -67,12 +68,17 @@ $RegBtn.addEventListener('click', () => {
     // requestPublicApi(submitData);
 })
 
+//취소버튼 이벤트
+$cancleBtn.addEventListener('click', () => {
+    console.log('취소')
+})
+
 // 서버에 외부api 통신요청(GET,Accept = json)
 function requestPublicApi(data) {
     const xhr = new XMLHttpRequest();
     const url = 'http://localhost:9080/public/review'; //매핑url은 수정 가능성 있음
     
-    xhr.open('POST',url);
+    xhr.open('UPDATE',url);
     xhr.send(JSON.stringify(data));
 } 
 

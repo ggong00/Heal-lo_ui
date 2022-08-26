@@ -12,17 +12,15 @@
 /* 페이지 타이틀 */
 .page-title {
     display: inline-block;
-    width: 200px;
     padding: 8px 0;
     margin: 12px 0;
-    font-size: 1.4em;
+    font-size: 1.2em;
     text-align: center;
-    background-color: var(--color-main-header);
     border-radius: 4px;
 }
 
 /* 리뷰작성 헤더 */
-.write-header {
+.review-form-header {
     display: flex;
     align-items: center;
     margin: 24px 0;
@@ -128,8 +126,32 @@
     outline: 1px solid var(--color-main-header);
 }
 /* 이미지 미리보기 */
+.upload-img-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 12px 0;
+}
+.upload-img-wrap label {
+    display: inline-block;
+    font-size: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--color-others-header);
+    cursor: pointer;
+    color: white;
+}
+.input-img {
+    display: none;
+}
+.preview-wrap {
+    display: flex;
+    margin: 24px 0;
+    height: 150px;
+}
 .preview-img {
-    margin: 6px 0;
+    display: flex;
+    flex-direction: column;
 }
 .preview-img img {
     width: 100px;
@@ -137,11 +159,22 @@
     border-radius: 12px;
     margin: 0 4px;
 }
-/* 리뷰 등록 버튼 */
-.review-reg {
-    text-align: end;
+.preview-img button {
+    border-style: none;
+    background-color: rgb(246, 75, 75, 0.6);
+    margin: 4px;
+    padding: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
 }
-.btn-reg {
+.preview-img button:hover {
+    background-color: rgb(246, 75, 7);
+}
+
+/* 리뷰 관련 버튼 */
+.revire-btn {
     background-color: var(--color-others-header);
     color: white;
     border-style: none;
@@ -151,3 +184,4 @@
     cursor: pointer;
     border-radius: 4px;
 }
+

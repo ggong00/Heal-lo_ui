@@ -8,7 +8,7 @@
 <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../../css/template/common.css">
 <link rel="stylesheet" href="../../css/template/layout-sub.css">
-<link rel="stylesheet" href="../../css/review/review-write.css">
+<link rel="stylesheet" href="../../css/review/review.css">
 </head>
 <body>
     <div id="wrapper">
@@ -44,7 +44,7 @@
     <main id="container">
         <section class="content">
             <p class="page-title">리뷰작성</p>
-            <article class="write-header">
+            <article class="review-form-header">
                 <div class="facility-card">
                     <div class="card-img">
                         <img src="../../img/이미지준비중.jpg" alt="">
@@ -67,6 +67,7 @@
                 </div>
                 <div class="rating-score">
                     <p>별점을 매겨주세요</p>
+                    <p class="text-score">0.0</p>
                     <div class="outer-star">
                         ★★★★★
                         <span class="inner-star">
@@ -74,23 +75,21 @@
                         </span>
                         <input class="change-score" type="range" value="1" step="1" min="0" max="10">
                     </div>    
-                    <p class="text-score">0.0</p>
                 </div>
             </article>    
-            <form action="" method="" class="review-write-form">
+            <article class="review-write-form">
                 <div class="textarea" name="" id="editor" contenteditable='true'></div>
                 <div class="upload-img-wrap">
-                    <input class="input-img" type="file" multiple accept=".png , .jpg">
-                    <div class="preview-img">
+                    <label for="inputImg">이미지 업로드</label>
+                    <div class="review-reg">
+                        <button class="btn-reg revire-btn">등록</button>
                     </div>
+                    <input class="input-img" id="inputImg" type="file" multiple accept=".png , .jpg">                    
                 </div>
-                <!-- <div class="review-reg">
-                    <button class="btn-reg">등록</button>
-                </div> -->
-            </form>
-
+                <div class="preview-wrap">
+                </div>
+            </article>
         </section>
-            
     </main>
 
     <!-- footer -->
@@ -109,6 +108,6 @@
     </div>  
     
     <script src="../../js/template/layout-sub.js"></script>
-    <script src="../../js/review/review-witre.js"></script>
+    <script type="module" src="../../js/review/review-witre.js"></script>
 </body>
 </html>
