@@ -92,7 +92,8 @@ a:hover {
   align-items: center;
   box-sizing: content-box;
   width: 80%;
-  margin: 48px auto;
+  margin-top: 120px;
+  margin-bottom: 24px;
 }
 .review-header {
   display: flex;
@@ -142,11 +143,11 @@ a:hover {
 }
 .review-lists {
   width: 700px;
+  margin-top: 48px;
 }
 .review-lists .review-card {
   position: relative;
   display: flex;
-  height: 150px;
   min-width: 600px;
   margin: 36px 0;
   border-bottom: 1px solid rgba(134, 132, 132, 0.368);
@@ -172,7 +173,8 @@ a:hover {
   justify-content: space-around;
   font-size: 1rem;
   border-width: 400;
-  margin: 18px;
+  margin: 12px 0;
+  padding: 0 32px;
 }
 .review-lists .review-card__info .user-name {
   font-size: 16px;
@@ -185,19 +187,39 @@ a:hover {
 .review-lists .review-card__star {
   position: absolute;
   top: 24px;
-  right: 24px;
+  right: 0;
   font-size: 1.5em;
+}
+.review-lists .preview-contents {
+  padding: 12px 36px;
 }
 .review-lists .review-btn-wrap {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  right: -40px;
   bottom: 0;
+  right: 0;
 }
 .review-lists .review-btn-wrap .btn-review {
   margin: 8px 2px;
   padding: 8px;
+}
+.preview-wrap {
+  margin: 0 36px;
+}
+.preview-wrap img {
+  width: 100px;
+  height: 100px;
+  margin: 4px;
+}
+
+.btn-moreview {
+  position: absolute;
+  top: 12px;
+  left: 148px;
+  padding: 6px;
+  background-color: #cfe4f9;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .pagination-wrap .pagination a {
@@ -206,7 +228,6 @@ a:hover {
   color: var(--color-main-header);
 }
 
-/* 별점 */
 /* 별점 */
 .rating-score {
   flex: 1;
@@ -253,7 +274,7 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   top: 30%;
-  min-width: 1000px;
+  min-width: 1200px;
   height: 0;
 }
 .fixed-menu {

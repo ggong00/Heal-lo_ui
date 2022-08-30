@@ -5,7 +5,7 @@
   속성(attributes)객체 구조 { 속성명1:속성값1, 속성명2:속성값2,....}
 */
 
-function makeElements(name, attributes, ...contents){
+export default function makeElements(name, attributes, ...contents){
   const node = document.createElement(name);
   if(attributes){
     for(let attr in attributes) {
@@ -29,5 +29,3 @@ function makeElements(name, attributes, ...contents){
 
   return node;
 }
-
-export {makeElements}

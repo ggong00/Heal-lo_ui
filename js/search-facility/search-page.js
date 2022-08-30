@@ -1,5 +1,5 @@
 import {categoryLoca_lv1, categoryLoca_lv2, category_fctype} from "../module/category.js";
-import {makeElements} from "../module/create-elememt.js";
+import makeElements from "../module/create-elememt.js";
 import {MapUtile} from "../module/naver-map-api.js";
 
 // dom접근

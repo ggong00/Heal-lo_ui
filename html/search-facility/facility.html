@@ -125,12 +125,25 @@
       <!-- 리뷰 정보 -->
       <section class="review" id="reviewContainer"> 
         <p class="review-header__title">리뷰</p> 
+
+        <!-- 사이드 메뉴바 -->
+        <div class="fixed-menu-wrap">
+          <div class="fixed-menu">
+            <a href="#container" class="move-top"><i class="fa-solid fa-arrow-up-long"></i></a>
+            <a href="#" class=""><i class="fa-solid fa-location-dot header__site-icon"></i></a>
+            <a href="#" class=""><i class="fa-solid fa-book-open header__site-icon"></i></a>
+            <a href="#" class=""><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
+          </div>
+        </div> 
+
         <!-- 시설 리뷰 정보 -->
         <article class="review-header">
           <div class="total-info">
             <p class="total">전체 리뷰 : <span class="new-review__cnt">18개</span></p>
           </div>
+
           <div class="review-header__main">
+            
             <div class="rating-score">
               <p class="text-score">0.0</p>
               <div class="outer-star">
@@ -143,113 +156,16 @@
             </div>   
           </div>
 
+          
           <div class="review__btn-write">
             <button class="review-write btn-review">리뷰작성</button>
           </div>
         </article>
 
-        <div class="fixed-menu-wrap">
-          <div class="fixed-menu">
-            <a href="#container" class="move-top"><i class="fa-solid fa-arrow-up-long"></i></a>
-            <a href="#" class=""><i class="fa-solid fa-location-dot header__site-icon"></i></a>
-            <a href="#" class=""><i class="fa-solid fa-book-open header__site-icon"></i></a>
-            <a href="#" class=""><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
-          </div>
-        </div> 
 
         <!-- 리뷰 목록 -->
         <article class="review-lists">
 
-          <div class="review-card">
-            <div class="review-card__info">
-              <div class="rating-score review-card__star">
-                <div class="outer-star">
-                    ★★★★★
-                    <span class="inner-star">
-                        ★★★★★
-                    </span>
-                    <input class="change-score" type="range" value="1" step="1" min="0" max="10">
-                </div>    
-              </div> 
-              <span class="user-name">이재진</span>
-              <span class="date">2022.09.09</span>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                aspernatur.</p>
-            </div>
-            <div class="review-btn-wrap">
-              <button class="review-update btn-review">수정</button>
-              <button class="review-delete btn-review">삭제</button>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card__info">
-              <div class="rating-score review-card__star">
-                <div class="outer-star">
-                  ★★★★★
-                  <span class="inner-star">
-                      ★★★★★
-                  </span>
-                </div>    
-              </div> 
-              <span class="user-name">이재진</span>
-              <span class="date">2022.09.09</span>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                aspernatur.</p>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card__info">
-              <div class="rating-score review-card__star">
-                <div class="outer-star">
-                  ★★★★★
-                  <span class="inner-star">
-                      ★★★★★
-                  </span>
-                </div>    
-              </div> 
-              <span class="user-name">이재진</span>
-              <span class="date">2022.09.09</span>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                aspernatur.</p>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card__info">
-              <div class="rating-score review-card__star">
-                <div class="outer-star">
-                  ★★★★★
-                  <span class="inner-star">
-                      ★★★★★
-                  </span>
-                </div>    
-              </div> 
-              <span class="user-name">이재진</span>
-              <span class="date">2022.09.09</span>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                aspernatur. lorem</p>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card__info">
-              <div class="rating-score review-card__star">
-                <div class="outer-star">
-                  ★★★★★
-                  <span class="inner-star">
-                      ★★★★★
-                  </span>
-                </div>    
-              </div> 
-              <span class="user-name">이재진</span>
-              <span class="date">2022.09.09</span>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
-                aspernatur.</p>
-            </div>
-          </div>
         </article>  
 
         <nav aria-label="Page navigation example" class="pagination-wrap">
@@ -291,6 +207,7 @@
   
   
   <script src="../../js/template/layout-sub.js"></script>
+  <script type="module" src="../../js/search-facility//facility.js"></script>
 </body>
 
 </html>
