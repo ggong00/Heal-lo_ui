@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/template/common.css">
@@ -21,27 +22,27 @@
     <header id="header">
       <!-- 탑 메뉴 -->
       <div class="header__menu-top">
-        <span class="header__my-menu"><a href="#">로그아웃</a></span>
-        <span class="header__my-menu"><a href="#">마이페이지</a></span>
-        <span class="header__my-menu"><a href="#">즐겨찾기</a></span>
+          <span class="header__my-menu"><a href="#">로그아웃</a></span>
+          <span class="header__my-menu"><a href="#">마이페이지</a></span>
+          <span class="header__my-menu"><a href="#">즐겨찾기</a></span>
       </div>
 
       <!-- 베너 -->
       <div class="header__banner">
-        <!-- 메인 로고 -->
-        <div class="header__main-logo">
-          <a href="#">
-            <h1 class="header__main-title">Heal-lo</h1>
-            <p class="header__sub-title">:Healthy location</p>
-          </a>
-        </div>
-        <div class="header__sitemenu" id="siteMenuContain">
-          <div class="header__sitemenu-info" id="sitemenuInfo">게시판</div> <!-- 스크립트용 -->
-          <a href="#"><i class="fa-solid fa-location-dot header__site-icon"></i></a>
-          <a href="#"><i class="fa-solid fa-book-open header__site-icon"></i></a>
-          <a href="#"><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
-        </div>
-      </div>
+          <!-- 메인 로고 -->
+          <div class="header__main-logo">
+              <a href="#">
+                  <h1 class="header__main-title">Heal-lo</h1>
+                  <p class="header__sub-title">:Healthy location</p>
+              </a>  
+          </div>
+          <div class="header__sitemenu" id="siteMenuContain">
+              <div class="header__sitemenu-info" id="sitemenuInfo">게시판</div> <!-- 스크립트용 -->
+              <a href="#"><i class="fa-solid fa-location-dot header__site-icon"></i></a>
+              <a href="#"><i class="fa-solid fa-book-open header__site-icon"></i></a>
+              <a href="#"><i class="fa-solid fa-calendar-days header__site-icon"></i></a>
+          </div>
+      </div>  
     </header>
 
     <!-- 메인 컨텐츠 -->
@@ -123,25 +124,23 @@
 
       <!-- 리뷰 정보 -->
       <section class="review" id="reviewContainer"> 
+        <p class="review-header__title">리뷰</p> 
         <!-- 시설 리뷰 정보 -->
-        
         <article class="review-header">
           <div class="total-info">
             <p class="total">전체 리뷰 : <span class="new-review__cnt">18개</span></p>
           </div>
-
           <div class="review-header__main">
-            <div class="review-header__top">
-              <p class="review-header__title">리뷰</p> 
-              <p class="review-header__avg review-avg">0.0</p>
-            </div>
-            <div class="review-header__star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
+            <div class="rating-score">
+              <p class="text-score">0.0</p>
+              <div class="outer-star">
+                  ★★★★★
+                  <span class="inner-star">
+                      ★★★★★
+                  </span>
+                  <input class="change-score" type="range" value="1" step="1" min="0" max="10">
+              </div>    
+            </div>   
           </div>
 
           <div class="review__btn-write">
@@ -161,18 +160,17 @@
         <!-- 리뷰 목록 -->
         <article class="review-lists">
 
-          <div class="review-item">
-            <div class="review-item__img">
-              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-            </div>
-            <div class="review-item__info">
-              <div class="review-item__star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
+          <div class="review-card">
+            <div class="review-card__info">
+              <div class="rating-score review-card__star">
+                <div class="outer-star">
+                    ★★★★★
+                    <span class="inner-star">
+                        ★★★★★
+                    </span>
+                    <input class="change-score" type="range" value="1" step="1" min="0" max="10">
+                </div>    
+              </div> 
               <span class="user-name">이재진</span>
               <span class="date">2022.09.09</span>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
@@ -185,18 +183,16 @@
             </div>
           </div>
 
-          <div class="review-item">
-            <div class="review-item__img">
-              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-            </div>
-            <div class="review-item__info">
-              <div class="review-item__star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
+          <div class="review-card">
+            <div class="review-card__info">
+              <div class="rating-score review-card__star">
+                <div class="outer-star">
+                  ★★★★★
+                  <span class="inner-star">
+                      ★★★★★
+                  </span>
+                </div>    
+              </div> 
               <span class="user-name">이재진</span>
               <span class="date">2022.09.09</span>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
@@ -204,18 +200,16 @@
             </div>
           </div>
 
-          <div class="review-item">
-            <div class="review-item__img">
-              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-            </div>
-            <div class="review-item__info">
-              <div class="review-item__star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
+          <div class="review-card">
+            <div class="review-card__info">
+              <div class="rating-score review-card__star">
+                <div class="outer-star">
+                  ★★★★★
+                  <span class="inner-star">
+                      ★★★★★
+                  </span>
+                </div>    
+              </div> 
               <span class="user-name">이재진</span>
               <span class="date">2022.09.09</span>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
@@ -223,18 +217,16 @@
             </div>
           </div>
 
-          <div class="review-item">
-            <div class="review-item__img">
-              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-            </div>
-            <div class="review-item__info">
-              <div class="review-item__star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
+          <div class="review-card">
+            <div class="review-card__info">
+              <div class="rating-score review-card__star">
+                <div class="outer-star">
+                  ★★★★★
+                  <span class="inner-star">
+                      ★★★★★
+                  </span>
+                </div>    
+              </div> 
               <span class="user-name">이재진</span>
               <span class="date">2022.09.09</span>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
@@ -242,18 +234,16 @@
             </div>
           </div>
 
-          <div class="review-item">
-            <div class="review-item__img">
-              <img src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png" alt="">
-            </div>
-            <div class="review-item__info">
-              <div class="review-item__star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
+          <div class="review-card">
+            <div class="review-card__info">
+              <div class="rating-score review-card__star">
+                <div class="outer-star">
+                  ★★★★★
+                  <span class="inner-star">
+                      ★★★★★
+                  </span>
+                </div>    
+              </div> 
               <span class="user-name">이재진</span>
               <span class="date">2022.09.09</span>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
@@ -299,7 +289,7 @@
   </div>
 
   
-  <script src="https://kit.fontawesome.com/7ee6b8223a.js" crossorigin="anonymous"></script>
+  
   <script src="../../js/template/layout-sub.js"></script>
 </body>
 

@@ -22,6 +22,7 @@ const cgAddColor = 'var(--color-others-header)';
 let listPageNum = 0;
 const limitPageNum = 10;
 const onePageNum = 10;
+let nowPage = 1;
 let createListStatus = 'false';
 
 // 네이버 지도 생성
@@ -174,10 +175,15 @@ $searchForm.addEventListener('submit',(e) => {
   searchedTextSave =  value;
   $inputByText.value = '';
 
-  console.log("클릭")
-
   // 서버 통신
-  requestPublicApi(searchedTextSave,selectedTypeCgSave,selectedCgLocaSave,"1");
+  submitData = {
+    text : searchedTextSave,
+    type : selectedTypeCgSave,
+    loca : faciRoadAddr1.level2 == '전체' ? faciRoadAddr1.level1 : `${faciRoadAddr1.level1} ${faciRoadAddr1.level2}`,
+    pageNO : nowPage
+  }
+
+  requestPublicApi(submitData);
 
 })
 
@@ -332,18 +338,11 @@ function createPagination(dataArr) {
 }
 
 // 서버에 외부api 통신요청(GET,Accept = json)
-function requestPublicApi(faciNm,fcobNm,faciRoadAddr1,pageNo) {
-  let address = '';
-
-  if (faciRoadAddr1.level2 == '전체') {
-    address = faciRoadAddr1.level1;
-  } else {
-    address = `${faciRoadAddr1.level1} ${faciRoadAddr1.level2}`;
-  }
+function requestPublicApi(data) {
 
   const xhr = new XMLHttpRequest();
   const url = 'http://localhost:9080/public/search'; //매핑url은 수정 가능성 있음
-  const queryPram = `?faciNm=${faciNm}&fcobNm=${fcobNm}&faciRoadAddr1=${address}&pageNo=${pageNo}`;
+  const queryPram = `?faciNm=${data.text}&fcobNm=${data.type}&faciRoadAddr1=${data.loca}&pageNo=${data.pageNO}`;
   
   xhr.open('GET',url + queryPram);
   xhr.send();
@@ -378,9 +377,7 @@ function requestPublicApi(faciNm,fcobNm,faciRoadAddr1,pageNo) {
         listPageNum = jsonItem.length / onePageNum;
         createPagination(jsonItem);
 
-
         $resultCount.textContent = jsonBody.totalCount;
-        // 지도 변경
 
         if (!$searchedLists.classList.contains('open-action')) {
           actionOpenMenu();

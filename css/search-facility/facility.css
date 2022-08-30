@@ -6,13 +6,16 @@
   justify-content: center;
   align-items: center;
 }
+a:hover {
+  color: inherit;
+}
 .hr {
   height: 1px;
   width: 100%;
   margin: 0 auto;
   background-color: rgb(187, 183, 183);
 }
-.review-avg {
+.review-score {
   color: rgb(172, 172, 31);
 }
 
@@ -118,12 +121,14 @@
   align-items: center;
 }
 .review-header__title {
+  width: 700px;
   font-size: 1.5rem;
+  opacity: 0.8;
 }
 .review-header__star {
-  font-size: 1rem;
+  font-size: 2.5rem;
 }
-.review-header__avg {
+.review-header__score {
   font-size: 1.5rem;
   margin: 8px;
 }
@@ -138,7 +143,7 @@
 .review-lists {
   width: 700px;
 }
-.review-lists .review-item {
+.review-lists .review-card {
   position: relative;
   display: flex;
   height: 150px;
@@ -146,7 +151,7 @@
   margin: 36px 0;
   border-bottom: 1px solid rgba(134, 132, 132, 0.368);
 }
-.review-lists .review-item__img {
+.review-lists .review-card__img {
   background-color: azure;
   border-radius: 50%;
   width: 100px;
@@ -155,12 +160,12 @@
   flex-grow: 0;
   flex-shrink: 0;
 }
-.review-lists .review-item__img img {
+.review-lists .review-card__img img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
 }
-.review-lists .review-item__info {
+.review-lists .review-card__info {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -169,18 +174,19 @@
   border-width: 400;
   margin: 18px;
 }
-.review-lists .review-item__info .user-name {
+.review-lists .review-card__info .user-name {
   font-size: 16px;
   font-weight: 600;
 }
-.review-lists .review-item__info .date {
+.review-lists .review-card__info .date {
   font-size: 16px;
   margin-bottom: 18px;
 }
-.review-lists .review-item__star {
+.review-lists .review-card__star {
   position: absolute;
   top: 24px;
   right: 24px;
+  font-size: 1.5em;
 }
 .review-lists .review-btn-wrap {
   position: absolute;
@@ -191,13 +197,54 @@
 }
 .review-lists .review-btn-wrap .btn-review {
   margin: 8px 2px;
-  padding: 4px;
+  padding: 8px;
 }
 
 .pagination-wrap .pagination a {
   font-weight: 700;
   border-radius: 0px;
   color: var(--color-main-header);
+}
+
+/* 별점 */
+/* 별점 */
+.rating-score {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 48px;
+}
+.rating-score p {
+  font-size: 18px;
+}
+.rating-score .text-score {
+  font-size: 32px;
+  margin: 12px;
+}
+.rating-score .text-score::after{
+  content: '점';
+}
+.rating-score .outer-star {
+  position: relative;
+  pointer-events: none;
+  color: #D6D6D6;
+}
+.rating-score .inner-star {
+  position: absolute;
+  left: 0;
+  width: 0;
+  color: gold;
+  overflow: hidden;
+}
+.rating-score .change-score {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 0;
 }
 
 /* 기타 */

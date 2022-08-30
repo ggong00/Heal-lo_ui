@@ -174,7 +174,7 @@
 }
 
 /* 리뷰 관련 버튼 */
-.revire-btn {
+.review-btn {
     background-color: var(--color-others-header);
     color: white;
     border-style: none;

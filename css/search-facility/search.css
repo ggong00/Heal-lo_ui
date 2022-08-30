@@ -1,6 +1,9 @@
 #container {
   height: auto;
 }
+a:hover {
+  color: inherit;
+}
 .contents {
   display: flex;
   flex-direction: column;
