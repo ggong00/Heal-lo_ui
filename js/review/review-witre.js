@@ -1,4 +1,4 @@
-import {makeElements} from '../module/create-elememt.js'
+import makeElements from '../module/create-elememt.js'
 
 //dom접근
 const $changeScore = document.querySelector('.change-score');

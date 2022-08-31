@@ -214,12 +214,14 @@ a:hover {
 
 .btn-moreview {
   position: absolute;
-  top: 12px;
-  left: 148px;
+  right: 0;
+  bottom: 120px;
   padding: 6px;
   background-color: #cfe4f9;
   border-radius: 12px;
+  border-style: none;
   cursor: pointer;
+
 }
 
 .pagination-wrap .pagination a {
@@ -304,5 +306,23 @@ a:hover {
   color: white;
   border-style: none;
   border-radius: 4px;
+}
+
+/* 이미지 확대 */
+#modal .modal-body {
+  padding: 0;
+}
+#modal .modal-header {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  border-style: none;
+  font-size: 36px;
+}
+#modal .modal-header button {
+  background-color: white;
+}
+#modal .modal-body img {
+  width: 100%;
 }
 
