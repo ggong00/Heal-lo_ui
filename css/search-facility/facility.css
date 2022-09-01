@@ -224,11 +224,21 @@ a:hover {
 
 }
 
+/* 페이지네이션 */
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+}
 .pagination-wrap .pagination a {
   font-weight: 700;
   border-radius: 0px;
   color: var(--color-main-header);
+  cursor: pointer;
 }
+.on {
+  background-color: #d9dfe47d;
+}
+
 
 /* 별점 */
 .rating-score {
@@ -321,8 +331,10 @@ a:hover {
 }
 #modal .modal-header button {
   background-color: white;
+  
 }
 #modal .modal-body img {
   width: 100%;
 }
+
 

@@ -236,10 +236,14 @@ a:hover {
   content: '[주소]';
 }
 
+/* 페이지네이션 */
 .search__main .search-body .searched-wrap .pagination-wrap .pagination a {
   cursor: pointer;
   font-weight: 700;
   color: var(--color-others-header);
+}
+.on {
+  background-color: #d9dfe47d;
 }
 
 /* 목록 하이드바 */

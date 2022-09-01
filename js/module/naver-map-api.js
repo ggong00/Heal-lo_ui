@@ -1,9 +1,9 @@
-export class MapUtile {
+export default class MapUtile {
 
     constructor(map) {
-       this.map = map;
-       this.markers = [];
-       this.infowindow = new naver.maps.InfoWindow();
+        this.map = map;
+        this.markers = [];
+        this.infowindow = new naver.maps.InfoWindow();
     }
 
     //마커들 생성 + 위치이동
@@ -63,7 +63,7 @@ export class MapUtile {
             lng,
             `<div class="my-location-marker marker">
                             <i class="fa-solid fa-house"></i>
-                         </div>`
+                        </div>`
         )
 
         if(this.beforeBound) {
