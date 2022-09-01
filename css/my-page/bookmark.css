@@ -18,6 +18,7 @@
 #container .bookmark ul>li:nth-child(2) {padding: 5px; }
 #container .bookmark ul>li:nth-child(3) {padding: 5px; }
 #container .bookmark ul>li:nth-child(4) {padding: 5px; }
-#container .bookmark i {font-size: 2rem;}
+#container .bookmark i {font-size: 2rem; height: 30px;}
+#container .bookmark i:hover {color: rgba(255, 155, 172, 0.462); transition: all 0.3s;}
 
-.bookmark-btn-color { color: #f39c12; }
+.bookmark-btn-color { color: rgba(255, 155, 172, 0.462); }
