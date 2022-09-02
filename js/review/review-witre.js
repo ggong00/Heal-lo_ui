@@ -33,9 +33,11 @@ $inputImg.addEventListener('change',({target}) => {
         return;
     }
 
-    [...files].forEach(ele => {
 
+
+    [...files].forEach(ele => {
         const reader = new FileReader();
+
         reader.onload = (e) => {
             uploadImgs.push(ele);
             const previewDiv =
@@ -44,14 +46,13 @@ $inputImg.addEventListener('change',({target}) => {
                 makeElements('button',{class : 'fa-solid fa-xmark'}));
                 $previewWrap.appendChild(previewDiv);
 
-            console.log(uploadImgs)
-            console.log(e)
             previewDiv.querySelector('button').addEventListener('click',(e)=> {
                 const idx = uploadImgs.findIndex(ele => ele.name == previewDiv.dataset.imgName);
                 uploadImgs.splice(idx,1);
                 previewDiv.remove();
             })
         }
+
         reader.readAsDataURL(ele);
     });
 })

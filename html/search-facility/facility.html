@@ -23,6 +23,7 @@
 
     <!-- 헤더 -->
     <header id="header">
+
       <!-- 탑 메뉴 -->
       <div class="header__menu-top">
           <span class="header__my-menu"><a href="#">로그아웃</a></span>
@@ -32,6 +33,7 @@
 
       <!-- 베너 -->
       <div class="header__banner">
+
           <!-- 메인 로고 -->
           <div class="header__main-logo">
               <a href="#">
@@ -59,7 +61,6 @@
 
         <!-- 즐겨찾기 -->
         <i class="fa-solid fa-heart favorite-icon"></i>
-
       </section>
 
       <!-- 시설 정보 바디-->
@@ -74,14 +75,13 @@
 
         <!-- 시설 상세 정보 -->
         <article class="facility-detail-wrap">
-          
+
           <div class="facility-detail__info">
             <h3 class="facility-detail__title">주소</h3>
             <div class="facility-detail__sub">
               <p>울산광역시 중구 xxxxxxxxxxx</p>
             </div>
           </div>
-
           <div class="hr"></div>
 
           <div class="facility-detail__info">
@@ -90,7 +90,6 @@
               <p>052-229-9660</p>
             </div>
           </div>
-
           <div class="hr"></div>
 
           <div class="facility-detail__info">
@@ -99,7 +98,6 @@
               <p><a href="https://www.naver.com">https://www.naver.com</a></p>
             </div>
           </div>
-
           <div class="hr"></div>
 
           <div class="facility-detail__info">
@@ -109,7 +107,6 @@
               <p>- 주말: 09:00 ~ 18:00</p>
             </div>
           </div>
-
           <div class="hr"></div>
 
           <div class="facility-detail__info">
@@ -118,14 +115,11 @@
               <span>헬스</span>
             </div>
           </div>
-
           <div class="hr"></div>
-
         </article>
-
       </section>
 
-      <!-- 리뷰 정보 -->
+      <!-- 리뷰 -->
       <section class="review" id="reviewContainer"> 
         <p class="review-header__title">리뷰</p> 
 
@@ -139,14 +133,14 @@
           </div>
         </div> 
 
-        <!-- 시설 리뷰 정보 -->
+        <!-- 리뷰 헤더 -->
         <article class="review-header">
           <div class="total-info">
-            <p class="total">전체 리뷰 : <span class="new-review__cnt">18개</span></p>
+            <p class="total">전체 리뷰 : <span class="review-cnt">18개</span></p>
           </div>
 
+          <!-- 리뷰 헤더-메인 -->
           <div class="review-header__main">
-            
             <div class="rating-score">
               <p class="text-score">0.0</p>
               <div class="outer-star">
@@ -159,14 +153,16 @@
             </div>   
           </div>
 
-          
-          <div class="review__btn-write">
+          <!-- 리뷰 작성 버튼 -->
+          <div class="write-btn-wrap">
             <button class="review-write btn-review">리뷰작성</button>
           </div>
         </article>
 
         <!-- 리뷰 목록 -->
         <article class="review-lists">
+
+          <!-- 페이징 -->
           <nav aria-label="Page navigation example" class="pagination-wrap">
             <ul class="pagination pagination-md">
               <li class="page-item">
@@ -186,7 +182,7 @@
           </nav>
         </article>
       
-        <!-- Modal -->
+        <!-- 이미지 확대 뷰 -->
         <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
@@ -217,8 +213,6 @@
     </footer>
   </div>
 
-  
-  
   <script src="../../js/template/layout-sub.js"></script>
   <script type="module" src="../../js/search-facility//facility-page.js"></script>
 </body>

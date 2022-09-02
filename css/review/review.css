@@ -6,7 +6,7 @@
 
 .content {
     width:800px;
-    margin: 80px auto;
+    margin: 0 auto;
 }
 
 /* 페이지 타이틀 */
@@ -129,7 +129,6 @@
 .upload-img-wrap {
     display: flex;
     justify-content: space-between;
-    margin: 8px 0;
     padding: 12px 0;
 }
 .upload-img-wrap label {
@@ -146,8 +145,19 @@
 }
 .preview-wrap {
     display: flex;
-    margin: 24px 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 12px 0;
     height: 150px;
+    background-color: rgba(78, 83, 157, 0.101);
+    border-radius: 12px;
+}
+.preview-wrap i {
+    position: absolute;
+    font-size: 72px;
+    color: rgba(78, 83, 157, 0.553);
+    z-index: -1;
 }
 .preview-img {
     display: flex;
@@ -184,4 +194,3 @@
     cursor: pointer;
     border-radius: 4px;
 }
-

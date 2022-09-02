@@ -21,6 +21,7 @@
 
     <!-- 헤더 -->
     <header id="header">
+
         <!-- 탑 메뉴 -->
         <div class="header__menu-top">
           <span class="header__my-menu"><a href="#">로그아웃</a></span>
@@ -30,6 +31,7 @@
 
         <!-- 베너 -->
         <div class="header__banner">
+
           <!-- 메인 로고 -->
           <div class="header__main-logo">
             <a href="#">
@@ -49,106 +51,81 @@
     <!-- 메인 컨텐츠 -->
     <main id="container">
       <section class="search contents">
-        <article class="search__header">
-
-
-        </article>
-
+      
+        <!-- 검색 메인-->
         <article class="search__main">
 
-
+          <!-- 카테고리 선택 wrap-->
           <div class="search__select-input">
 
+            <!-- 지역 카테고리 -->
             <div class="search__cg-wrap">  
               <div class="category-title">
                 <p class="label-input">지역</p>
               </div>
+
+              <!-- 지역 대분류 -->
               <ul class="search__cg-loca1 category">
               </ul>
 
-              <!-- 카테고리 wrap 스크립트 -->
+              <!-- 지역 중분류 -->
               <ul class="search__cg-loca2 category">
               </ul>
             </div>
 
+            <!-- 운동 카테고리 -->
             <div class="search__cg-wrap">
               <div class="category-title">
                 <p class="label-input">분류</p>
               </div>
+
+              <!-- 운동 분류 -->
               <ul class="search__cg-fa category">
               </ul>
             </div>
           </div>
         
-          <div class="search-body">
-            <div class="searched-wrap" id="searchedWrap">
+          <!-- 검색 결과-->
+          <div class="searched-wrap">
 
+            <!-- 검색 결과 목록 wrap-->
+            <div class="searched-list-wrap">
+
+              <!-- 시설명 검색 창-->
               <div class="text-input">
+
+                <!-- 시설명 검색 창 헤더 -->
                 <div class="text-input__header" -data-after="건">
                   검색 결과 : <span class="result-count"></span>
                 </div>
+
+                <!-- 시설명 검색 창 메인 -->
                 <form class="text-input__body input-group mb-3">
                   <input type="text" class="form-control shadow-none" id="textSearchInput" placeholder="시설명을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1">
                   <button type="submit"><i class="fa-solid fa-magnifying-glass-location" id="facilityBtn"></i></button>   
                 </form>      
               </div>
+
+              <!-- 검색 결과 목록-->
               <ul class="searched-lists" id="searchedLists">
-                <li class="searched-lists__item">
-                  <div class="item-img">
-                    <img src="../../img/이미지준비중.jpg" alt="">
-                  </div>
-                  <div class="item-content">
-                    <div class="item-content__top">
-                      <h3 class="item-title">울산공공헬스장</h3>
-                      <div class="icon-wrap">
-                        <span class="fa-stack fa-lg favorite-icon">
-                          <i class="fa fa-square fa-stack-2x"></i>
-                          <i class="fa-solid fa-heart fa-stack-1x contents-icon"></i>
-                        </span>
-                        <span class="fa-stack fa-lg move-map-icon">
-                          <i class="fa fa-square fa-stack-2x"></i>
-                          <i class="fa-solid fa-map-location-dot fa-stack-1x contents-icon"></i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="item-content__body">
-                      <p class="item-tel">010-8888-7711</p>
-                      <p class="item-addr">울산 중구 옥교동 xxxx</p>
-
-                    </div>
-                  </div>
-                </li>
-
-                <li aria-label="Page navigation example" class="pagination-wrap">
-                  <ul class="pagination pagination-sm">
-                    <li class="page-item">
-                      <a class="page-link shadow-none" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                    <li class="page-item"><a class="page-link shadow-none" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link shadow-none" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link shadow-none" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link shadow-none" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
               </ul>
             </div>
 
+            <!-- 지도 추가기능 -->
             <div class="map-util">
+
+              <!-- 리스트 목록 on/off -->
               <div class="open-list util">
                 <i class="fa-solid fa-arrow-down-short-wide"></i>
               </div>
+
+              <!-- 내위치 -->
               <div class="my-location util">
                 <span>내 위치</span>
               </div>
             </div>
 
+            <!-- 지도 API -->
             <div class="search-map__api">
               <div id="map" style="width:100%;height:100%;"></div>
             </div>

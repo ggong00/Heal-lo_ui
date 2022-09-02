@@ -77,6 +77,111 @@ const reviews = {
                 ]                
             },
             {   
+                rvno : 4,        
+                rvcontents : `    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur`,  
+                rvscore : 2.5,     
+                rvcdate : '2022/08/30',    
+                rvudate : '2022/08/30',   
+                fcno : 1,  
+                memno : 3,
+                memninkname : 'abc1235',
+                imgs : [
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://images.unsplash.com/photo-1630703178161-1e2f9beddbf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg'
+                ]                
+            },
+            {   
+                rvno : 4,        
+                rvcontents : `    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur`,  
+                rvscore : 2.5,     
+                rvcdate : '2022/08/30',    
+                rvudate : '2022/08/30',   
+                fcno : 1,  
+                memno : 3,
+                memninkname : 'abc1235',
+                imgs : [
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://images.unsplash.com/photo-1630703178161-1e2f9beddbf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg'
+                ]                
+            },
+            {   
+                rvno : 4,        
+                rvcontents : `    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur`,  
+                rvscore : 2.5,     
+                rvcdate : '2022/08/30',    
+                rvudate : '2022/08/30',   
+                fcno : 1,  
+                memno : 3,
+                memninkname : 'abc1235',
+                imgs : [
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://images.unsplash.com/photo-1630703178161-1e2f9beddbf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg'
+                ]                
+            },
+            {   
+                rvno : 4,        
+                rvcontents : `    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur`,  
+                rvscore : 2.5,     
+                rvcdate : '2022/08/30',    
+                rvudate : '2022/08/30',   
+                fcno : 1,  
+                memno : 3,
+                memninkname : 'abc1235',
+                imgs : [
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://images.unsplash.com/photo-1630703178161-1e2f9beddbf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg'
+                ]                
+            },
+            {   
+                rvno : 4,        
+                rvcontents : `    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur
+                aspernaturipsum dolor sit amet consectetur adipisicing elit. Doloremque praesentium consectetur`,  
+                rvscore : 2.5,     
+                rvcdate : '2022/08/30',    
+                rvudate : '2022/08/30',   
+                fcno : 1,  
+                memno : 3,
+                memninkname : 'abc1235',
+                imgs : [
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://images.unsplash.com/photo-1630703178161-1e2f9beddbf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg',
+                    'https://cdn.pixabay.com/photo/2014/11/11/15/24/gym-526995_960_720.jpg'
+                ]                
+            },
+            {   
                 rvno : 1,        
                 rvcontents : '시설이 좋아요3',  
                 rvscore : 4.5,     
@@ -117,11 +222,15 @@ const reviews = {
 //dom 접근
 const $reviewLists = document.querySelector('.review-lists');
 const $modal = document.getElementById('modal');
+const $reviewCnt = document.querySelector('.review-cnt');
+
+//다용도 전역변수
+let isFirstRander = true;
 
 // 페이지네이션 설정
 const limitPage = 5;      //  페이지 최대 생성 수
-const onePageNum = 5;    //  1페이지에 최대 목록 수
-let nowPage = 1;          //  현재 페이지
+const onePageNum = 10;    //  1페이지에 최대 목록 수
+let currentPage = 1;          //  현재 페이지
 
 //초기 페이지 셋팅
 reviewListRequest();
@@ -133,6 +242,7 @@ function reviewListRequest() {
     const pagination = createPagination(Math.ceil(reviews.item.totalcount / onePageNum));
     $reviewLists.appendChild(pagination);
 
+    $reviewCnt.textContent = reviews.item.totalcount;
 }
 
 //리뷰 랜더링 함수
@@ -195,29 +305,30 @@ function reviewListRander(data) {
 
 //페이지네이션 생성 함수
 function createPagination(totalPage) {
+
     //이전 페이지네이션 삭제
     $reviewLists.querySelector('.pagination-wrap')?.remove();
 
     //페이지네이션 wrap생성
     const paginationLis = [];
     const paginationWrap = document.createElement('li');
+    const pagination = document.createElement('ul');
     paginationWrap.setAttribute('class', 'pagination-wrap');
     paginationWrap.setAttribute('aria-label', 'Page navigation example');
-    const pagination = document.createElement('ul');
     pagination.setAttribute('class', 'pagination pagination-sm');
     paginationWrap.appendChild(pagination);
 
     //페이지 생성
-    let pageLv = Math.ceil(nowPage/limitPage);
-    let startIdx = pageLv == 1 ? 1 : (pageLv-1)*limitPage + 1;
-    let lastIdx = totalPage - (startIdx + limitPage) > 0 ? startIdx + limitPage : totalPage + 1;
-    const saveStartIdx = startIdx;
+    let pageLv = Math.ceil(currentPage/limitPage);
+    let startIdx = currentPage;
+    let lastIdx = currentPage + (limitPage - 1);
 
-    for (startIdx; startIdx < lastIdx; startIdx++) {
+    for (startIdx; startIdx <= lastIdx && startIdx <= totalPage; startIdx++) {
         const page = document.createElement('li');
         page.setAttribute('class', 'page-item');
         const a = document.createElement('a');
         a.setAttribute('class', 'page-link shadow-none');
+        a.setAttribute('href','#reviewContainer');
         a.textContent = startIdx;
 
         // 페이지 클릭 이벤트
@@ -233,15 +344,19 @@ function createPagination(totalPage) {
             //클릭 표시
             [...$reviewLists.querySelectorAll('a')].forEach(ele => ele.classList.remove('on'));
             e.target.classList.add('on');
-
         });
-        
         page.appendChild(a);
         paginationLis.push(page);
+
+        isFirstRander ? a.href = '#' : '';
+        if(startIdx == currentPage) {
+            a.click();
+            isFirstRander = false;
+        }
     }
 
     //이전 페이지 생성
-    if(nowPage - limitPage > 0) {
+    if(currentPage - limitPage > 0) {
         const page = document.createElement('li');
         page.setAttribute('class', 'page-item');
         const a = document.createElement('a');
@@ -252,14 +367,14 @@ function createPagination(totalPage) {
         paginationLis.unshift(page);
 
         a.addEventListener('click', e => {
-            nowPage = saveStartIdx - 1;
+            currentPage -= limitPage;
             const paginationWrap = createPagination(totalPage);
             $reviewLists.appendChild(paginationWrap);
         })
     }
 
     //다음 페이지 생성
-    if(totalPage - (nowPage + limitPage) > 0) {
+    if(pageLv*limitPage < totalPage) {
         const page = document.createElement('li');
         page.setAttribute('class', 'page-item');
         const a = document.createElement('a');
@@ -270,19 +385,12 @@ function createPagination(totalPage) {
         paginationLis.push(page);
 
         a.addEventListener('click', e => {
-            nowPage = lastIdx;
-            console.log(nowPage)
+            currentPage += limitPage;
             const paginationWrap = createPagination(totalPage);
             $reviewLists.appendChild(paginationWrap);
         })
     }
 
-    paginationLis.forEach(ele => {
-        const pageIdx = ele.querySelector('a');
-        pageIdx.textContent == saveStartIdx && pageIdx.click();
-
-        pagination.appendChild(ele);
-    })
-
+    paginationLis.forEach(ele => pagination.appendChild(ele))
     return paginationWrap;
 }

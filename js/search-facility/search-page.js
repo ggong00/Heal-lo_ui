@@ -29,7 +29,7 @@ const $cgListsByLoca2 = document.querySelector('.search__cg-wrap .search__cg-loc
 const $cgListsByFacility = document.querySelector('.search__cg-wrap .search__cg-fa');
 const $searchForm = document.querySelector('.text-input__body');
 const $inputByText = document.getElementById('textSearchInput');
-const $searchedLists = document.querySelector('.searched-wrap .searched-lists');
+const $searchedLists = document.querySelector('.searched-list-wrap .searched-lists');
 const $resultCount = document.querySelector('.result-count');
 const $mapUtil = document.querySelector('.map-util');
 const $openList = document.querySelector('.open-list');
@@ -44,7 +44,7 @@ let requstStatus = 'false';
 // 페이지네이션 설정
 const limitPage = 5;      //  페이지 최대 생성 수
 const onePageNum = 10;    //  1페이지에 최대 목록 수
-let nowPage = 1;          //  현재 페이지
+let currentPage = 1;          //  현재 페이지
 
 //검색 조건 저장
 let selectedCgLocaSave = {level1 : '', level2 : ''};
@@ -60,23 +60,23 @@ const map = new naver.maps.Map('map', mapOptions);
 const mapUtil = new MapUtile(map);
 
 // 지역 카테고리 대분류 랜더링 
-RanderingUlTagLv1($cgListsByLoca1,categoryLoca_lv1);
+RenderingUlTagLv1($cgListsByLoca1,categoryLoca_lv1);
 
 // 운동 카테고리 랜더링
-RanderingUlTagLv1($cgListsByFacility,category_fctype);
+RenderingUlTagLv1($cgListsByFacility,category_fctype);
 
 // 지역 카테고리 대분류 클릭 이벤트
 $cgListsByLoca1.addEventListener('click', ({target,currentTarget}) => {
-  if(target.tagName != 'P') {
-    return;
-  }
+  if(target.tagName != 'P') return;
   selectedLog.now = target;
+  
   //카테고리 생성 로직
   $cgListsByLoca2.innerHTML = '';
-  RanderingUlTagLv2($cgListsByLoca2,categoryLoca_lv2[`${target.id}`], target.id);
+  RenderingUlTagLv2($cgListsByLoca2,categoryLoca_lv2[`${target.id}`], target.id);
   $cgListsByLoca2.style.top = $cgListsByLoca1.children[0].offsetTop + $cgListsByLoca1.offsetHeight + 'px';
   $cgListsByLoca2.style.visibility = 'visible';
-  //캡쳐링 단계(lv2 삭제)
+
+  //캡쳐링 단계(중분류 삭제)
   document.body.addEventListener('click', ({target}) => {
     if(target.closest('.search__cg-wrap .search__cg-loca2')) {
       return;
@@ -115,13 +115,9 @@ $cgListsByLoca2.addEventListener('click',({target,currentTarget}) => {
 
 //운동 카테고리 클릭 이벤트
 $cgListsByFacility.addEventListener('click',({target,currentTarget}) => {
-  if(target.tagName != 'P') {
-    return;
-  }
+  if(target.tagName != 'P') return;
   const li_lv2 = currentTarget.querySelectorAll('li p');
-  [...li_lv2].forEach(ele => {
-    ele.style.backgroundColor = cgRemveColor;
-  })
+  [...li_lv2].forEach(ele =>ele.style.backgroundColor = cgRemveColor);
   target.style.backgroundColor = cgAddColor;
   selectedTypeCgSave = target.id;
 })
@@ -137,17 +133,11 @@ $myLocation.addEventListener('click', () => {
     alert('내 위치정보를 지원하지 않는 브라우저입니다.');
     return;
   }
-  navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
 
-        mapUtil.makeMyMarker(lat, lng);
-      },
-      (positionError) => {
-        console.log(positionError.code,positionError.message);
-        alert('위치를 불러오는 중 오류가 생겼습니다.');
-      }
+  //위치 불러오기
+  navigator.geolocation.getCurrentPosition(
+      position => mapUtil.makeMyMarker(position.coords.latitude, position.coords.longitude),
+      positionError => alert('위치를 불러오는 중 오류가 생겼습니다.')
   );
 });
 
@@ -158,14 +148,11 @@ $searchForm.addEventListener('submit',(e) => {
   if(!requstStatus) {
     alert("검색어를 조회하고 있습니다");
     return;
-  }
-  if(!ispossible) {
+  } else if (!ispossible) {
     alert("카테고리를 선택해주세요");
     return;
   }
-
-  let value = $inputByText.value.trim('');
-  searchedTextSave =  value;
+  searchedTextSave = $inputByText.value.trim('');
   $inputByText.value = '';
 
   //검색시작
@@ -173,19 +160,17 @@ $searchForm.addEventListener('submit',(e) => {
 })
 
 //대분류 카테고리 ul태그 랜더링 함수 (ul > li > p)
-function RanderingUlTagLv1(ulTag,arr) {
+function RenderingUlTagLv1(ulTag,arr) {
   arr.forEach(ele => {
-    const pTag = document.createElement('p');
-    pTag.textContent = ele.text;
-    pTag.setAttribute('id',ele.value);
-    const liTag = document.createElement('li');
-    liTag.appendChild(pTag);
-    ulTag.appendChild(liTag);
+    ulTag.appendChild(
+      makeElements('li',null,
+        makeElements('p',{id : ele.value},ele.text))
+    );
   })
 }
 
 //중분류 카테고리 ul태그 랜더링 함수 (ul > li > p)
-function RanderingUlTagLv2(ulTag,arr,parentLv) {
+function RenderingUlTagLv2(ulTag,arr,parentLv) {
   arr.forEach((ele,idx) => {
     const pTag = document.createElement('p');
     pTag.textContent = ele;
@@ -269,13 +254,13 @@ function search() {
     text : searchedTextSave,
     type : selectedTypeCgSave,
     loca : selectedCgLocaSave.level2 == '전체' ? selectedCgLocaSave.level1 : `${selectedCgLocaSave.level1} ${selectedCgLocaSave.level2}`,
-    pageNO : nowPage
+    pageNO : currentPage
   }
   // const xhr = requestPublicApi(submitData);
 
   // xhr.addEventListener('readystatechange', () => {
     requstStatus = true;
-    nowPage = 1;
+    currentPage = 1;
     // if (xhr.readyState == XMLHttpRequest.DONE) {
       // if (xhr.status == 0 || (xhr.status >= 200 && xhr.status < 400)) {
         // const jsonData = JSON.parse(xhr.responseText);
@@ -303,7 +288,7 @@ function search() {
         $searchedLists.appendChild(paginationWrap);
 
         //총 검색 결과 표시
-        $resultCount.textContent = jsonData.totalCount; 
+        $resultCount.textContent = jsonData.item.totalcount; 
         
         //목록 on
         if (!$searchedLists.classList.contains('open-lists')) {
@@ -321,24 +306,25 @@ function search() {
 
 //페이지네이션 생성 함수
 function createPagination(totalPage) {
+
   //이전 페이지네이션 삭제
   $searchedLists.querySelector('.pagination-wrap')?.remove();
+
   //페이지네이션 wrap생성
   const paginationLis = [];
   const paginationWrap = document.createElement('li');
+  const pagination = document.createElement('ul');
   paginationWrap.setAttribute('class', 'pagination-wrap');
   paginationWrap.setAttribute('aria-label', 'Page navigation example');
-  const pagination = document.createElement('ul');
   pagination.setAttribute('class', 'pagination pagination-sm');
   paginationWrap.appendChild(pagination);
 
   //페이지 생성
-  let pageLv = Math.ceil(nowPage/limitPage);
-  let startIdx = pageLv == 1 ? 1 : (pageLv-1)*limitPage + 1;
-  let lastIdx = totalPage - (startIdx + limitPage) > 0 ? startIdx + limitPage : totalPage + 1;
-  const saveStartIdx = startIdx;
+  let pageLv = Math.ceil(currentPage/limitPage);
+  let startIdx = currentPage;
+  let lastIdx = currentPage + (limitPage - 1);
 
-  for (startIdx; startIdx < lastIdx; startIdx++) {
+  for (startIdx; startIdx <= lastIdx && startIdx <= totalPage; startIdx++) {
     const page = document.createElement('li');
     page.setAttribute('class', 'page-item');
     const a = document.createElement('a');
@@ -347,12 +333,12 @@ function createPagination(totalPage) {
     // 페이지 클릭 이벤트
     a.addEventListener('click', (e) => {
       requstStatus = false;
-      nowPage = startIdx;  //현재 페이지 저장
+      currentPage = startIdx;  //현재 페이지 저장
       const submitData = {
         text : searchedTextSave,
         type : selectedTypeCgSave,
         loca : selectedCgLocaSave.level2 == '전체' ? selectedCgLocaSave.level1 : `${selectedCgLocaSave.level1} ${selectedCgLocaSave.level2}`,
-        pageNO : nowPage
+        pageNO : currentPage
       }
       //테스트
       const jsonData = listsData;
@@ -391,14 +377,14 @@ function createPagination(totalPage) {
       //   }
       // });
 
-
     });
     page.appendChild(a);
     paginationLis.push(page);
+    if(startIdx == currentPage) a.click();
   }
 
   //이전 페이지 생성
-  if(nowPage - limitPage > 0) {
+  if(currentPage - limitPage > 0) {
     const page = document.createElement('li');
     page.setAttribute('class', 'page-item');
     const a = document.createElement('a');
@@ -409,14 +395,14 @@ function createPagination(totalPage) {
     paginationLis.unshift(page);
 
     a.addEventListener('click', e => {
-      nowPage = saveStartIdx - 1;
+      currentPage -= limitPage;
       const paginationWrap = createPagination(totalPage);
       $searchedLists.appendChild(paginationWrap);
     })
   }
 
   //다음 페이지 생성
-  if(totalPage - (nowPage + limitPage) > 0) {
+  if(pageLv*limitPage < totalPage) {
     const page = document.createElement('li');
     page.setAttribute('class', 'page-item');
     const a = document.createElement('a');
@@ -427,19 +413,13 @@ function createPagination(totalPage) {
     paginationLis.push(page);
 
     a.addEventListener('click', e => {
-      nowPage = lastIdx;
-      console.log(nowPage)
+      currentPage += limitPage;
       const paginationWrap = createPagination(totalPage);
       $searchedLists.appendChild(paginationWrap);
     })
   }
-  paginationLis.forEach(ele => {
-    const pageIdx = ele.querySelector('a');
-    pageIdx.textContent == saveStartIdx && pageIdx.click();
 
-    pagination.appendChild(ele);
-  })
-
+  paginationLis.forEach(ele => pagination.appendChild(ele))
   return paginationWrap;
 }
 

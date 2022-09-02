@@ -8,6 +8,7 @@ export default class MapUtile {
 
     //마커들 생성 + 위치이동
     makeMarkers(data) {
+        
         //기존 마커들 초기화
         if(!this.markers.length != 0) {
             this.markers.forEach(ele => {
